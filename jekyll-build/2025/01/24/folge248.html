@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Folge 248 - Code Charta mit Richard Gross | Software Architektur im Stream </title>
+  <link type="application/atom+xml" rel="alternate" href="https://software-architektur.tv/feed.xml" title="software-architektur.tv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="stylesheet" href="/css/custom1.css">
+  <meta name="twitter:card" content="player" />
+  <meta property="og:url" content="https://software-architektur.tv/2025/01/24/folge248.html" />
+  <meta property="twitter:title" content="Folge 248 - Code Charta mit Richard Gross  | Software Architektur im Stream" />
+  <meta property="og:title" content="Folge 248 - Code Charta mit Richard Gross  | Software Architektur im Stream" />
+  <meta property="og:type" content="article" />
+  <meta property="twitter:player" content="https://www.youtube.com/embed/rDHtNNBoP6Y" />
+  <meta property="twitter:player:width" content="560" />
+  <meta property="twitter:player:height" content="315" />
+
+  <meta property="twitter:image" content="https://software-architektur.tv/thumbnails/folge248.png" />
+  <meta property="twitter:image:alt" content="Titel der Folge" />
+  <meta property="og:image" content="https://software-architektur.tv/thumbnails/folge248.png" />  
+
+  <meta property="og:description" content="Code Charta stellt die Qualität eines Software-Systems als Stadt da." />
+  <meta property="twitter:description" content="Code Charta stellt die Qualität eines Software-Systems als Stadt da." />
+</head>
+
+
+
+  <body>
+    <script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://software-architektur.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', 'fc80a353-ef3c-45fc-b60f-f417d73ca50d');
+</script>
+
+<section class="page-header">
+  <h1 class="project-name">Folge 248 - Code Charta mit Richard Gross</h1>
+
+  <h2 class="project-tagline">Software Architektur im Stream</h2>
+
+
+
+  <section id="links">
+    <a href="/index.html">Home</a>
+    &nbsp;
+    <a href="/tags.html">Tags</a>
+    &nbsp;
+    <a href="/chronologisch.html">Folgen</a>
+    &nbsp;
+    <!-- <a href="/guests.html">Gäste</a> -->
+    &nbsp;
+    <a href="/podcast.html">Podcast</a>
+    &nbsp;
+    <a href="/sketchnote-buch">Buch</a>
+    &nbsp;
+    <a href="/beruf.html">Architektur als Beruf</a>
+    &nbsp;
+    <a href="/plan.html">Planung</a>
+    &nbsp;
+    <a href="/feed.xml">Feed</a>
+  </section>
+</section>
+
+
+
+
+	  
+    <section class="main-content">
+<ul>
+
+	<li><a href="#peertube">PeerTube Video - no Big Tech!</a></li>
+
+
+	<li><a href="#youtube">YouTube Video</a></li>
+
+
+	<li><a href="#podcast">Audio als Podcast</a></li>
+
+
+
+	<li><a href="#key-takeaways">Key Takeaways</a></li>
+	<li><a href="#wichtige-fragen-der-folge">Wichtige Fragen</a></li>
+	<li><a href="#glossar">Glossar</a></li>
+	<li><a href="#transcription">Transkription</a></li>
+
+</ul>	    
+
+	    
+    <p>Bei Software mit hunderttausend Zeilen kann man schnell den Überblick
+über Code, Architektur und deren Qualität verlieren. Sind wir noch auf
+dem richtigen Weg, blockieren wir uns mit internen Abhängigkeiten,
+oder sind wir schon festgefahren? Software ist immateriell, wir können
+nicht sehen, wie es ihr geht.</p>
+
+<p>Wir können uns allerdings mit Tools helfen. Eines davon ist das
+kostenlose Open-Source-Tool CodeCharta, das uns Richard vorstellen
+wird. Es bietet seit 2017 die Möglichkeit, Experten und Laien
+gleichermaßen die Qualität von Software nachvollziehbar zu machen.</p>
+
+<p>Die Idee ist sehr einfach: Wir visualisieren unsere Software als
+3D-Stadtkarte (Charta = lateinisch für Karte oder Papier). Jede Datei
+wird zu einem Gebäude. Kleine Dateien werden zu Bungalows, komplexe
+Dateien stechen als Wolkenkratzer hervor. Wolkenkratzer, die nur einen
+Autor haben, werden rot, denn hier existiert ein Wissenssilo.</p>
+
+<p>Das ist nur ein kleiner Teil der Visualisierungsmöglichkeiten:
+CodeCharta kann auch visualisieren, welche Dateien viel verändert
+werden, kaum Testabdeckung haben, hohe Verschachtelungstiefe bieten
+oder eine hohe Anzahl an Code Smells.</p>
+
+<p>Die Stadt-Metapher hilft dabei Experten wie Laien gleichermaßen und
+ermöglicht eine verständnisvolle Diskussion. Ein Feature, dass in den
+New Yorker Wolkenkratzern eingebaut werden soll, wird garantiert
+länger dauern als eines, das in einem Bonner Bungalow platziert
+wird. Diese Diskussion können wir auch am physischen Objekt führen,
+denn eine CodeCharta kann auch in 3D drucken.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://zoom.us/meeting/register/9Mnh0yNJS8q5vcc7chVAZQ">Unconference zu Software Architektur und KI mit Lisa, Ralf und
+Eberhard</a></li>
+  <li><a href="https://codecharta.com/">CodeCharta Homepage</a></li>
+  <li><a href="https://github.com/MaibornWolff/codecharta">CodeCharta bei GitHub</a></li>
+  <li><a href="https://software-architektur.tv/tags.html#Architecture%20Management">Folgen zu Architektur-Management-Werkzeugen</a></li>
+  <li><a href="https://www.linkedin.com/in/richargh/">Richard bei LinkedIn</a></li>
+  <li><a href="https://bsky.app/profile/richargh.de">Richard bei BlueSky</a></li>
+  <li><a href="https://richargh.de/">Richards Blog</a></li>
+</ul>
+
+
+
+    2025-01-24 <a href="https://software-architektur.tv/thumbnails/folge248.png">Thumbnail</a>
+
+
+
+<h2 id="peertube">PeerTube Video - no Big Tech!</h2>
+
+<center>
+    <div class="embed-container">
+      <iframe title="Folge 248 - Code Charta mit Richard Gross"
+	width="560" height="315"
+	src="https://tube.tchncs.de/videos/embed/a55879a2-5c3c-4d1f-bc1c-51e1c7a71cbd"
+	frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+    </div>
+</center>
+
+    
+
+<h2 id="youtube">YouTube Video</h2>
+
+<center>
+  <div class="embed-container">
+    <iframe width="560" height="315"
+src="https://www.youtube-nocookie.com/embed/rDHtNNBoP6Y" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe>
+    </div>
+</center>
+
+
+
+
+
+<h2 id="podcast">Audio als Podcast</h2>
+
+<center>
+<iframe
+style="width:100%;min-width:275px;min-height:320px;max-width:475px;max-height:400px;border:0;overflow:hidden"
+src="https://www.podcaster.de/simpleplayer/?id=show~1evriw~software-architektur-im-stream~pod-80ce844b12e6db756fd334fb04&v=1737736238"></iframe>
+</center>
+
+<a href="https://1evriw.podcaster.de/download/Code_Charta_mit_Richard_Gross(1).mp3">MP3 Download</a>
+
+<br />
+
+<a href="/podcast.html">Infos und Feeds zum Audio als Podcast</a>
+
+
+
+
+
+<p style="font-size: small;"><b>Hinweis:</b> Die nachfolgenden Texte wurden mit KI erstellt und können somit Fehler enthalten.</p>
+
+
+  <h1 id="code-charta-architektur-visualisierung-als-stadt">Code Charta: Architektur-Visualisierung als Stadt</h1>
+
+<p>Software-Architektur zu visualisieren ist eine große Herausforderung - besonders wenn es darum geht, den Zustand und die Qualität von Legacy-Code zu kommunizieren. Das Open-Source-Tool Code Charta bietet hier einen innovativen Ansatz: Es stellt Softwarearchitektur als dreidimensionale Stadt dar.</p>
+
+<h2 id="die-stadt-metapher">Die Stadt-Metapher</h2>
+
+<p>Code Charta visualisiert jede Datei als Gebäude in einer virtuellen Stadt. Dabei werden drei zentrale Metriken auf verschiedene visuelle Eigenschaften abgebildet:</p>
+
+<ul>
+  <li>Die Grundfläche entspricht der Größe der Datei (z.B. Lines of Code)</li>
+  <li>Die Höhe repräsentiert die Komplexität (z.B. zyklomatische Komplexität)</li>
+  <li>Die Farbe zeigt weitere Metriken wie Änderungshäufigkeit oder Test-Coverage</li>
+</ul>
+
+<p>Die Ordnerstruktur wird als Straßennetz dargestellt, wodurch die hierarchische Organisation des Codes sichtbar wird. Diese intuitive Metapher macht es auch für Nicht-Techniker einfacher, den Zustand einer Codebasis zu verstehen.</p>
+
+<h2 id="einsatzmöglichkeiten">Einsatzmöglichkeiten</h2>
+
+<p>Code Charta eignet sich besonders für:</p>
+
+<ul>
+  <li>Identifikation von problematischen Code-Bereichen durch auffällige “Gebäude”</li>
+  <li>Visualisierung von Verbesserungen durch Refactoring über Zeit</li>
+  <li>Kommunikation von technischen Schulden ans Management</li>
+  <li>Analyse von Abhängigkeiten und Struktur größerer Codebasen</li>
+</ul>
+
+<p>Ein besonders nützliches Feature ist der Delta-Modus: Hier können zwei Versionen verglichen werden, um Veränderungen über die Zeit sichtbar zu machen. Grüne Gebäude zeigen positive Entwicklungen wie reduzierte Komplexität, rote weisen auf potenzielle Probleme hin.</p>
+
+<h2 id="technische-details">Technische Details</h2>
+
+<p>Code Charta besteht aus zwei Hauptkomponenten:</p>
+
+<ol>
+  <li>Analyse-Tools zum Extrahieren der Metriken</li>
+  <li>Visualisierungs-Frontend zur Darstellung</li>
+</ol>
+
+<p>Die Analyse kann über verschiedene Wege erfolgen:</p>
+<ul>
+  <li>Direkter Source-Code-Parser (aktuell für Java)</li>
+  <li>Import aus SonarQube</li>
+  <li>CSV-Import für beliebige Metriken</li>
+  <li>Git-Log-Analyse für Change-Metriken</li>
+</ul>
+
+<p>Die Daten werden in einem JSON-Format (cc.json) zwischen Analyse und Visualisierung ausgetauscht. Die Visualisierung läuft komplett im Browser und speichert alle Daten lokal.</p>
+
+<h2 id="open-source-und-erweiterbarkeit">Open Source und Erweiterbarkeit</h2>
+
+<p>Code Charta ist unter BSD3-Lizenz als Open Source verfügbar. Durch die flexible Architektur und das standardisierte Datenformat lässt sich das Tool leicht erweitern:</p>
+
+<ul>
+  <li>Neue Parser für weitere Programmiersprachen</li>
+  <li>Alternative Visualisierungen</li>
+  <li>Integration weiterer Metriken</li>
+  <li>Anbindung anderer Analyse-Tools</li>
+</ul>
+
+<p>Die Community ist eingeladen sich zu beteiligen - sei es durch Feature-Requests, Bug Reports oder direkte Code-Beiträge.</p>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Code Charta bietet einen wertvollen Beitrag zur Visualisierung von Software-Architektur. Die Stadt-Metapher macht komplexe Metriken greifbar und unterstützt die Kommunikation zwischen technischen und nicht-technischen Stakeholdern.</p>
+
+<p>Besonders im Legacy-Kontext hilft das Tool dabei, den Überblick zu behalten und Verbesserungen sichtbar zu machen. Die Open-Source-Natur und flexible Architektur ermöglichen vielfältige Einsatzszenarien.</p>
+
+<p>Das Web-Studio auf der Code Charta Homepage ermöglicht einen einfachen Einstieg ohne Installation. Wer das Tool ausprobieren möchte, kann dort direkt mit eigenen Daten experimentieren.</p>
+
+<p>[Link to Code Charta on GitHub]</p>
+
+
+
+  <h2 id="key-takeaways">Key Takeaways</h2>
+
+<ol>
+  <li>Visualisierung von Code-Metriken
+    <ul>
+      <li>Code Charta stellt Codebasis als 3D-Stadt dar</li>
+      <li>Jede Datei wird als Gebäude visualisiert</li>
+      <li>Drei Hauptmetriken: Grundfläche (z.B. Lines of Code), Höhe (z.B. Komplexität) und Farbe (z.B. Häufigkeit der Änderungen)</li>
+    </ul>
+  </li>
+  <li>Technische Details
+    <ul>
+      <li>Open Source unter BSD3-Lizenz</li>
+      <li>Besteht aus Analyse- und Visualisierungskomponente</li>
+      <li>Unterstützt verschiedene Datenquellen (Sonar, Git, CSV etc.)</li>
+      <li>Läuft komplett client-seitig im Browser</li>
+      <li>Primär für Java entwickelt, aber über Sonar für viele Sprachen nutzbar</li>
+    </ul>
+  </li>
+  <li>Einsatzzwecke
+    <ul>
+      <li>Identifizierung problematischer Code-Bereiche</li>
+      <li>Kommunikation technischer Schulden ans Management</li>
+      <li>Visualisierung von Refactoring-Fortschritten</li>
+      <li>Delta-Ansicht zum Vergleich verschiedener Versionen</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="wichtige-fragen-der-folge">Wichtige Fragen der Folge</h2>
+
+<ol>
+  <li>Wie kann man große Codebasen effektiv visualisieren?</li>
+  <li>Wie kommuniziert man technische Schulden an nicht-technische Stakeholder?</li>
+  <li>Wie kann man Refactoring-Fortschritte sichtbar machen?</li>
+  <li>Wie geht man mit Monorepos um?</li>
+</ol>
+
+<h2 id="glossar">Glossar</h2>
+
+<ul>
+  <li>Churn: Häufigkeit der Änderungen an einer Datei</li>
+  <li>McCabe-Komplexität: Metrik für die zyklomatische Komplexität von Code</li>
+  <li>Refactoring-stabil: Visualisierung bleibt auch nach Code-Änderungen vergleichbar</li>
+  <li>Sonar/SonarQube: Tool für statische Code-Analyse</li>
+  <li>TreeMap: Visualisierungsform für hierarchische Daten</li>
+</ul>
+
+<h2 id="transcription" >Vollständige Transkription</h2>
+
+<p style="font-size: small;"><b>Hinweis:</b> Dieses Transkript wurde mit KI erstellt und kann somit Fehler enthalten.</p>
+  
+  <h3 id="einführung-und-vorstellung">Einführung und Vorstellung</h3>
+
+<p>So, dann herzlich willkommen zu einer weiteren Episode von Software-Architektur im Stream, diesmal mit Richard.</p>
+
+<p>Schön, dass es geklappt hat und schön, dass du da bist.</p>
+
+<p>Ja, ich freue mich total.</p>
+
+<p>Genau.</p>
+
+<p>Und bevor wir sozusagen inhaltlich losgehen, so ein paar Announcements.</p>
+
+<p>Also, wir sprechen heute über CodeCarter.</p>
+
+<p>Das ist ein Werkzeug zum Thema Architekturmanagement.</p>
+
+<p>Wir haben vor langer Zeit, also vor ein paar Jahren, irgendwie ganz viele Episoden gemacht zu anderen Werkzeugen in dem Bereich.</p>
+
+<p>Ich verlinke die nochmal.</p>
+
+<p>Und der andere Hinweis ist, es gibt eine Ankonferenz zu Software-Architektur und KI.</p>
+
+<p>Das heißt, wir treffen uns und sprechen über das Thema Software-Architektur und eben den Einfluss von KI oder wie KI das unterstützen kann.</p>
+
+<p>Da gibt es, das ist am 17.02., meine ich, und zwar von 14 bis 18 Uhr.</p>
+
+<p>Und da gibt es eine Möglichkeit, sich zu registrieren.</p>
+
+<p>Das ist ein Zoom-Meeting und den Link findet ihr entweder hier im Chat, wenn ihr live dabei seid, oder sonst in den Shownotes.</p>
+
+<p>Genau, ist natürlich kostenlos und so weiter.</p>
+
+<p>Das sozusagen als kleiner Werbevorspann.</p>
+
+<p>Und jetzt nochmal herzlich willkommen, Richard.</p>
+
+<p>Willst du kurz zwei Worte über dich sagen, was du so machst und was so dein Hintergrund ist?</p>
+
+<p>Ja, gern.</p>
+
+<p>Ich bin Richard Groß.</p>
+
+<h3 id="hintergrund-von-richard-gross">Hintergrund von Richard Gross</h3>
+
+<p>Ich bin jetzt seit zwölf Jahren bei Maiba und Wolf als IT-Archäologe angestellt.</p>
+
+<p>Das heißt, ich mag Legacy-Code.</p>
+
+<p>Spezifisch, ich mag es, Legacy-Code wieder flott zu machen.</p>
+
+<p>Deswegen durchsetze ich mich auch sehr für das Thema hexagonale Architekturen.</p>
+
+<p>Die lassen sich sehr gut mit Legacy-Code kombinieren.</p>
+
+<p>Hypermedia, Test-DSL und halt klar ausdrucksstarke Modellierung von Code.</p>
+
+<p>Das gefällt mir auch am meisten.</p>
+
+<p>Und ich glaube, das Wichtigste für diese Runde ist, ich habe halt lange Zeit das Open-Source-Projekt begleitet, namens CodeCarter.</p>
+
+<p>Und das hilft halt auch Non-Techies, aber Techies gleichermaßen, ein Gefühl für die Qualität von Software zu geben.</p>
+
+<p>Ich werde gleich noch eine Präsentation dazu geben, aber das ist, glaube ich, der Hauptgrund, warum ich hier bin.</p>
+
+<p>Genau.</p>
+
+<p>Und die erste Frage, die ich mir so stellen würde, oder die ich dir gerne stellen würde, ist, warum habt ihr denn mit CodeCarter angefangen?</p>
+
+<h3 id="motivation-für-codecarter">Motivation für CodeCarter</h3>
+
+<p>Ja, wir hatten 2014 angefangen, so Health-Checks, Software-Health-Checks zu machen.</p>
+
+<p>Ich sehe gerade, der Daniel hat gesagt, sein Vorgesetzter hat mal gesagt, wir sind nicht als Archäologen angestellt.</p>
+
+<p>Ja, das stimmt.</p>
+
+<p>Archäologe ist kein Selbstzweck.</p>
+
+<p>Aber es geht ja darum, wenn man Legacy-Code hat, dann ist es halt Software, die Mehrwert hat.</p>
+
+<p>Ansonsten wäre sie ja irgendwie gelöscht worden.</p>
+
+<p>Und ich sehe den Begriff des Archäologen so, dass wir uns halt damit beschäftigen, wie schaffen wir halt wieder, dass dieser Code Optionen hat.</p>
+
+<p>Oder besser gesagt, dass das Business-Optionen hat.</p>
+
+<p>Weil wenn wir Legacy-Code haben, dann ist halt immer das Problem, okay, irgendwie hat der Mehrwert, weil ansonsten wäre er gelöscht worden.</p>
+
+<p>Aber gleichzeitig, da sollen auch wieder neue Features rein und da ist dann irgendwie so ein Innovationsstau entstanden.</p>
+
+<p>Deswegen, ich finde Archäologen, die sind nicht da, weil sie es toll finden, in alten Code einzusteigen, sondern die sind da, weil sie es toll finden, Business wieder zu enablen und wieder Optionen zu schaffen, die vorher nicht da waren.</p>
+
+<p>Genau, super.</p>
+
+<p>Und ich habe mein Turmproblem auch behoben.</p>
+
+<p>Also ProTip, YouTube-Studio nicht gleichzeitig aufhören mit streamen.</p>
+
+<p>Hast du schon die Frage, haben wir schon diskutiert oder hast du schon gesagt, wie die Lizenz aussieht von dem Projekt und wie Maiba und Wolf da drin involviert ist?</p>
+
+<p>Ich habe tatsächlich pausiert mit meiner Vorstellung und habe einfach gerade auf einen Kommentar im Chat geantwortet.</p>
+
+<p>Ich spule es mal gleich vor.</p>
+
+<h3 id="projektdetails-und-lizenzierung">Projektdetails und Lizenzierung</h3>
+
+<p>Also wir hatten das Problem, wir machen diese Health-Checks und da kriegt man halt eine Million Zeilen Code und die Frage, okay, was ist überhaupt das Problem und wie komme ich da raus?</p>
+
+<p>Und das wollen wir innerhalb von drei Wochen beantworten.</p>
+
+<p>Und da hatten wir gute Tools und irgendwann haben wir gesagt, okay, es macht total Sinn, wenn wir unsere eigene schreiben, weil eines unserer Kernkompetenzen sind diese Health-Checks.</p>
+
+<h3 id="open-source-und-lizenz">Open Source und Lizenz</h3>
+
+<p>Und das haben wir dann online gestellt, 2017 glaube ich war es, unter einer BSD3-Lizenz.</p>
+
+<p>Also sprich, jeder darf die nutzen.</p>
+
+<p>Das Einzige, was BSD3 und MIT unterscheidet, ich bin kein Anwalt und habe das länger nicht mal angeguckt, aber in aller Kürze, BSD3 ist ohne Werbung.</p>
+
+<p>Also ihr dürft dann halt nicht großartig damit werben.</p>
+
+<p>Bei MIT wäre es feuerfrei.</p>
+
+<p>Macht, was ihr wollt.</p>
+
+<p>Am Ende des Tages ist es allerdings trotzdem komplett kostenlos.</p>
+
+<p>Jeder darf das halt nutzen.</p>
+
+<p>Gut, super.</p>
+
+<p>Du wolltest eine Live-Demo machen und eine kurze Präsentation.</p>
+
+<p>Dann würde ich sagen, ist das der nächste Schritt?</p>
+
+<p>Genau, dann starte ich mal die Präse.</p>
+
+<h3 id="visualisierungskonzept">Visualisierungskonzept</h3>
+
+<p>Wenn man halt so ein Millionen Zeilen oder 100.000, ist eigentlich egal, wenn man sehr viel Zeilencode vor sich hat.</p>
+
+<p>Dann fühlt sich das für mich immer so auf.</p>
+
+<p>Man hat ganz viel Code und man ist halt irgendwie dort gerade.</p>
+
+<p>Und das ist halt auch der Scope, den man hat.</p>
+
+<p>Man ist relativ klein, fokussiert auf dieser eine Datei.</p>
+
+<p>Und dann irgendwann später kommt man halt an eine andere Stelle und stellt fest, okay, hier war ein Problem und das wusste ich gar nicht.</p>
+
+<p>Und man sieht halt den Wald vor lauter Bäumen nicht, weil man halt immer sehr klein und nur an einer Stelle halt eben arbeitet.</p>
+
+<p>Und mein Gefühl ist zumindest, wenn man dann halt Legacy-Code vor sich hat, dann bietet einem sowas wie Sonar bietet einem dann auch nicht so den perfekten Überblick, weil man dann halt viel zu viele Bugs, viel zu viele Issues und viel zu viele Smiles hat und man fragt sich eigentlich, okay, wo soll ich überhaupt anfangen?</p>
+
+<p>Und ich glaube, das ist halt ein reines Problem der Perspektive.</p>
+
+<p>Wenn man halt diesen Schritt zurückgehen könnte und man geht halt auf so einen Berg drauf und kann von da auf die Software draufgucken, dann kann man sich ein Bild machen, dann kann man halt diese Perspektive haben und auch um folgreich Probleme zu erkennen.</p>
+
+<p>Und ich habe dieses Bild jetzt mit Dolly gezeichnet, aber die Idee oder die Metapher ist da schon drin.</p>
+
+<h3 id="stadtmetapher">Stadtmetapher</h3>
+
+<p>Nämlich, dass wir halt jede Datei als so ein Gebäude, als so ein Hochhaus zeichnen.</p>
+
+<p>Und das Schöne ist, wenn ich jede Datei in meiner Code-Basis als Gebäude mache, dann habe ich halt eine Grundfläche von so einem Gebäude, eine Höhe vom Gebäude und eine Farbe, also sprich drei Metriken.</p>
+
+<p>Und jetzt kann ich auf diese drei Attribute und auf diese drei Attribute kann ich jeweils eine Metrik legen.</p>
+
+<p>Dann wird meine Karte, je größer die Datei ist, desto mehr Platz nimmt sie auf der Karte ein.</p>
+
+<p>Komplexität, also zyklomatische, wäre dann zum Beispiel die Höhe.</p>
+
+<p>Könnte aber auch Nesting-Level sein, das bietet sich auch an.</p>
+
+<p>Und dann halt eben Churn, also wie oft es verändert wird, wäre dann halt die Farbe.</p>
+
+<p>Und das Coole ist dann, dass es dann halt wirklich so eine Stadtkarte ergibt, wo ich dann halt eine Datei habe oder pro Datei ein Gebäude.</p>
+
+<p>Und dann wird mir auch diese Ordner angezeigt und je nachdem, wie tief die Ordnerverschachtelung ist, geht es halt immer höher und höher.</p>
+
+<p>Und das gibt mir dann halt total so eine Perspektive von oben drauf.</p>
+
+<p>Und irgendwie werden dann Probleme halt sehr angenehm und sehr klar und sehr offensichtlich.</p>
+
+<p>Im Detail ist es dann so, man hat dann halt eben hier rote Gebäude und da muss man dann als Mensch nochmal reingucken.</p>
+
+<p>Also diese roten Gebäude sind der Start deiner Unterhaltung, nicht das Ende von der Unterhaltung.</p>
+
+<p>Und das Coole ist, diese Ansicht kann ich jetzt ja als Architekt, als Developer oder was auch immer nutzen, um halt Probleme zu identifizieren.</p>
+
+<p>Aber ich kann halt auch mit dieser Ansicht kommunizieren mit meinem Stakeholder, mit meinem Peer.</p>
+
+<p>Und ich kann sagen, guckt mal, ihr wollt, dass wir ein Feature hier rechts oben einbauen.</p>
+
+<p>Wir haben da folgende Probleme, dann ist da vielleicht nicht nur ein Gebäude, sondern ganz viele, die rot sind.</p>
+
+<p>Und dann ist das irgendwie sehr plastisch.</p>
+
+<p>Und ich kann sogar noch viel plastischer sein.</p>
+
+<p>Warum sind denn die Gebäude rot, wenn ich fragen darf?</p>
+
+<p>Also das wäre, also das rote Gebäude symbolisiert hier, also die Größe, die Grundfläche ist hier Lines of Code.</p>
+
+<p>Die Höhe ist die Zyklomatisch-Komplexität und die Farbe ist Churn.</p>
+
+<p>Also sprich, es wird sehr oft geändert.</p>
+
+<p>Okay, das heißt, also ich sehe jetzt hier drei, vier Gebäude, glaube ich, die halt unterschiedlich groß sind.</p>
+
+<p>So groß sind die gar nicht im Vergleich zu den anderen, so mittlere Größe, würde ich sagen.</p>
+
+<p>Und das da hinten ist das höchste, also das ist das, was am meisten geändert wird.</p>
+
+<p>Ja, also die Höhe bedeutet, dass es komplex, also sehr komplex ist.</p>
+
+<p>Es hat die meiste Komplexität.</p>
+
+<p>Ja, stimmt.</p>
+
+<p>Und bei der Farbe gibt es jetzt hier keine Abstufung.</p>
+
+<p>Ich könnte so den Gradienten-Modus anmachen, dann wäre es ein bisschen, aber meistens reicht es einfach zu wissen, okay, das Ding ist rot, gelb oder grün halt.</p>
+
+<p>Und wird deswegen, also das rote Gebäude wird halt häufig geändert.</p>
+
+<p>Das heißt, hinten haben wir ein Gebäude mit hoher Komplexität und einer, ja, wie auch immer gearteten Größe, so mittelgroß.</p>
+
+<p>Und das wäre jetzt etwas, wo man sagen könnte, okay, ist das ein Problem, weil eben das ein komplexes Gebäude ist, was halt häufig geändert wird oder ein komplexer Teil, der häufig geändert wird.</p>
+
+<p>Genau.</p>
+
+<p>Und ich hatte ja, vorhin hatte ich ja zum Beispiel so Sonar-Metriken angesprochen, die kann man jetzt zum Beispiel auch auf die Farbe oder auf die Höhe legen.</p>
+
+<p>Und dann kann ich halt unterschiedliche Metriken miteinander korrelieren und dann kann ich sagen, okay, das Ding ist sehr komplex und hat auch sehr viel Codesmells, okay, da sollte ich vielleicht mal reingehen.</p>
+
+<p>Oder es ist sehr komplex, hat sehr viel Codesmells und es wird an und an geändert, okay, das ist teuer.</p>
+
+<p>Und wenn ich will, kann ich das halt auch, ja, 3D drucken.</p>
+
+<p>Das klingt wie eine Spielerei, aber es ist tatsächlich überraschend gut, damit greifbar zu machen für Leute, wie ihre Software halt aussieht.</p>
+
+<p>Und es ist ein Gimmick, das irgendwie sehr beliebt ist und ich kann das total nachvollziehen.</p>
+
+<p>Genau, und du hattest, ich glaube, du hattest mir das gegeben, nicht?</p>
+
+<p>Das ist irgendwie so ein 3D gedrucktes Demo-Gebäude-Ding, wo man halt irgendwie die, so ein paar kleine Dinge sozusagen sieht.</p>
+
+<p>Genau.</p>
+
+<p>Genau.</p>
+
+<p>Sehr schön.</p>
+
+<p>Und jetzt kann ich halt auch hingehen und zum Beispiel halt Sprintrends.</p>
+
+<p>Sorry, da ist eine Frage im, also es sind zwei Bemerkungen.</p>
+
+<p>Also einmal steht da, erinnert mich an Commercial Tool.</p>
+
+<p>Toll, dass es eine Alternative gibt.</p>
+
+<p>Das stimmt.</p>
+
+<p>Es gibt, es gab auch mal früher, also es gibt dieses Commercial Tool, aber es gibt halt auch dieses Code Cities, nicht?</p>
+
+<p>Ich glaube, das ist irgendwie noch älter.</p>
+
+<p>Ja, also wir hatten mal eine Recherche gemacht, ich kann mich an die Details nicht erinnern.</p>
+
+<p>Also das, also was 100% stimmt und das will ich auch gar nicht überspielen, ist, wir machen da in Anführungsstrichen nichts Neues.</p>
+
+<p>Diese Stadtmetapher, dieses Code Cities oder Evo Street oder sowas, es gibt da wirklich sehr schöne Forschungspapiere dazu.</p>
+
+<p>Mein Gefühl ist halt, die enden dann halt immer dort.</p>
+
+<p>Also die gehen halt hin, machen eine coole Forschungsarbeit, bauen halt irgendwie ein Tool für einen Beispielfall und danach ist dann halt zu Ende und es wird nicht weiterentwickelt.</p>
+
+<p>Ja, genau.</p>
+
+<p>Ich hatte irgendwann mal eine Recherche gemacht.</p>
+
+<p>Ich glaube, das Ding hieß wirklich Code Cities.</p>
+
+<p>Also ich habe es nur mal irgendwie durch das Web geguckt und festgestellt, es gibt halt das Werkzeug, aber es ist irgendwie nicht besonders benutzbar und dann war es das halt irgendwie.</p>
+
+<p>Und also positiv wäre jetzt die Aussage, das ist halt ein etabliertes Konzept, wo man nachweisen kann, dass es gut funktioniert.</p>
+
+<p>Genau.</p>
+
+<p>Und die andere, so dazu noch, weil sonst ist ja noch eine andere Frage.</p>
+
+<p>Ja, also wenn ihr durch Zufall mal über Serene zum Beispiel gestolpert seid, das wäre so das gängige Tool, das auch so eine 3D-Visualisierung anbietet.</p>
+
+<p>Ansonsten in Sonar und Independent und solchen Tools ist meistens halt so eine 2D-Tree-Map von oben.</p>
+
+<p>Also da hat man dann keine Höhe drin.</p>
+
+<p>Genau.</p>
+
+<p>Serene ist genau das andere Werkzeug, was da einfährt.</p>
+
+<p>Ich glaube, das sind wir auch das, was der MD42Martin da irgendwie anspricht.</p>
+
+<p>Und dann hat der N2000 heißt es, glaube ich, noch gefragt, Schörn High meint, die Anzahl der Änderungen liegt über einem Threshold.</p>
+
+<p>Ja.</p>
+
+<p>Genau.</p>
+
+<p>Gut.</p>
+
+<p>Dann haben wir das, glaube ich, soweit geklärt.</p>
+
+<p>Dann können wir, glaube ich, weitermachen mit deiner Präsentation.</p>
+
+<p>Genau.</p>
+
+<p>Ich bemühe mich aber, das schnell abzuschließen.</p>
+
+<p>Kein Stress.</p>
+
+<p>Damit wir schnell in die Live-Demo kommen.</p>
+
+<p>Nur kurz hier noch, jetzt kann ich halt diese Karten, jeden Sprint, die zu zeigen macht keinen Sinn.</p>
+
+<p>Das ist vielleicht beim Projekt, das sehr schnell wächst, gerade noch irgendwie spannend, aber meistens ist es eher so ein, ich mache das zu bestimmten Milestones.</p>
+
+<p>Aber das Schöne ist, gerade halt bei, also nicht nur bei grünen Wieseprojekten, wo man halt so Milestones zeigt und sagt, daran haben wir gearbeitet, kann man das halt bei Legacy-Projekten machen und man kann halt sagen, okay, am Anfang sah das so aus.</p>
+
+<p>Also hier ist jetzt die Farbe Kraut-Coverage und man sieht halt, wie es im Laufe der Zeit, wenn die Gebäude halt immer kleiner, schmaler, flacher und halt die Coverage wirklich signifikant.</p>
+
+<p>Grün anstatt Rot.</p>
+
+<p>Genau, also es wird grüner als Rot, sieht man ja auch noch als der dritte Parameter.</p>
+
+<p>Genau.</p>
+
+<p>So, wie kann man das nutzen?</p>
+
+<p>Also erstens, frei, kostenlos, open source, das heißt auf GitHub verfügbar.</p>
+
+<h3 id="technische-implementierung">Technische Implementierung</h3>
+
+<p>Was wir anbieten, ist eine Analyse-Plattform, so eine kleine.</p>
+
+<p>Und wir machen das so, wir teilen CodeCarter in zwei Hälften.</p>
+
+<h3 id="analyse-komponenten">Analyse-Komponenten</h3>
+
+<p>Es gibt den Analyse-Teil auf der linken Seite und den Visualisierungsteil auf der rechten Seite.</p>
+
+<p>Kommunizieren tun die beiden über so ein Dateiformat namens cc.json, also CodeCarter.json.</p>
+
+<p>Und man braucht im Prinzip immer irgendwie jemand, der einen Code hat, braucht man irgendwie einen Code-Parser.</p>
+
+<p>Da kommt der Datei raus, dann kann man auch einen zweiten Parser haben, der guckt sich jetzt zum Beispiel Git-Metrik an, zieht dort auch eine Datei raus.</p>
+
+<p>Und die mergt man dann zusammen.</p>
+
+<p>Und jetzt kann man halt Metrik miteinander eben korrelieren und vergleichen.</p>
+
+<p>Man kann dann sagen, okay, wie hoch ist meine Churn, wie hoch ist meine Komplexität.</p>
+
+<p>Und deswegen ist es immer irgendwie, vorne ist halt ein Parser für unterschiedliche Quellen und die kann ich dann zusammen mergen.</p>
+
+<p>Muss ich nicht, aber man kann sie zusammen mergen.</p>
+
+<p>Dann nimmt man die Datei und dann visualisiert man sie.</p>
+
+<p>Also alles, was ich euch bisher gezeigt habe, war der Visualisierungsteil.</p>
+
+<p>Jetzt gucken wir mal kurz auf die Analyse.</p>
+
+<p>Was wir nämlich insgesamt anbieten, ist halt für rein Java, haben wir den Source-Code-Parser gebaut.</p>
+
+<p>Der war immer gedacht, dass der mehr parsen soll.</p>
+
+<p>Ich kann Ausblick machen, das kommt jetzt auch noch, aber für unsere Zwecke hat sich meistens angeboten, Sonar zu nutzen.</p>
+
+<p>Das kann von Haus aus, kann Sonar, glaube ich, 28 Sprachen.</p>
+
+<p>Dann gibt es noch Community-Plugins, die man noch reinladen kann oder halt eine kostenpflichtige Sonar-Version, dann kannst du noch mehr sparen.</p>
+
+<p>Dann kannst du auch Kobol und solche Sachen.</p>
+
+<p>Und wir bieten halt ein Tool an, den Sonar-Importer.</p>
+
+<p>Der kann halt aus Sonar die Metriken extrahieren.</p>
+
+<p>Also sprich, wenn ihr einen Sonar habt, könnt ihr Codecard einsetzen.</p>
+
+<p>Wenn ihr keinen Sonar habt, könnt ihr entweder den Sonar-Importer einsetzen.</p>
+
+<p>Wenn ihr keinen Sonar habt, könnt ihr entweder den Source-Code-Parser nehmen.</p>
+
+<p>Ihr braucht halt noch ein bisschen Liebe auf unserer Seite, aber vielleicht ist ja jemand da, der einen Pull-Request stellen will und den aufpeppen möchte.</p>
+
+<p>Wer weiß.</p>
+
+<p>Ihr kriegt gleich auch den Git-Log-Parser.</p>
+
+<p>Es gibt noch einen SVN-Parser, aber in de facto, glaube ich, braucht den niemand mehr.</p>
+
+<p>Und es gibt halt den CSV-Importer.</p>
+
+<p>Und der CSV-Importer ist insofern spannend, weil damit kann ich jetzt beliebige Sachen visualisieren.</p>
+
+<p>Weil am Ende ist ja ein Gebäude einfach nur ein Dateipfad und ein paar Metriken.</p>
+
+<p>Und jetzt kann ich zum Beispiel als Gebäude auch Testfälle haben und Ausführungszeit von Metriken.</p>
+
+<p>Oder ich kann die Personen Deutschlands visualisieren.</p>
+
+<p>Okay, das wäre jetzt datenschutzrechtlich schwierig, oder vielleicht die Züge von Deutschland.</p>
+
+<p>Dadurch, dass es sehr generisch ist, was Codekarte macht.</p>
+
+<p>Es gibt einfach ein Gebäude und das hat Metriken.</p>
+
+<p>Dadurch kann ich halt auch mit dem CSV-Importer halt alles Mögliche irgendwie visualisieren.</p>
+
+<p>Weil solange es eine CSV ist in dem richtigen Format, kann man die halt umwandeln in eine CC-JSON.</p>
+
+<p>Das heißt, wenn aus irgendeinem Grund ihr keinen Sonar einsetzen dürft oder die Sprache, die ihr habt, nicht von Sonar unterstützt wird, kann man immer überlegen, ob man vielleicht seinen eigenen Importer baut, der entweder eine CSV ausspuckt oder halt selber direkt eine CC-JSON ausspuckt.</p>
+
+<p>Und das macht es halt super flexibel.</p>
+
+<p>Wir nennen das auch eine Pipes-and-Filters-Architektur.</p>
+
+<p>Genau.</p>
+
+<p>Also ich glaube, in dem Kontext gibt es jetzt verschiedene Sachen, die sich vielleicht als Fragen anbieten.</p>
+
+<p>Sonst müsste es mich sozusagen stoppen.</p>
+
+<p>Die eine Sache ist die Frage, die halt übers Formular vorher schon vorgestern, glaube ich, reingekommen ist und anonym ist.</p>
+
+<p>Da hat ja die Person geschrieben, witzig, das Tool habe ich erst diese Woche entdeckt, konnte es aber noch nicht im Detail ansehen.</p>
+
+<p>Und da steht Codekarte unterstützt bisher ja nur Java.</p>
+
+<p>So wie ich es verstehe, heißt Unterstützung insbesondere, dass die Codekarte Shell die Ausgaben eines QA-Tools versteht und in CC.JSON übersetzen kann, beziehungsweise ein QA-Tool bereits CC.JSON erzeugt.</p>
+
+<p>Habt ihr praktische Erfahrung, wie aufwendig es ist, Codekarte für andere Sprachen, in meinem Fall PHP, zu nutzen?</p>
+
+<p>Die QA-Tools im PHP-Bereich haben ja häufig auch ein Ausgabeformat für die Nutzung in typischen Standard-QA-Tools.</p>
+
+<p>Also dann wahrscheinlich Sonar nehme ich auch an, dass es mit dazu gehört.</p>
+
+<p>Oder muss ich dann für Zigmetrigen eine entsprechende Konvertierung schreiben, mit der Codekarte umgehen kann?</p>
+
+<p>Ja, also die Kurzform ist, wenn du PHP hast und Sonar, bist du fertig.</p>
+
+<p>Sonar kann ja nicht nur Codemetriken erfassen, sondern die können ja auch zum Beispiel Coverage einlesen, wenn es in dem JUnit-Format ist zum Beispiel.</p>
+
+<p>Gib mir mal eine Sekunde.</p>
+
+<p>So, pusten, sehr schön.</p>
+
+<p>Können auch pro Tipp immer etwas zu trinken dabei haben.</p>
+
+<p>Ich war letztens in Vilnius auf der Bilsdorf, da hatte ich so einen Hustanfall drei Minuten lang.</p>
+
+<p>Ich glaube mittlerweile, dass es so wie sich das Lampenfieber bei mir äußert.</p>
+
+<p>Wer weiß.</p>
+
+<p>Ich hatte mal den Effekt, dass mir tatsächlich die Stimme während der Präsentation weggeblieben ist.</p>
+
+<p>Das ist noch ein Stück interessanter.</p>
+
+<p>Aber ja.</p>
+
+<p>Ja, das ist auch schön.</p>
+
+<p>Genau.</p>
+
+<p>Also die Frage, du hattest halt gesagt, PHP, Sonar, dann ist man halt im Prinzip fertig.</p>
+
+<p>Das wäre also eine Alternative.</p>
+
+<p>Noch was zu diesem PHP-Thema?</p>
+
+<p>Also es gibt immer die Möglichkeit, sich einen eigenen Importer zu schreiben.</p>
+
+<p>Das ist halt die Frage, wie präzise der sein muss.</p>
+
+<p>Man kommt ziemlich weit mit einem stupiden Rack-Expressions-Ansatz.</p>
+
+<p>Weil was ist Komplexität?</p>
+
+<p>Komplexität ist eine Verzweigung im Kontrollschluss.</p>
+
+<p>Also, Entschuldigung, mehr keine Komplexität.</p>
+
+<p>Vielleicht grundsätzlich noch mal zwei Worte dazu, warum ich diese Episode spannend fand und warum ich das wichtig fand.</p>
+
+<p>Ich glaube tatsächlich, dass diese Visualisierung in so Code-Cities eine ganz spannende Sache ist und zur Kommunikation total viele Vorteile hat.</p>
+
+<p>Mir sind Fälle bewusst, wo das eben auch tatsächlich ein bisschen ins Management dazu geführt hat, dass Dinge transparent werden und es klar wird, wie Dinge sich ändern.</p>
+
+<p>Ich finde die Metapher spannend.</p>
+
+<p>Das ist ja so ein Bereich, in dem wir ganz viel machen müssen.</p>
+
+<p>Wir haben immer dieses Problem mit dem Technical Debt und uns als technischen Menschen ist klar, da gibt es irgendwelche Probleme.</p>
+
+<p>Das ist etwas, was wir transportieren müssen in andere Rollen hinein.</p>
+
+<p>Das, was Richard vorhin gezeigt hatte, diese Geschichte mit nicht, ist eine Stadt.</p>
+
+<p>Da sind große Gebäude und die sind alle rot.</p>
+
+<p>Die werden klein und dann wird es grün.</p>
+
+<p>Das ist eine ganz hervorragende Möglichkeit, zu sagen, es wird tatsächlich besser.</p>
+
+<p>Wir haben investiert und es wird besser.</p>
+
+<p>Das kann man jedem klar anschaulich machen.</p>
+
+<p>Das ist eine von diesen Geschichten, die scheinbar einfach sind, aber in Wirklichkeit wertvoll.</p>
+
+<p>Man kann nicht sagen, das ist nur eine weitere Visualisierung, aber das ist gerade total wichtig, weil wir Dinge kommunizieren müssen.</p>
+
+<p>Dafür ist das genau eine geeignete Sache.</p>
+
+<p>Ich wäre mir auch nicht bewusst, dass es eine große Alternative ist.</p>
+
+<p>Was ich heute gelernt habe, ist, dass es da offensichtlich auch Forschung zu gibt.</p>
+
+<p>Das ist dann nochmal extra spannend.</p>
+
+<p>Aber auf jeden Fall finde ich, es ist eine super Sache und es passt auch gut ergänzend zu den anderen Werkzeugen, die wir so haben, die wir uns bisher im Stream angeschaut haben.</p>
+
+<p>Die da, glaube ich, gar nicht so stark auf Visualisierung an Wert liegen.</p>
+
+<p>Vielen Dank fürs Übernehmen.</p>
+
+<p>Sehr gerne.</p>
+
+<p>Also, wenn ihr eine Codebasis vor euch habt, ich mache mal mit der Live-Demo weiter.</p>
+
+<p>Was ihr braucht, ist typischerweise irgendeine Form von Node.</p>
+
+<p>Warum?</p>
+
+<p>Die Visualisierung ist zwar in Node, wir liefern allerdings den Analyse-Teil, der in Kotlin geschrieben ist, liefern wir in npm auf.</p>
+
+<p>Das heißt, npm install globally-codecard-analysis.</p>
+
+<p>Dann kriegt man etwas Schönes, was sich da schimpft, CodeCarter-Shell.</p>
+
+<p>Und da sind jetzt diese ganzen Parser drin, die wir alle haben.</p>
+
+<p>Ihr seht, noch ein paar mehr, als ich in der PowerPoint drin hatte, weil das sehr überfrachtig gewesen wäre.</p>
+
+<p>Und wenn ich jetzt keinen Sonar habe und eh keinen Zugriff auf Code, dann kann ich jederzeit ganz simpel starten.</p>
+
+<p>Ich kann so Tools wie Toki einsetzen.</p>
+
+<p>Die zählen einfach die Lines of Code.</p>
+
+<p>Dann kommt raus, Java hat jetzt 471 Java-Teile, 45.000 Lines.</p>
+
+<p>Davon sind Code 31.000.</p>
+
+<p>Also sprich, Kommentare sind der Rest oder leere Zeilen.</p>
+
+<p>Und Toki kann das für liebevolle Sprachen.</p>
+
+<p>Im Endeffekt ist es dann nur Lines of Code, aber das ist ja wenigstens ein Startpunkt.</p>
+
+<p>Das heißt, eine Möglichkeit für diesen PHP-Fall wäre, genau dieses Werkzeug jetzt zu benutzen.</p>
+
+<p>Genau.</p>
+
+<p>Das ist natürlich nicht optimal, weil irgendwie ist das schön mit CodeCarter, dass ich mehr Metrik miteinander kombinieren kann.</p>
+
+<p>Aber so ist es halt manchmal.</p>
+
+<p>Manchmal hat man nicht das Perfekte.</p>
+
+<p>Das Schöne ist, Toki hat auch einen JSON-Export.</p>
+
+<p>Und dann kann ich das in so ein JSON-Format reinprügeln.</p>
+
+<p>Und jetzt kann ich auf CodeCarter-Seite den Toki-Importer nehmen und das dann halt auch wieder in unser gzippedes-tc-json-Format reinpacken.</p>
+
+<p>Das heißt, da sind die beiden Dateien.</p>
+
+<p>Am Ende des Tages.</p>
+
+<p>Damit kann man überstarten.</p>
+
+<p>Das heißt, ich habe jetzt die Größe der einzelnen Teile und du hast diese JSON-Code-Coverage auch mit diesem Toki ermittelt.</p>
+
+<p>Richtig?</p>
+
+<p>Es ist leider wirklich nur Lines of Code.</p>
+
+<p>Also JUnit ist unser Beispiel und das sind jetzt die Lines of Code.</p>
+
+<p>Ich kann jetzt halt auch lokal SonarCube laden.</p>
+
+<p>Es gibt die Community-Edition von SonarCube.</p>
+
+<p>Kann man sich runterladen.</p>
+
+<p>Die ist auch kostenlos.</p>
+
+<p>Und dann kann man halt eine Analyse hier machen.</p>
+
+<p>Man kann halt JUnit 4 da reinpacken.</p>
+
+<p>Und entsprechend wäre das dann.</p>
+
+<p>Gucken, wie heißt das Ding nochmal?</p>
+
+<p>Also, ich gucke mal kurz in die Datei rein.</p>
+
+<p>Das ist ja nicht viel.</p>
+
+<p>Man braucht diesen Sonar-Scanner.</p>
+
+<p>Man braucht einen lokal laufenden SonarCube.</p>
+
+<p>Und dann kann ich da halt eben mit Sonar-Scannen lokal starten.</p>
+
+<p>Wenn ich den will.</p>
+
+<p>Muss ich nicht.</p>
+
+<p>Aber wenn Sonar in meiner Umgebung nicht läuft, aus welchem Grunde, ich kann es immer lokal ausprobieren.</p>
+
+<p>Einfach nur, um zu sagen, hey, guck mal, Business wäre es nicht total cool, wenn wir Sonar hätten.</p>
+
+<p>Oder was weiß ich, Kodana gibt es ja auch.</p>
+
+<p>Wenn ihr IntelliJ nutzt, kennt ihr vielleicht Kodana.</p>
+
+<p>Das ist deren Analyse-Plattform.</p>
+
+<p>Hat natürlich nochmal ganz andere Features, weil IntelliJ sind sehr gut, was Mieträgen betrifft und intelligente Lösungen.</p>
+
+<p>Dann kann ich den Sonar-Scanner nutzen.</p>
+
+<p>Dann landet das hier drin.</p>
+
+<p>Irgendwelche Open Issues.</p>
+
+<p>Null Coverage.</p>
+
+<p>Das liegt aber daran, dass ich es nicht konfiguriert habe.</p>
+
+<p>Wäre ein bisschen komisch, wenn ein JUnit-Tool keine Coverage hätte.</p>
+
+<p>Und danach kann ich den Sonar-Import machen.</p>
+
+<p>Ich verbinde mich auf meinen Local-Host.</p>
+
+<p>Ich sage, welches Projekt ich ziehen will.</p>
+
+<p>Ich gebe meinen User-Token mit.</p>
+
+<p>Und am Ende habe ich dann aus Sonar alle Mieträgen rausgezogen.</p>
+
+<p>Das könnte man jetzt mit PHP-Analog machen, nicht?</p>
+
+<p>Das heißt, ich würde da mit einem PHP-Projekt genauso vorgehen.</p>
+
+<p>Das ist eine Frage, die mir vorhin angekommen ist.</p>
+
+<p>Du hast ja jetzt den Java-Parser nicht benutzt, oder?</p>
+
+<p>Genau, ich habe den Java-Parser nicht benutzt.</p>
+
+<p>Also der Source-Code-Parser.</p>
+
+<p>Was würde der denn noch bringen?</p>
+
+<p>Der macht die Einstiegshöhe halt geringer.</p>
+
+<p>Ich muss keinen Sonar aufsetzen.</p>
+
+<p>Wenn ich schon einen Sonar habe, dann ist es egal.</p>
+
+<p>Was also bedeutet, dass die Aussage, die dieser Mensch ja getroffen hat, CodeCutter unterstützt bisher nur Java.</p>
+
+<p>Das ist sozusagen die Halbwahrheit, weil eigentlich ist deine Demo ja basiert auf Sonar und diesem Tokey.</p>
+
+<p>Was also bedeutet, dass es mit jeder anderen Programming-Sprache genauso funktionieren würde, die von Sonar unterstützt wird und von dem Tokey unterstützt wird?</p>
+
+<p>Genau.</p>
+
+<p>Es gibt so ein paar Sachen, die bei Sonar besonders sind.</p>
+
+<p>Die Community Edition von Sonar kann, glaube ich, kein C++.</p>
+
+<p>Es gibt ein Community-Plugin für C++, aber das ist dann halt nicht in der Community Edition drin, sondern das müsst ihr dann halt reinladen.</p>
+
+<p>Ansonsten C++ ist, glaube ich, ein Premium-Feature.</p>
+
+<p>Aber PHP ist, glaube ich, in dem Standard-28-Programmiersprachen-Kader drin.</p>
+
+<p>Oder, glaube ich, ich habe gestern nachgeguckt, das war drin.</p>
+
+<p>Wollen wir noch kurz…</p>
+
+<p>Es sind ein paar Fragen aus dem Chat.</p>
+
+<p>Ich weiß nicht, ob wir die jetzt klären wollen oder ob du erstmal mit deinem…</p>
+
+<p>Ja, warum denn nicht?</p>
+
+<p>Wir machen es doch jetzt.</p>
+
+<p>Genau.</p>
+
+<p>Der MD42Martin bei Twitch hat gefragt, gibt es zum CSFV-Import-Beispiele?</p>
+
+<p>Wäre schön, eine Grafik auf drei Sternchen zu haben.</p>
+
+<p>Ich würde vermuten, dass damit die Homepage gemeint ist.</p>
+
+<p>Wir können ja mal kurz in die Docs reingucken.</p>
+
+<p>Da ist der CSV-Exporter, da ist der CSV-Importer.</p>
+
+<p>Ja, ich finde es ehrlich gesagt ein bisschen…</p>
+
+<p>Also die Grafik, die ein CSV-Export auswirft, wird hier genauso aussehen wie alle anderen Grafiken auch.</p>
+
+<p>Deswegen frage ich mich, was da zu erwarten ist, was irgendwie anders aussieht.</p>
+
+<p>Das bedeutet ja nur, dass ich eine offene Schnittstelle habe über klassische Mechanismen, wie wir sie in der IT kennen.</p>
+
+<p>Ich glaube, es ging dem Fragesteller darum zu sehen, wie würde denn so ein Import aussehen.</p>
+
+<p>Also da stehen dann halt die Metriken drin.</p>
+
+<p>Und hier oben drüber stehen dann halt, naja, welche Metrik ist das denn eigentlich.</p>
+
+<p>Okay, das heißt in der ersten Seite steht da drin, Path Name, Type, Airlock Functions.</p>
+
+<p>Und dann hast du halt mit drunter stehen irgendeinen Namen von irgendetwas.</p>
+
+<p>Und dann sagst du, stehen da halt irgendwie die Werte drin, Komma getrennt.</p>
+
+<p>Und dann hat der nächste Datenpunkt mit dem entsprechenden Namen und den Werten und so weiter und so weiter.</p>
+
+<p>Genau.</p>
+
+<p>Also alles kein Hexenwerk oder so.</p>
+
+<p>Das Wichtige des halben Mechanismus ist, diese ganzen Sachen sind jetzt halt beliebig.</p>
+
+<p>Also da muss nicht Airlock stehen.</p>
+
+<p>Da kann jetzt Metrik 5 sein oder MyMetric oder was auch immer.</p>
+
+<p>Und deswegen kann ich dann halt auch unterschiedliche Sachen visualisieren.</p>
+
+<p>Genau.</p>
+
+<p>Und da ist dann so ein bisschen die nächste Frage von dem, die 42 Martin, der so fragt.</p>
+
+<p>Habt ihr auch die Erlebung, damit auch ein Bildmonitor zu bauen?</p>
+
+<p>Größe, Zeit, Anzahl, Changes.</p>
+
+<p>Ja, ich weiß nicht, was er damit meint.</p>
+
+<p>Größe, Zeit.</p>
+
+<p>Ich glaube, er meint damit, dass man halt irgendwie das Wert trippelt.</p>
+
+<p>Dass ich halt sage, ich habe die Größe einer Datei, die Zeit, die es halt braucht, um es zu bauen.</p>
+
+<p>Und die Anzahl der Changes, die da drin sind.</p>
+
+<p>Sowas halt irgendwie grafisch darzustellen.</p>
+
+<p>Ich bin mir auch gerade nicht sicher, was man sozusagen aus denen daraus ermitteln kann.</p>
+
+<p>Aber wie soll ich sagen?</p>
+
+<p>Die Idee, dass man das halt nicht nur so klassisch Code Metering nimmt, kann ich mir schon vorstellen.</p>
+
+<p>Ihr habt ja auch den Git-Import, der hat Änderungen importiert.</p>
+
+<p>Genau, der importiert halt Anzahl der Autoren oder wie oft wurde es in letzter Zeit verändert, solche Geschichten.</p>
+
+<p>Er hat gerade gesagt, auf eine Pipeline angewandt.</p>
+
+<p>Also kann man, glaube ich, alles machen.</p>
+
+<p>Ich glaube nur, ihr habt es halt in dem klassischen Modell noch nicht genutzt, nehme ich mal an.</p>
+
+<p>Nö, aus meiner Sicht ist es halt übertrieben, da täglich reinzugucken.</p>
+
+<p>Außer man will halt wirklich irgendeinen Fortschritt explizit überwachen, ist es jeden Tag reinzugucken viel zu viel.</p>
+
+<p>Ich würde mal sagen, einmal pro Monat ist immer eine ganz gute Periode, bis man am Monatsanfang oder zum Sprint, zu jedem zweiten Sprint oder sowas.</p>
+
+<p>Ja, also ich habe das Gefühl, ich weiß nicht, wie du es siehst, aber ich denke, das Werkzeug gibt es halt hier.</p>
+
+<p>Also man kann ja beliebige Daten anzeigen, auch die Daten, die sozusagen von der Bildkomplexität her kommen.</p>
+
+<p>Und ich finde die Idee gar nicht schlecht, zu sagen, es interessiert mich vielleicht nicht nur Architektur, sondern auch solche Sachen.</p>
+
+<p>Denn gerade so etwas wie Bild ist ja durchaus eine wichtige Eigenschaft von Code.</p>
+
+<p>Von daher finde ich eigentlich die Frage und die Idee, die da mitschwirbt, irgendwie ganz gut.</p>
+
+<p>Ich habe das tatsächlich mal für Performance-Tests angewandt.</p>
+
+<p>Dann hatte ich halt so einen Testlauf und der hat halt so und so viele Sachen abgefrühstückt.</p>
+
+<p>Und dann wollte ich halt einen Delta haben.</p>
+
+<p>Ich wollte halt wissen, okay, Performance-Test diese Woche sah so aus, letzte Woche sah der so aus.</p>
+
+<p>Und dann konnte ich wirklich pro Testlauf gucken, okay, ist der besser, schlechter oder ist es grob im Mittel besser geworden.</p>
+
+<p>Und das war halt, dafür fand ich es halt ganz spannend.</p>
+
+<p>Weil wenn man halt irgendwie so 1000 Datenpunkte hat oder so und die halt gleichzeitig visualisieren und einen Delta haben will, dann bietet sich das halt einfach wirklich an.</p>
+
+<p>Der Daniel C.</p>
+
+<p>Oderbolz bei YouTube hat gefragt oder hat halt bemerkt, die Frage ist halt, ob sich Qualität auf drei Werte melden lässt. Ähm, nee.</p>
+
+<p>Es ist immer eine Kombination.</p>
+
+<p>Also, ich starte mal kurz Codekarte.</p>
+
+<p>Genau, vielleicht kurz dazu sozusagen aus meiner Perspektive.</p>
+
+<p>Ich habe diese Episode gemacht zum Thema, kann man eigentlich am mittleren Produktivität messen.</p>
+
+<p>Und ich glaube, eine wichtige Aussage der Episode war halt, wenn ich irgendwas mit Metrigen mache, muss ich mir halt überlegen, was ich eigentlich untersuchen will.</p>
+
+<p>Und das, was du jetzt irgendwie darstellst als prototypisches Beispiel, ist ja genau diese Geschichte mit, okay, ich will halt irgendwie herausfinden, ist mein Code änderbar?</p>
+
+<p>Und diese Qualität kann ich ja anhand von Metrigen versuchen, dem halt irgendwie sozusagen hinterherzulaufen.</p>
+
+<p>Und wir haben, glaube ich, gerade eben auch diskutiert, indirekt, dass es eben andere Qualitäten gibt.</p>
+
+<p>Du hast ja zum Beispiel über Performance gesprochen.</p>
+
+<p>Das ist ja eine andere Qualität, die man damit irgendwie auch visualisieren kann.</p>
+
+<p>Das bedeutet, je nachdem, welche drei Werte ich wähle, kriege ich unterschiedliche Aussagen über unterschiedliche Qualitäten, wäre mein Gefühl.</p>
+
+<p>Genau, also ich habe jetzt mal Codekarte gestartet, um das mal kurz zu zeigen.</p>
+
+<p>Also man kann sich das lokal installieren, wenn man will.</p>
+
+<p>Ist einfach lokal installiert, dann habe ich es immer und kann ich auch bestimmen, welcher Version es ist.</p>
+
+<p>Ich kann aber genauso gut auch auf der Codekarte Homepage hingehen.</p>
+
+<p>Und halt hier dieses Webstudio halt anklicken.</p>
+
+<p>Wenn ich das Webstudio anklicke, ist 1.1 das Gleiche.</p>
+
+<p>Da seid ihr halt darauf angewiesen, welche Version wir halt gerade online haben.</p>
+
+<p>Kein funktionstechnischer Unterschied, aber inhaltlich.</p>
+
+<p>Und da habe ich auch gleich ein Demo-Projekt, so scheint es nicht.</p>
+
+<p>Genau, das hier ist Codekarte in Codekarte.</p>
+
+<p>Ah cool.</p>
+
+<p>In Codekarte sieht es sehr grün aus.</p>
+
+<p>Ja, fast hätten wir es auch angelegt.</p>
+
+<p>Also, ihr seht den Dateipfad immer hier oben, falls es euch interessiert.</p>
+
+<p>Also wenn ich hier irgendwo drüberfahre, dann steht da oben jetzt Datamox, wo das ganze Ding drin liegt.</p>
+
+<h3 id="praktische-anwendung">Praktische Anwendung</h3>
+
+<p>So, die ursprüngliche Frage war ja, kann ich Qualität aus drei Werten heruntermappen?</p>
+
+<p>Und ich behaupte nein.</p>
+
+<h3 id="metriken-und-korrelation">Metriken und Korrelation</h3>
+
+<p>Ich behaupte, was ich mit Codekarte mache, ist, ich nehme diese Metriken und die sind eine Indikation.</p>
+
+<p>Und ich kombiniere mindestens drei miteinander.</p>
+
+<p>Aber ich kann ja auch sagen, zum Beispiel dieser CodeMapMouseEventsService hier, der hat halt 390 Lines of Code, 92 McCabe-Komplexität und 14 CodeSmurfs.</p>
+
+<p>Und jetzt ist halt für mich die spannende Frage, okay, wird der zum Beispiel oft geändert?</p>
+
+<p>Oder, was weiß ich, wie viele Autoren habe ich?</p>
+
+<p>Und dann, oder wobei, das hätte ich auch hier unten nachgucken können.</p>
+
+<p>Welcher war das?</p>
+
+<p>CodeMap, da.</p>
+
+<p>Ich hätte ja auch hier unten auf, wo ist er? Äh.</p>
+
+<p>Genau, wir sehen glaube ich gerade irgendwie 10, 20 Metriken oder so, die irgendwie diese Datei hat.</p>
+
+<p>Genau.</p>
+
+<p>Und jetzt habe ich halt dieses komplexe Gebäude hier gefunden mit einer hohen Anzahl an Authors.</p>
+
+<p>Fragt mich jetzt nicht, warum der einfach jetzt gerade gar keine Authors anzeigt.</p>
+
+<p>Hört mal die Seite neu.</p>
+
+<p>So.</p>
+
+<p>Jetzt wieder was an.</p>
+
+<p>Ah, ich glaube, das ist ein Fehler in der Datei drin.</p>
+
+<p>Moment.</p>
+
+<p>Wir laden mal.</p>
+
+<p>So.</p>
+
+<p>So, jetzt kommt das da.</p>
+
+<p>Die klicken wir jetzt mal weg.</p>
+
+<p>Also, jetzt nochmal.</p>
+
+<p>Die muss ich jetzt auch mal disablen.</p>
+
+<p>Sorry.</p>
+
+<p>Okay.</p>
+
+<p>Boss Event Service, there we go.</p>
+
+<p>Und jetzt haben wir auch wieder eine ordentliche Anzahl von Authors.</p>
+
+<p>Also, ich glaube, es ist halt sinnvoll, wenn man halt irgendein Gebäude gefunden hat und sich halt fragt, okay, ist das jetzt schlimm, dass man halt Metriken miteinander korreliert.</p>
+
+<p>Aus Sicht von so einer Komplexität war der jetzt halt irgendwie spannend, aber gleichzeitig hat der halt auch eine ganz solide Anzahl an Authors.</p>
+
+<p>Der hat nämlich 20 Autoren.</p>
+
+<p>Also, sprich, es gibt genug Leute, die sich darin auskennen.</p>
+
+<p>Und das ist, glaube ich, halt das Wichtige, dass man halt nicht sagt, oh, ich habe zwei Metriken und die sagen, das ist schlimm, sondern ich korreliere mehrere davon.</p>
+
+<p>Und am Ende mache ich dann sowas wie hier zum Beispiel doppelt draufklicken.</p>
+
+<p>Und dann kann ich halt in dem Fall so einer Cloud, kann ich dann halt den Deep Dive machen.</p>
+
+<p>Ich finde in Code Carter irgendwas und dann mache ich den Deep Dive, springe hier rein und sage mal, okay, ist hier wirklich irgendwas großartig Schlimmes?</p>
+
+<p>Und dann scrolle ich halt so drüber und schaue mir diesen Code halt an.</p>
+
+<p>Hier wäre vielleicht irgendwas, was man ordentlich refactoren könnte, weil das schon ein langes If-Statement ist.</p>
+
+<p>Und dann dadurch finde ich halt Punkte, wo ich sagen kann, okay, da sollten wir nochmal hingehen oder das sollten wir überarbeiten.</p>
+
+<p>Oder wir sagen halt, okay, warte mal, aufgrund der Metriken sah es irgendwie schlimm aus, aber in der Realität ist es gar nicht so schlimm.</p>
+
+<p>Also ich glaube, es ist halt nur ein Ich-Finde-Startpunkt, um eine Diskussion zu haben.</p>
+
+<p>Damit hast du, glaube ich, zwei wichtige Sachen gesagt.</p>
+
+<p>Also die eine Sache ist eben Informationsreduktion.</p>
+
+<p>Also wir haben ein großes Stück Software und da können wir eben nicht alles sehen.</p>
+
+<p>Das hattest du ja auch gesagt, nicht?</p>
+
+<p>Also 100.000 Zahlen vom Code.</p>
+
+<p>Und das andere ist, glaube ich, auch total wichtig.</p>
+
+<p>Du hast gesagt, wir haben eine Diskussion.</p>
+
+<p>Das Ergebnis kann sein, das ist halt fein.</p>
+
+<p>Und von daher passt es halt.</p>
+
+<p>Da ist noch eine Frage, wo ich ehrlich gesagt, also die ist, glaube ich, einmal übers Formular gekommen, aber jetzt auch nochmal im Chat von dem Daniel C.</p>
+
+<p>Uderbolz, wo ich auch ehrlich gesagt gespannt bin, wie es die Antwort ist.</p>
+
+<p>Habt ihr dieses Tool auch schon genutzt, um Customizations an Standardsoftware zu ändern?</p>
+
+<p>Die sehen zum Beispiel ServiceNow.</p>
+
+<p>Also ServiceNow ist offensichtlich eine Standardsoftware.</p>
+
+<p>Also man könnte es bestimmt dafür nutzen.</p>
+
+<p>Ich nicht.</p>
+
+<p>In was bitte?</p>
+
+<p>Gott, in was macht man Customization ServiceNow?</p>
+
+<p>Ist das rumiersprachenunabhängig?</p>
+
+<p>Ich weiß es gar nicht.</p>
+
+<p>Ich kann es dir, glaube ich, auch gerade nicht sagen.</p>
+
+<p>Oder nutzen die ABAP?</p>
+
+<p>Also würde bestimmt Sinn machen.</p>
+
+<p>Im Regelfall analysiere ich halt Individualsoftware und nicht irgendwie Customizations oder so.</p>
+
+<p>Ja, im Chat meinte…</p>
+
+<p>Ja, JavaScript steht da.</p>
+
+<p>Ja.</p>
+
+<p>Und damit ist man ja im normalen Umfang.</p>
+
+<p>Also JavaScript ist ja dann etwas ganz Normales.</p>
+
+<p>Ich zeige nochmal kurz was.</p>
+
+<p>Also wie ihr seht, es gibt halt viele Buttons.</p>
+
+<p>Also ich kann immer meine Metriken auswählen.</p>
+
+<p>Number of authors, 18 weeks oder sowas.</p>
+
+<p>Ich kann immer hier anpassen, was sind die Ranges, die ich sehen will.</p>
+
+<p>Dann habe ich auch hier so ein Histogramm und sehe halt, okay, der Großteil, der Number of authors, ist halt irgendwie relativ weit hier unten.</p>
+
+<p>Und dann gibt es am Ende diesen Longtail mit Sachen, die halt schon so lange dabei sind, bis sie immer noch verändert werden.</p>
+
+<p>Ist übrigens auch so eine spannende Frage, warum Sachen immer noch so viel…</p>
+
+<p>Also warum Sachen überhaupt 60 Autoren bekommen haben.</p>
+
+<p>Das könnten wir jetzt irgendwie…</p>
+
+<p>Das können wir jetzt natürlich noch größer hinausstellen.</p>
+
+<p>Mal gucken.</p>
+
+<p>Das ist eigentlich eine spannende Sache, nicht?</p>
+
+<p>Das bedeutet, es gibt irgendwie…</p>
+
+<p>Eine niedrige Anzahl Authors kann schlecht sein, aber auch eine hohe Anzahl Authors kann irgendwie komisch sein.</p>
+
+<p>Ja, okay, gut.</p>
+
+<p>Ja, Datamox macht Sinn.</p>
+
+<p>Datamox gewinnt immer, weil alle Mox da reingeschoben werden, egal was man tut.</p>
+
+<p>Man sieht auch, das Ding ist super flach.</p>
+
+<p>Einfach alle Mox da drin.</p>
+
+<p>Aber keine Logik.</p>
+
+<p>Das würde jetzt bedeuten, dieses Gebäude hat zwar eine große Grundfläche und ist irgendwie rot, aber wir ignorieren es halt und es ist halt fein.</p>
+
+<p>Genau.</p>
+
+<p>Vielleicht auch nicht.</p>
+
+<p>Das ist ja schon eine relevante Frage.</p>
+
+<p>Warum sollen denn alle Mox da drin sein?</p>
+
+<p>Wie modelliert man da denn nicht die Übersichtlichkeit?</p>
+
+<p>Weil das Ding hier ist jetzt…</p>
+
+<p>Da oben seht ihr es.</p>
+
+<p>Wenn ich jetzt drüber habere, hat das einfach mal 2.700 real lines of code.</p>
+
+<p>Also real in dem Fall heißt ohne Kommentare und Leerzeilen.</p>
+
+<p>Aber das wäre jetzt eigentlich die Frage.</p>
+
+<p>Wie kommst du jetzt zu einer Entscheidung, ob du halt dieses Problem als Problem erkennst, was du tatsächlich fixen willst?</p>
+
+<p>Was machst du denn jetzt?</p>
+
+<p>Ja, da sind wir jetzt leider in dem It depends.</p>
+
+<p>Ich glaube, dieses Datamox im explizit ist einfach nur eins.</p>
+
+<p>Man muss das mal mit dem Team diskutieren.</p>
+
+<p>Und dann entscheiden sie sich, hey, ne, hast recht, wir wollen das mal aufsplitten.</p>
+
+<p>Oder sie entscheiden sich, ach ne, das ist eigentlich super, ich finde alle Sachen, die ich da drin brauche und dann habe ich nur eine Datei und so weiter.</p>
+
+<p>Das kann man ja diskutieren.</p>
+
+<p>Hier reden wir nicht viel von das Problem, das Problem, hier reden wir nicht viel von Komplexität.</p>
+
+<p>Wenn es allerdings Sachen gibt, die halt komplex sind und die auch beim Deep Dive dann halt komplex sind und ich sehe, die werden auch oft geändert oder die haben nur einen Autor.</p>
+
+<p>Das ist dann kein Diskussionsobjekt mehr.</p>
+
+<p>Weil wenn es oft geändert wird und nur einen Autor hat, okay, dann habe ich dann Wissensziele.</p>
+
+<p>Und wenn dieser Autor dann vielleicht auch noch das Team verlassen hat, es gibt ja den Lotto-Faktor, Lotto gewonnen oder Kind gekriegt oder sowas ist weg und das wird anderer und verändert und dann ist er nicht mehr da, dann ist das ja ein Business-Risiko.</p>
+
+<p>Da muss ich, da kann ich ja nicht mehr darüber diskutieren, da kann ich nur noch über Prioritäten reden und sagen, okay, ist das jetzt das Allerwichtigste oder ist es das, was keine Ahnung, was bekannt dafür ist, dass es sehr viele Bugs verursacht.</p>
+
+<p>Was hat, ich glaube da ist schon was Spannendes gesagt, also das hat gesagt, okay, es gibt halt irgendwie bestimmte Dinge, die diskutiert man halt nicht, weil die sind halt so und bei einem Autor ist es halt auch irgendwie so, dass es nicht viel Sinn macht, das zu diskutieren, weil es gibt nur eine Person, die das eigentlich diskutieren kann.</p>
+
+<p>Und dann gibt es irgendwie diese Sachen, wie zum Beispiel mit diesem Mock, wo man eben diese Diskussion haben kann und ich weiß nicht, wie es dir geht, aber oder ich würde jetzt mal unterstellen, wenn jetzt irgendwie das Team sagt, naja, wir können halt damit leben, das sieht zwar komisch aus, aber was soll’s, dann wäre das halt so.</p>
+
+<p>Der MD42 Martin hat noch geschrieben, ist es sinnvoll, solches Insider-Wissen, also ich nehme an, dieser Lottofaktor von eins, dass eben nur eine Person da irgendwie das Bescheid weiß und wenn die halt irgendwie da ein Problem, wenn die halt das unternehmen will, deshalb hat man halt ein Problem.</p>
+
+<p>Ist es sinnvoll, sowas als Kommentar am Datamocks zu hinterlassen?</p>
+
+<p>Geht das überhaupt?</p>
+
+<p>Also, dass das Ding nur einen Autor hat?</p>
+
+<p>Ach so!</p>
+
+<p>Also, dass man jetzt sagt, dass man jetzt irgendwie was sagt und halt sagt, hey, netter Versuch, ist aber eigentlich egal, wir haben uns halt irgendwie darüber unterhalten und es ist halt fein.</p>
+
+<p>Ja, also in Code, also Moment, distanziert zwischen Code und Codekarte.</p>
+
+<p>Sorry, er hat gerade geschrieben, nein, ich meinte, dass alle Mocks in Datamocks sind, also dass man jetzt irgendwie hinschreibt irgendwie, okay, Datamocks ist das Ding, da sind alle Mocks drin, das ist der Grund, warum das irgendwie so komisch aussieht.</p>
+
+<p>Es sieht ja tatsächlich komisch aus.</p>
+
+<p>Ich glaube, es ist das Gebäude mit offensichtlich der größten Grundfläche.</p>
+
+<p>Es ist rot und es ist relativ niedrig und das sticht wirklich hervor.</p>
+
+<p>Ob es sinnvoll ist, ich mach’s mir mal einfach und sag, das ist halt eine Teamdiskussion.</p>
+
+<p>Also, ich…</p>
+
+<p>Thema Onboarding, Thema Perprogramm, wie kriegt man diese Information am besten vermittelt?</p>
+
+<p>Keine Ahnung.</p>
+
+<p>Das ist halt so unglaublich teamvariabel, dass ich darauf keine Antwort geben kann.</p>
+
+<p>Ja, was aber auch wiederum bedeutet, also wir hatten ja vorhin dieses Ding, diese sehr schöne Grafik, wo du eben gesagt hast, okay, die City wird halt hübscher, also kleinere Gebäude, weniger rot.</p>
+
+<p>Und da muss man jetzt an einigen Stellen, also, wie soll ich sagen, wenn man einfach reflektiert jetzt sagt, und das ist das Ziel, müsste man ja jetzt bei dem Datamox irgendwie sagen, das müssen wir jetzt irgendwie klein hauen.</p>
+
+<p>Und das macht vielleicht nicht so viel Sinn, also das hat er gesagt, es ist denkbar, dass das Team damit leben kann, dann würde man eben damit leben.</p>
+
+<p>Ja, und dann kann es sein, dass das Team auch entscheidet, okay, wir machen jetzt einen Kommentar hin.</p>
+
+<p>Was aber dann nicht in dem Werkzeug wäre, glaube ich, oder?</p>
+
+<p>Was ist in dem Werkzeug?</p>
+
+<p>Was wir machen können in dem Werkzeug, ist natürlich, wir können sagen, okay, entweder flatten oder exclude.</p>
+
+<p>Also flatten ist, ich mache es mal flach.</p>
+
+<p>Dann hat es auch keine Farbe mehr.</p>
+
+<p>Es ist einfach platt gedrückt.</p>
+
+<p>Ich kann das mal ein bisschen exemplarisch mit diesem Großen hier machen und sagen, okay, platt.</p>
+
+<p>Wenn ich allerdings sage, okay, das ist aber trotzdem eine große Grundfläche, ich hätte das gerne jetzt exclude, dann kann ich es auch rausschmeißen.</p>
+
+<p>Und wie ihr seht, hat sich die Stadt geändert und das Ding ist halt weg.</p>
+
+<p>Genau, das ist so ein bisschen der Nachteil von so einer TreeMap.</p>
+
+<p>Der Algorithmus sagt, der ist nicht refactoring-stabil.</p>
+
+<p>Weswegen wir auch einen anderen anbieten, der ist aber ein bisschen experimenteller.</p>
+
+<p>Und der sieht dann halt wirklich aus wie eine Stadt.</p>
+
+<p>Also wir hatten vorher komplett die Fläche sozusagen nur unterteilt.</p>
+
+<p>Das war so ein großes Quadrat.</p>
+
+<p>Hier sehen wir tatsächlich Straßen mit Gebäuden dran, also wie eine richtige Stadt, die eben nicht mehr eine quadratische Grundfläche hat, die irgendwie aufgeteilt ist, sondern das ist eben eine richtige Stadt.</p>
+
+<p>Genau.</p>
+
+<p>Und der große Vorteil ist, wenn ich jetzt hier irgendwas großartig flatter oder halt gleich exclude, also die grundsätzliche Struktur bleibt halt da.</p>
+
+<p>Die ist refactoring-stabil.</p>
+
+<p>Ich sehe jetzt halt die Größen nicht mehr so wirklich optimal.</p>
+
+<p>Vorher war halt etwas, das sehr groß war, war halt auch physisch zentriert an einem Ort sehr groß und jetzt ist es halt so spread out.</p>
+
+<p>Es ist manchmal eine praktische Darstellungsform, weil wenn man viel refactoring gemacht hat, dann macht es mehr Sinn, diese Grafik zu zeigen.</p>
+
+<p>Sie ist aber, wie ihr hier unten seht, also warum ist diese Straße so lang?</p>
+
+<p>Und das ist halt ein Algorithmus-Thema, weil die Bounding-Box von der Straße, die hier abgeht, halt so groß ist.</p>
+
+<p>Und dann ist diese Straße auch so lang.</p>
+
+<p>Woher kommen denn die Straßen jetzt?</p>
+
+<p>Also die Gebäude sind immer noch die drei Meter.</p>
+
+<p>Also das sind Ordner.</p>
+
+<p>Ah, okay.</p>
+
+<p>Also das ist dann tatsächlich die Source-Kunststruktur.</p>
+
+<p>Genau.</p>
+
+<p>Also du siehst hier hier oben wieder den Dateipfad.</p>
+
+<p>Da siehst du Root, App.</p>
+
+<p>Und von App geht jetzt Code-Charta und dann geht da von State dann da von UI.</p>
+
+<p>Und noch eine Frage.</p>
+
+<p>Du sagtest refactoring stabil.</p>
+
+<p>Damit meinst du, wenn ich Gebäude entferne, sieht der Rest immer noch genauso aus wie vorher?</p>
+
+<p>Richtig?</p>
+
+<p>Das meintest du?</p>
+
+<p>Also das ist nicht Refactoring im Code, sondern wenn ich halt hier diese Grafik ändere, weil ich halt irgendwelche Gebäude ausschließen möchte.</p>
+
+<p>Ja, also ich meine auch, also es ist natürlich, wenn ich jetzt irgendwie ein Gebäude komplett aufsplitte.</p>
+
+<p>Also wirklich Refactoring.</p>
+
+<p>Und das Ding wird jetzt zu zwei, drei kleinen.</p>
+
+<p>Dann bleiben die halt entweder hier oder vielleicht ein bisschen weiter drüben.</p>
+
+<p>Aber die bleiben grob an derselben Stelle.</p>
+
+<p>Bei der selben Straße sein, bei der selben Ordnerstruktur irgendwo sein werden, in der Nähe.</p>
+
+<p>Genau.</p>
+
+<p>Also es ist schon auch auf Refactoring, auf das Code-Refactoring bezogen.</p>
+
+<p>Es ist halt nur jetzt gerade für mich schwierig, Refactoring darzustellen.</p>
+
+<p>Ja, klar.</p>
+
+<p>Das ist experimentell, sagtest du?</p>
+
+<p>Ja, das ist experimentell, weil ich die Darstellung vorne noch nicht so gut finde.</p>
+
+<p>Ich haue jetzt gerade unseren PO ein bisschen auf den Mützen.</p>
+
+<p>Ich bin ja nicht mehr der PO.</p>
+
+<p>Da sage ich das nur ganz kurz und danach halte ich die Klappe, damit er nicht sauer wird auf mich.</p>
+
+<p>Vor allem, weil ich ihn dazu gebracht habe, es einzubauen.</p>
+
+<p>Es ist halt, also da muss man auch ein bisschen Gehirnschmalz reinstecken, wie man diese Bounding-Boxes macht, damit diese Straßen halt ein bisschen hübscher aussehen.</p>
+
+<p>Also es ist einfach ein ästhetisches Erfinden bei mir, wo ich sage, das könnte schicker aussehen.</p>
+
+<p>Genau, das ist jetzt eine relativ lange Straße, an deren Ende irgendwie so drei Gebäude sind.</p>
+
+<p>Und das ist halt weird, weil die anderen Straßen sehen halt so aus wie Manhattan, nicht?</p>
+
+<p>Ein bisschen.</p>
+
+<p>Genau.</p>
+
+<p>Also das passiert halt gerade bei dem Root, aber im Regelfall bietet es sich nicht her.</p>
+
+<p>Es ist halt auf jeden Fall nutzbar und nicht irgendwie instabil oder so, sondern du sagst, dass man da irgendwie noch das noch hübscher machen kann.</p>
+
+<p>Genau, genau.</p>
+
+<p>So und eine Sache wollte ich noch, bevor uns die Zeit wegläuft.</p>
+
+<p>Ich habe viel darüber geredet, es gibt halt auch einen Delta-Modus.</p>
+
+<p>Und den finde ich halt sehr angenehm, wenn man halt zum Beispiel ein Review hat und halt einfach explizit nur ein Refactoring vorzustellen hat.</p>
+
+<p>Und wie macht man dieses Refactoring für Non-Business-User halt eben plastisch?</p>
+
+<p>Naja, so.</p>
+
+<p>Man kann halt sagen, okay, wir haben jetzt zum Beispiel hier also da links oben habt ihr es gesehen, wir haben Komplexität abgebaut.</p>
+
+<p>Also sprich, alles was grün ist, ist in dem Fall eher irgendwie positiv.</p>
+
+<p>Denn grünes Dach hier heißt, ich habe Komplexität abgebaut.</p>
+
+<p>Wenn ich jetzt Coverage vergleichen würde, würde ich halt eher sagen, okay, dort, wo ich Coverage abgebaut habe, ist es rot.</p>
+
+<p>Und dann kann ich ihm halt auch sagen.</p>
+
+<p>Hier sind jetzt aber viele rote Gebäude.</p>
+
+<p>Ja, genau.</p>
+
+<p>Bei manchen Sachen ist das okay.</p>
+
+<p>Hier ist ein komplett neues Gebäude entstanden seit dem letzten Mal.</p>
+
+<p>Also ich vergleiche hier gerade Mai 24.</p>
+
+<p>Das Delta hat nicht nur das Refactoring, sondern hat eben auch das Ongoing Business.</p>
+
+<p>Und wenn man jetzt das rein Refactoring hätte, könnte man tatsächlich das Ergebnis das rein Refactoring dazu zeigen.</p>
+
+<p>Genau.</p>
+
+<p>Oder, keine Ahnung, hier.</p>
+
+<p>Da ist jetzt schon die Frage, okay, der Filepanel hatte vorher 36 Complexity.</p>
+
+<p>Jetzt hat er 49.</p>
+
+<p>Okay, gut.</p>
+
+<p>Also schon ordentlich mehr.</p>
+
+<p>Musste das sein?</p>
+
+<p>Nein, hätte man da nicht was anderes machen können.</p>
+
+<p>Dann kann man diese Diskussion halt führen.</p>
+
+<p>Dann kann man sagen, oh, ja, da sind wir vielleicht noch nicht ganz fertig mit dem Refactoring.</p>
+
+<p>Genau.</p>
+
+<p>Es gibt noch eine Frage aus dem Chat von Teertrude, der schreibt oder fragt, kann man auch Monoreprister mit analysieren?</p>
+
+<p>Ja.</p>
+
+<p>Den Drilldown vom Projekt eben starten, sprich ein Gebäude, ein Projekt.</p>
+
+<p>Ein Gebäude, ein Projekt.</p>
+
+<p>Ach so.</p>
+
+<p>Also ich glaube, er meint damit, ich habe irgendwie so ein Ding, wo viele Projekte sind und dann fange ich halt an und sage, ein Gebäude ist ein Projekt.</p>
+
+<p>Ja, also ich meine, natürlich tierfrei.</p>
+
+<p>Genau, dann kannst du keinen Drilldown machen.</p>
+
+<p>Also ich kann ja nicht sagen, dieses Gebäude ist ja dieses Projekt und dann kann ich halt irgendwie in das Gebäude reingehen und das irgendwie noch detailliert anschauen.</p>
+
+<p>Sondern du müsstest ja verschiedene Beziehungen haben.</p>
+
+<p>Was du natürlich machen kannst, ist, du kannst halt …</p>
+
+<p>Wenn du jetzt zum Beispiel zwei Projekte hast, JUnit4 und CodeCarter.</p>
+
+<p>Das sind deine Projekte im Monorepo jetzt beispielsweise.</p>
+
+<p>Dann habe ich hier JUnit4 und dort habe ich CodeCarter.</p>
+
+<p>Das heißt, ich kann mehrere jetzt gemeinsam anzeigen.</p>
+
+<p>Genau.</p>
+
+<p>Das ist im Endeffekt auch das, was ihr seht, wenn wir jetzt hier die Seite komplett neu laden, dann zeigen wir standardmäßig CodeCarter.</p>
+
+<p>Das ist CodeCarter Visualization und Analysis an.</p>
+
+<p>Und dann siehst du halt auf der linken Seite, die Analyse ist halt deutlich kleiner als hier die Visualisierung.</p>
+
+<p>Das liegt auch ein bisschen an Kotlin, aber ehrlicherweise ist die Visualisierung auch da, wo mehr von unserer Zeit reinfließt.</p>
+
+<p>Was ja nachvollziehbar ist, weil es ist im Wesentlichen ein Visualisierungstool.</p>
+
+<p>Irgendwas, was du den Zuschauern mitgeben soll, willst du irgendwas?</p>
+
+<p>Also gar nicht.</p>
+
+<p>Man kann es ausprobieren, man kann auf die Homepage gehen und das da sozusagen live verwenden.</p>
+
+<p>Das läuft im Wesentlichen im Browser, von daher ist es halt auch nicht besonders aufwendig.</p>
+
+<p>Man muss nicht irgendwie groß was installieren.</p>
+
+<p>Also der Travelling-IT-Konsultant hat noch gefragt, das heißt dann aber, dass man für jedes Projekt im Monorepo eine eigene Analyse fahren muss, oder?</p>
+
+<p>Und das ist dann so, glaube ich.</p>
+
+<p>Das Problem ist ja jetzt an dieser Frage, was heißt Monorepo?</p>
+
+<p>Ich habe ein JavaScript-Projekt, das ist dann aufgeteilt in mehrere einzelne sowas wie NX oder so.</p>
+
+<p>Das ist aufgeteilt in mehrere kleine Projekte und insgesamt ist es ein Projekt.</p>
+
+<p>Und das kann man dann auch als eines analysieren.</p>
+
+<p>Wenn im Monorepo allerdings irgendwie ein Frontend, ein Backend ist und die sind in unterschiedlichen Programmiersprachen, dann kommt es halt ein bisschen darauf an, ob man jetzt Sonar nutzt und das eben sagt, ich will das in separate Sachen in Sonar pumpen oder ich will es in ein oder andere Sachen reinpumpen.</p>
+
+<p>Von daher die Antwort auf deine Frage ist it depends.</p>
+
+<p>Also auf deine Projektsetup, wie du es selber in Sonar gerne vorfinden möchtest, ob du überhaupt Sonar hast.</p>
+
+<p>Und wie es da umgesetzt ist.</p>
+
+<p>Eine ganz wichtige Sache.</p>
+
+<p>Es steht hier irgendwo so da.</p>
+
+<h3 id="datenschutz-und-deployment">Datenschutz und Deployment</h3>
+
+<p>Also Codekarte als Visualisierung und als Analyse, entweder das läuft komplett bei euch oder ihr nutzt dieses Webstudio.</p>
+
+<h3 id="lokale-datenspeicherung">Lokale Datenspeicherung</h3>
+
+<p>So oder so, das nutzt nur eure Local Storage.</p>
+
+<p>Also ich kann das auch technisch belegen.</p>
+
+<p>Es ist in GitHub Pages gehostet.</p>
+
+<p>Also sprich, da ist kein Backend oder so.</p>
+
+<p>Also die Daten bleiben bei euch.</p>
+
+<p>Fertig.</p>
+
+<p>Okay, das heißt, ich kann online eben auch meine eigenen Sachen analysieren, sagst du, weil die Daten irgendwie bei mir bleiben.</p>
+
+<p>Genau.</p>
+
+<p>Also wenn ihr aus irgendeinem Grund sagt, hey, das Risiko ist mir zu hoch, dass ihr da irgendwelchen Bullshit macht, naja, also ich meine, ihr könnt auch die Codekarte Visualisierung halt lokal starten.</p>
+
+<p>Braucht ihr nicht, aber könnt ihr natürlich machen.</p>
+
+<p>Okay, das heißt also eigentlich sagst du, ich muss nicht unbedingt also mindestens die Visualisierung muss ich eben nicht bei mir selber betreiben.</p>
+
+<p>Was Irgendwas, was du noch den ZuschauerInnen irgendwie mitgeben möchtest?</p>
+
+<p>Ja, ich würde mich super darüber freuen, wenn ihr uns da so ein Sternchen geben würdet.</p>
+
+<p>Bei GitHub?</p>
+
+<p>Ja, bei GitHub.</p>
+
+<p>Ich würde mich generell auch super darüber freuen, Feedback zu kriegen.</p>
+
+<p>LinkedIn oder Blue Sky oder was auch immer.</p>
+
+<p>Einfach anschreiben.</p>
+
+<p>Wir requesten natürlich gerne Issues.</p>
+
+<p>Also wenn ihr sagt, da ist ein Bug drin oder wenn ihr sagt, da fehlt ein Feature, also nur zu.</p>
+
+<p>Wir finden das super.</p>
+
+<p>Also wir finden es nicht super, dass wir Bugs haben, aber wir finden es super, wenn wir Feedback kriegen.</p>
+
+<p>Genau, und das würde ich gerne noch unterstreichen.</p>
+
+<p>Das ist auch so eine, wie soll ich sagen, so eine Misskonzeption, die hat ja mit da draußen existiert.</p>
+
+<p>Also beteiligen an Open-Source-Projekten bedeutet eben nicht unbedingt selber Code schreiben, sondern irgendwie Feedback geben, Issues einstellen und Bugs man und so weiter.</p>
+
+<p>Das ist, glaube ich, irgendwie auch ich habe das halt gemerkt, als ich noch mich intensiv mit dem Spring Framework beschäftigt habe.</p>
+
+<p>Da kamen dann irgendwelche technischen Fragen und dann bin ich dazu übergegangen zu sagen, also nicht, und das sah dann auch aus wie ein Bug oder irgendwas ist irgendwie unklar.</p>
+
+<p>Und dann bin ich dann dazu übergegangen zu sagen, hast du ein Issue eingestellt?</p>
+
+<p>Also sehr nett, wenn jemand mit mir redet, aber besser ist es halt noch, wenn es irgendwo ein Bug-Checker steht und da steht eben die Möglichkeit offen.</p>
+
+<p>Gut.</p>
+
+<p>Dann würde ich sagen, haben wir es soweit?</p>
+
+<p>Vielen Dank auf jeden Fall, dass du da warst.</p>
+
+<p>Ich finde es total spannend und ich glaube, das ist ein total cooles Tool für Visualisierung.</p>
+
+<p>Und genau, dann sehen wir uns nächste Woche wieder.</p>
+
+<p>Mal schauen, was wir nächste Woche im Stream machen.</p>
+
+<p>Noch ist das nicht so ganz klar.</p>
+
+<p>Und genau, ich würde sagen schönes Wochenende und bis dahin.</p>
+
+<p>Achso, und wie gesagt, wenn ihr zu der Konferenz, zu der Ankunft von uns kommen wollt, zu dem Thema Software, Integration und KI, sehr gerne.</p>
+
+<p>Freuen wir uns natürlich.</p>
+
+<p>Bis dahin.</p>
+
+<p>Ciao.</p>
+
+
+
+<footer class="site-footer">
+  <span class="site-footer-owner">
+    <a href="https://software-architektur.tv">software-architektur.tv</a> von <a href="http://ewolff.com">Eberhard Wolff</a>.<br />
+    Sketchnotes von Lisa Maria Schäfer
+  </span>
+  <nav>
+    <a href="/datenschutzhinweise.html">Datenschutzhinweise</a>
+    <a href="/impressum.html">Impressum</a>
+  </nav>
+  <span class="site-footer-credits" lang="en">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

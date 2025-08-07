@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Guest-List Feature - Wartungsanleitung | Software Architektur im Stream </title>
+  <link type="application/atom+xml" rel="alternate" href="https://software-architektur.tv/feed.xml" title="software-architektur.tv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="stylesheet" href="/css/custom1.css">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://software-architektur.tv/Guest-List/" />
+  <meta property="twitter:title" content="Guest-List Feature - Wartungsanleitung | Software
+  Architektur im Stream" />
+  <meta property="og:title" content="Guest-List Feature - Wartungsanleitung | Software Architektur im Stream" />
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:image" content="https://software-architektur.tv/twitter-image.jpg" />
+  <meta property="twitter:image" content="https://software-architektur.tv/twitter-image.jpg" />
+  <meta property="twitter:image:alt" content="Eberhard Wolff vor einem Software Architektur im Stream-Hintergrund" />
+  
+  <meta property="og:description" content="" />
+  <meta property="twitter:description" content="" />
+</head>
+
+
+  <body>
+    <script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://software-architektur.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', 'fc80a353-ef3c-45fc-b60f-f417d73ca50d');
+</script>
+
+<section class="page-header">
+  <h1 class="project-name">Guest-List Feature - Wartungsanleitung</h1>
+
+  <h2 class="project-tagline">Software Architektur im Stream</h2>
+
+
+
+  <section id="links">
+    <a href="/index.html">Home</a>
+    &nbsp;
+    <a href="/tags.html">Tags</a>
+    &nbsp;
+    <a href="/chronologisch.html">Folgen</a>
+    &nbsp;
+    <!-- <a href="/guests.html">Gäste</a> -->
+    &nbsp;
+    <a href="/podcast.html">Podcast</a>
+    &nbsp;
+    <a href="/sketchnote-buch">Buch</a>
+    &nbsp;
+    <a href="/beruf.html">Architektur als Beruf</a>
+    &nbsp;
+    <a href="/plan.html">Planung</a>
+    &nbsp;
+    <a href="/feed.xml">Feed</a>
+  </section>
+</section>
+
+
+    <section class="main-content">
+      
+      <h1 id="guest-list-feature---wartungsanleitung">Guest-List Feature - Wartungsanleitung</h1>
+
+<h2 id="überblick">Überblick</h2>
+
+<p>Das Guest-List Feature bietet eine interaktive Übersicht aller Stream-Gäste mit Filterung, Sortierung und direkten Links zu ihren Profilen und Stream-Episoden.</p>
+
+<h2 id="dateien-struktur">Dateien-Struktur</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── _data/
+│   └── guests.yml              # Gast-Datenbank (YAML)
+├── _layouts/
+│   ├── default.html           # Standard Layout
+│   └── guest-list.html        # Guest-List Template
+├── _includes/
+│   ├── head.html              # HTML Head mit CSS
+│   ├── page-header.html       # Navigation (erweitert)
+│   └── page-footer.html       # Footer
+├── images/
+│   └── guests/                # Profilbilder
+│       └── README.md          # Bildrichtlinien
+├── css/
+│   └── custom1.css           # Erweiterte Styles
+├── guests.md                 # Hauptseite
+└── Guest-List/
+    ├── requirements.md       # EARS Requirements
+    ├── plan.md              # Implementierungsplan
+    └── README.md            # Diese Datei
+</code></pre></div></div>
+
+<h2 id="neue-gäste-hinzufügen">Neue Gäste hinzufügen</h2>
+
+<h3 id="1-gast-daten-in-yaml-eintragen">1. Gast-Daten in YAML eintragen</h3>
+
+<p>Bearbeite <code class="language-plaintext highlighter-rouge">_data/guests.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">guests</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Neuer</span><span class="nv"> </span><span class="s">Gast"</span>
+    <span class="na">linkedin</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://www.linkedin.com/in/neuergast/"</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/images/guests/neuer-gast.jpg"</span>
+    <span class="na">bio</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Kurze</span><span class="nv"> </span><span class="s">Beschreibung</span><span class="nv"> </span><span class="s">des</span><span class="nv"> </span><span class="s">Gastes"</span>
+    <span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Tag1"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Tag2"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Tag3"</span><span class="pi">]</span>
+    <span class="na">episodes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Folge</span><span class="nv"> </span><span class="s">XXX:</span><span class="nv"> </span><span class="s">Episoden-Titel"</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/YYYY/MM/DD/folgeXXX.html"</span>
+        <span class="na">date</span><span class="pi">:</span> <span class="s2">"</span><span class="s">YYYY-MM-DD"</span>
+        <span class="na">role</span><span class="pi">:</span> <span class="s2">"</span><span class="s">guest"</span>
+</code></pre></div></div>
+
+<h3 id="2-profilbild-hinzufügen">2. Profilbild hinzufügen</h3>
+
+<ul>
+  <li>Bild nach <code class="language-plaintext highlighter-rouge">images/guests/</code> kopieren</li>
+  <li>Format: 300x300px, WebP oder JPEG</li>
+  <li>Dateiname: <code class="language-plaintext highlighter-rouge">vorname-nachname.jpg</code></li>
+  <li>Siehe <code class="language-plaintext highlighter-rouge">images/guests/README.md</code> für Details</li>
+</ul>
+
+<h3 id="3-jekyll-neu-bauen">3. Jekyll neu bauen</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll build
+bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span>
+</code></pre></div></div>
+
+<h2 id="testing">Testing</h2>
+
+<h3 id="lokales-testen">Lokales Testen</h3>
+
+<ol>
+  <li><strong>Jekyll Server starten</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Guest-List öffnen</strong>:
+    <ul>
+      <li>http://localhost:4000/guests.html</li>
+    </ul>
+  </li>
+  <li><strong>Funktionen testen</strong>:
+    <ul>
+      <li>✅ Suchfunktion (Namen eingeben)</li>
+      <li>✅ Tag-Filter (Dropdown auswählen)</li>
+      <li>✅ Sortierung (Name, Auftritte, Letzte)</li>
+      <li>✅ Episode-Links (klickbar)</li>
+      <li>✅ LinkedIn-Links (öffnen in neuem Tab)</li>
+      <li>✅ Mobile Ansicht (responsive)</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="browser-tests">Browser-Tests</h3>
+
+<p><strong>Desktop</strong>:</p>
+<ul>
+  <li>✅ Chrome (neueste Version)</li>
+  <li>✅ Firefox (neueste Version)</li>
+  <li>✅ Safari (macOS)</li>
+  <li>✅ Edge (neueste Version)</li>
+</ul>
+
+<p><strong>Mobile</strong>:</p>
+<ul>
+  <li>✅ iOS Safari</li>
+  <li>✅ Chrome Mobile</li>
+  <li>✅ Samsung Internet</li>
+</ul>
+
+<h3 id="performance-tests">Performance-Tests</h3>
+
+<p><strong>Tools</strong>:</p>
+<ul>
+  <li>Google PageSpeed Insights</li>
+  <li>GTmetrix</li>
+  <li>WebPageTest</li>
+</ul>
+
+<p><strong>Ziele</strong>:</p>
+<ul>
+  <li>First Contentful Paint &lt; 1.5s</li>
+  <li>Largest Contentful Paint &lt; 2.5s</li>
+  <li>Lighthouse Score &gt; 90</li>
+</ul>
+
+<h2 id="wartung">Wartung</h2>
+
+<h3 id="regelmäßige-aufgaben">Regelmäßige Aufgaben</h3>
+
+<ol>
+  <li><strong>Gast-Daten aktualisieren</strong>
+    <ul>
+      <li>Neue Episoden zu bestehenden Gästen hinzufügen</li>
+      <li>LinkedIn-Profile auf Aktualität prüfen</li>
+      <li>Veraltete Links korrigieren</li>
+    </ul>
+  </li>
+  <li><strong>Bilder optimieren</strong>
+    <ul>
+      <li>WebP-Format für bessere Performance</li>
+      <li>Bildgrößen auf 300x300px standardisieren</li>
+      <li>Kompression optimieren (&lt; 50KB pro Bild)</li>
+    </ul>
+  </li>
+  <li><strong>Tags vereinheitlichen</strong>
+    <ul>
+      <li>Konsistente Schreibweise</li>
+      <li>Synonyme zusammenfassen</li>
+      <li>Neue Tags dokumentieren</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="troubleshooting">Troubleshooting</h3>
+
+<p><strong>Problem</strong>: Gast wird nicht angezeigt</p>
+<ul>
+  <li>✅ YAML-Syntax prüfen (Einrückung, Anführungszeichen)</li>
+  <li>✅ Jekyll Build-Fehler überprüfen</li>
+  <li>✅ Browser-Cache leeren</li>
+</ul>
+
+<p><strong>Problem</strong>: Bild lädt nicht</p>
+<ul>
+  <li>✅ Dateipfad in YAML korrekt?</li>
+  <li>✅ Bild existiert in <code class="language-plaintext highlighter-rouge">images/guests/</code>?</li>
+  <li>✅ Dateiname korrekt (Groß-/Kleinschreibung)?</li>
+</ul>
+
+<p><strong>Problem</strong>: Filter funktioniert nicht</p>
+<ul>
+  <li>✅ JavaScript-Fehler in Browser-Konsole?</li>
+  <li>✅ CSS korrekt geladen?</li>
+  <li>✅ HTML-Struktur intakt?</li>
+</ul>
+
+<h2 id="deployment">Deployment</h2>
+
+<h3 id="github-pages">GitHub Pages</h3>
+
+<ol>
+  <li><strong>Commit &amp; Push</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Add new guest: [Name]"</span>
+git push origin main
+</code></pre></div>    </div>
+  </li>
+  <li><strong>GitHub Pages Build</strong>:
+    <ul>
+      <li>Automatisch nach Push</li>
+      <li>Status unter Settings &gt; Pages</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="manuelles-deployment">Manuelles Deployment</h3>
+
+<ol>
+  <li><strong>Build</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll build <span class="nt">--destination</span> _site
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Upload</strong>:
+    <ul>
+      <li>Inhalt von <code class="language-plaintext highlighter-rouge">_site/</code> auf Server kopieren</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="seo--analytics">SEO &amp; Analytics</h2>
+
+<h3 id="meta-tags">Meta-Tags</h3>
+
+<p>Die Guest-List Seite enthält optimierte Meta-Tags:</p>
+<ul>
+  <li>Title: “Gäste von Software-Architektur.tv”</li>
+  <li>Description: SEO-optimierte Beschreibung</li>
+  <li>Open Graph Tags für Social Media</li>
+</ul>
+
+<h3 id="structured-data">Structured Data</h3>
+
+<p>Für bessere SEO könnten Schema.org Person-Markups hinzugefügt werden:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://schema.org"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gast Name"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sameAs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LinkedIn URL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bio"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="backup--recovery">Backup &amp; Recovery</h2>
+
+<h3 id="wichtige-dateien-sichern">Wichtige Dateien sichern</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_data/guests.yml</code> (Hauptdatenbank)</li>
+  <li><code class="language-plaintext highlighter-rouge">images/guests/</code> (Profilbilder)</li>
+  <li><code class="language-plaintext highlighter-rouge">css/custom1.css</code> (Custom Styles)</li>
+</ul>
+
+<h3 id="git-repository">Git-Repository</h3>
+
+<p>Alle Änderungen werden automatisch in Git versioniert:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log <span class="nt">--oneline</span> Guest-List/
+</code></pre></div></div>
+
+<h2 id="weiterentwicklung">Weiterentwicklung</h2>
+
+<h3 id="mögliche-erweiterungen">Mögliche Erweiterungen</h3>
+
+<ol>
+  <li><strong>Enhanced Features</strong>:
+    <ul>
+      <li>Volltext-Suche in Episode-Beschreibungen</li>
+      <li>Gast-Favoriten mit LocalStorage</li>
+      <li>Social Media Integration (Twitter, GitHub)</li>
+      <li>RSS Feed für neue Gäste</li>
+    </ul>
+  </li>
+  <li><strong>Performance Optimierungen</strong>:
+    <ul>
+      <li>Lazy Loading für Bilder</li>
+      <li>Service Worker für Caching</li>
+      <li>CDN für statische Assets</li>
+    </ul>
+  </li>
+  <li><strong>Analytics</strong>:
+    <ul>
+      <li>Click-Tracking für LinkedIn-Links</li>
+      <li>Beliebte Gäste/Tags identifizieren</li>
+      <li>A/B Tests für UI-Verbesserungen</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="support">Support</h2>
+
+<p>Bei Problemen oder Fragen:</p>
+
+<ol>
+  <li><strong>Logs prüfen</strong>: Jekyll Build-Output</li>
+  <li><strong>Browser-Konsole</strong>: JavaScript-Fehler</li>
+  <li><strong>GitHub Issues</strong>: Feature-Requests und Bugs</li>
+  <li><strong>Community</strong>: Software-Architektur.tv Slack</li>
+</ol>
+
+<hr />
+
+<p><em>Letzte Aktualisierung: 2025-08-04</em><br />
+<em>Version: 1.0</em></p>
+
+
+      <footer class="site-footer">
+  <span class="site-footer-owner">
+    <a href="https://software-architektur.tv">software-architektur.tv</a> von <a href="http://ewolff.com">Eberhard Wolff</a>.<br />
+    Sketchnotes von Lisa Maria Schäfer
+  </span>
+  <nav>
+    <a href="/datenschutzhinweise.html">Datenschutzhinweise</a>
+    <a href="/impressum.html">Impressum</a>
+  </nav>
+  <span class="site-footer-credits" lang="en">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

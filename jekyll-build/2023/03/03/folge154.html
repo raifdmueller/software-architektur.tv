@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Folge 154 - Serverless Architektur mit Sascha Möllering | Software Architektur im Stream </title>
+  <link type="application/atom+xml" rel="alternate" href="https://software-architektur.tv/feed.xml" title="software-architektur.tv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="stylesheet" href="/css/custom1.css">
+  <meta name="twitter:card" content="player" />
+  <meta property="og:url" content="https://software-architektur.tv/2023/03/03/folge154.html" />
+  <meta property="twitter:title" content="Folge 154 - Serverless Architektur mit Sascha Möllering  | Software Architektur im Stream" />
+  <meta property="og:title" content="Folge 154 - Serverless Architektur mit Sascha Möllering  | Software Architektur im Stream" />
+  <meta property="og:type" content="article" />
+  <meta property="twitter:player" content="https://www.youtube.com/embed/PN6Tj_9JOGk" />
+  <meta property="twitter:player:width" content="560" />
+  <meta property="twitter:player:height" content="315" />
+
+  <meta property="twitter:image" content="https://software-architektur.tv/thumbnails/folge154.png" />
+  <meta property="twitter:image:alt" content="Titel der Folge" />
+  <meta property="og:image" content="https://software-architektur.tv/thumbnails/folge154.png" />  
+
+  <meta property="og:description" content="Sascha Möllering von AWS spricht über Serverless Architekture" />
+  <meta property="twitter:description" content="Sascha Möllering von AWS spricht über Serverless Architekture" />
+</head>
+
+
+
+  <body>
+    <script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://software-architektur.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', 'fc80a353-ef3c-45fc-b60f-f417d73ca50d');
+</script>
+
+<section class="page-header">
+  <h1 class="project-name">Folge 154 - Serverless Architektur mit Sascha Möllering</h1>
+
+  <h2 class="project-tagline">Software Architektur im Stream</h2>
+
+
+
+  <section id="links">
+    <a href="/index.html">Home</a>
+    &nbsp;
+    <a href="/tags.html">Tags</a>
+    &nbsp;
+    <a href="/chronologisch.html">Folgen</a>
+    &nbsp;
+    <!-- <a href="/guests.html">Gäste</a> -->
+    &nbsp;
+    <a href="/podcast.html">Podcast</a>
+    &nbsp;
+    <a href="/sketchnote-buch">Buch</a>
+    &nbsp;
+    <a href="/beruf.html">Architektur als Beruf</a>
+    &nbsp;
+    <a href="/plan.html">Planung</a>
+    &nbsp;
+    <a href="/feed.xml">Feed</a>
+  </section>
+</section>
+
+
+
+
+	  
+    <section class="main-content">
+<ul>
+
+	<li><a href="#peertube">PeerTube Video - no Big Tech!</a></li>
+
+
+	<li><a href="#youtube">YouTube Video</a></li>
+
+
+	<li><a href="#podcast">Audio als Podcast</a></li>
+
+
+
+</ul>	    
+
+	    
+    <p>Serverless ist die neueste Evolutionsstufe der Infrastrukturen - und
+steht nicht nur für eine Technik zum Deployment von Anwendungen,
+sondern auch für eine neue Infrastruktur-Abstraktion, ein
+Abrechnungsmodell und umfasst viel mehr als nur Rechenleistung. In
+dieser Episode zeigt Sascha Möllering, Solutions Architect bei Amazon
+Web Services, uns die Vor- und Nachteile von Serverless auf. Außerdem
+diskutieren wir typische Anwendungsfälle und die Auswirkungen von
+Serverless auf die Software-Architektur.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="/sketchnotes/folge154.pdf">Saschas Folien</a></li>
+  <li><a href="https://software-architektur.tv/2020/07/31/folge010.html">Folge zu 12 Factor Apps und Independent Systems Architecture</a></li>
+  <li><a href="https://software-architektur.tv/2021/04/01/folge54.html">Folge zu GraalVM mit Spring Native, Spring Boot und Spring
+Cloud</a></li>
+  <li><a href="https://aws.amazon.com/blogs/compute/developing-evolutionary-architecture-with-aws-lambda/">Developing evolutionary architecture with AWS Lambda</a></li>
+  <li><a href="https://aws.amazon.com/blogs/compute/developing-portable-aws-lambda-functions/">Developing portable AWS Lambda functions</a></li>
+  <li><a href="https://aws.amazon.com/blogs/architecture/field-notes-optimize-your-java-application-for-aws-lambda-with-quarkus/">Field Notes: Optimize your Java application for AWS Lambda with Quarkus</a></li>
+  <li><a href="https://www.youtube.com/watch?v=ZbnAithBNYY">AWS Lambda SnapStart: Fast cold starts for your Java functions</a></li>
+  <li><a href="https://aws.amazon.com/blogs/containers/optimize-your-spring-boot-application-for-aws-fargate/">Optimize your Spring Boot application for AWS Fargate</a></li>
+  <li><a href="https://aws.amazon.com/blogs/compute/optimizing-aws-lambda-function-performance-for-java/">Optimizing AWS Lambda function performance for Java</a></li>
+  <li><a href="https://awslabs.github.io/aws-lambda-powertools-java/">AWS Lambda Power Tuning:</a></li>
+  <li><a href="https://aws.amazon.com/blogs/aws/new-for-aws-lambda-container-image-support/">New for AWS Lambda – Container Image Support</a></li>
+</ul>
+
+
+
+    2023-03-03 <a href="https://software-architektur.tv/thumbnails/folge154.png">Thumbnail</a>
+
+
+
+<h2 id="peertube">PeerTube Video - no Big Tech!</h2>
+
+<center>
+    <div class="embed-container">
+      <iframe title="Folge 154 - Serverless Architektur mit Sascha Möllering"
+	width="560" height="315"
+	src="https://tube.tchncs.de/videos/embed/6285bef9-82e8-463d-9283-6db0290e892c"
+	frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+    </div>
+</center>
+
+    
+
+<h2 id="youtube">YouTube Video</h2>
+
+<center>
+  <div class="embed-container">
+    <iframe width="560" height="315"
+src="https://www.youtube-nocookie.com/embed/PN6Tj_9JOGk" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe>
+    </div>
+</center>
+
+
+
+
+
+<h2 id="podcast">Audio als Podcast</h2>
+
+<center>
+<iframe
+style="width:100%;min-width:275px;min-height:320px;max-width:475px;max-height:400px;border:0;overflow:hidden"
+src="https://www.podcaster.de/simpleplayer/?id=show~1evriw~software-architektur-im-stream~pod-84d2ffafc1d571187e962182e5&v=1677873609"></iframe>
+</center>
+
+<a href="https://1evriw.podcaster.de/software-architektur-im-stream/media/Serverless_Architektur_mit_Sascha_Moellering.mp3">MP3 Download</a>
+
+<br />
+
+<a href="/podcast.html">Infos und Feeds zum Audio als Podcast</a>
+
+
+
+
+
+<footer class="site-footer">
+  <span class="site-footer-owner">
+    <a href="https://software-architektur.tv">software-architektur.tv</a> von <a href="http://ewolff.com">Eberhard Wolff</a>.<br />
+    Sketchnotes von Lisa Maria Schäfer
+  </span>
+  <nav>
+    <a href="/datenschutzhinweise.html">Datenschutzhinweise</a>
+    <a href="/impressum.html">Impressum</a>
+  </nav>
+  <span class="site-footer-credits" lang="en">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

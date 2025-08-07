@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Guest-List Feature Requirements | Software Architektur im Stream </title>
+  <link type="application/atom+xml" rel="alternate" href="https://software-architektur.tv/feed.xml" title="software-architektur.tv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="stylesheet" href="/css/custom1.css">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://software-architektur.tv/Guest-List/requirements.html" />
+  <meta property="twitter:title" content="Guest-List Feature Requirements | Software
+  Architektur im Stream" />
+  <meta property="og:title" content="Guest-List Feature Requirements | Software Architektur im Stream" />
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:image" content="https://software-architektur.tv/twitter-image.jpg" />
+  <meta property="twitter:image" content="https://software-architektur.tv/twitter-image.jpg" />
+  <meta property="twitter:image:alt" content="Eberhard Wolff vor einem Software Architektur im Stream-Hintergrund" />
+  
+  <meta property="og:description" content="" />
+  <meta property="twitter:description" content="" />
+</head>
+
+
+  <body>
+    <script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://software-architektur.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', 'fc80a353-ef3c-45fc-b60f-f417d73ca50d');
+</script>
+
+<section class="page-header">
+  <h1 class="project-name">Guest-List Feature Requirements</h1>
+
+  <h2 class="project-tagline">Software Architektur im Stream</h2>
+
+
+
+  <section id="links">
+    <a href="/index.html">Home</a>
+    &nbsp;
+    <a href="/tags.html">Tags</a>
+    &nbsp;
+    <a href="/chronologisch.html">Folgen</a>
+    &nbsp;
+    <!-- <a href="/guests.html">Gäste</a> -->
+    &nbsp;
+    <a href="/podcast.html">Podcast</a>
+    &nbsp;
+    <a href="/sketchnote-buch">Buch</a>
+    &nbsp;
+    <a href="/beruf.html">Architektur als Beruf</a>
+    &nbsp;
+    <a href="/plan.html">Planung</a>
+    &nbsp;
+    <a href="/feed.xml">Feed</a>
+  </section>
+</section>
+
+
+    <section class="main-content">
+      
+      <h1 id="guest-list-feature-requirements">Guest-List Feature Requirements</h1>
+
+<h2 id="überblick">Überblick</h2>
+<p>Dieses Dokument definiert die Anforderungen für ein Guest-List Feature auf der software-architektur.tv Website. Das Feature soll eine übersichtliche Darstellung aller Stream-Gäste mit ihren Profilen und Stream-Teilnahmen bieten.</p>
+
+<h2 id="ears-requirements">EARS Requirements</h2>
+
+<h3 id="funktionale-anforderungen">Funktionale Anforderungen</h3>
+
+<h4 id="fr-01-gäste-übersichtsseite">FR-01: Gäste-Übersichtsseite</h4>
+<p><strong>WHEN</strong> ein Zuschauer die Guest-List Seite besucht,<br />
+<strong>THEN</strong> soll das System eine HTML-Seite mit allen Gästen des Streams anzeigen.</p>
+
+<h4 id="fr-02-gast-profildaten">FR-02: Gast-Profildaten</h4>
+<p><strong>WHEN</strong> ein Gast auf der Guest-List Seite angezeigt wird,<br />
+<strong>THEN</strong> soll das System folgende Informationen darstellen:</p>
+<ul>
+  <li>Name des Gastes</li>
+  <li>Tags aus den Stream-Episoden</li>
+  <li>Liste der Stream-Episoden mit Verlinkungen</li>
+</ul>
+
+<h4 id="fr-03-yaml-basierte-datenhaltung">FR-03: YAML-basierte Datenhaltung</h4>
+<p><strong>WHEN</strong> die Guest-List Seite generiert wird,<br />
+<strong>THEN</strong> soll das System die Gast-Daten aus einer YAML-Datei lesen.</p>
+
+<h4 id="fr-04-jekyll-integration">FR-04: Jekyll-Integration</h4>
+<p><strong>WHEN</strong> die Website erstellt wird,<br />
+<strong>THEN</strong> soll das System die Guest-List als Jekyll-Seite generieren,<br />
+<strong>SO THAT</strong> sie konsistent mit dem bestehenden Design und der Navigation integriert ist.</p>
+
+<h3 id="benutzerinteraktion">Benutzerinteraktion</h3>
+
+<h4 id="ui-01-gäste-anzeigen">UI-01: Gäste anzeigen</h4>
+<p><strong>WHEN</strong> ein Zuschauer die Guest-List öffnet,<br />
+<strong>THEN</strong> soll das System alle Gäste in einer strukturierten Übersicht darstellen.</p>
+
+<h4 id="ui-02-filterung">UI-02: Filterung</h4>
+<p><strong>WHEN</strong> ein Zuschauer nach bestimmten Gästen suchen möchte,<br />
+<strong>THEN</strong> soll das System eine Filterfunktion bereitstellen,<br />
+<strong>SO THAT</strong> Gäste nach Tags oder Namen gefiltert werden können.</p>
+
+<h4 id="ui-03-sortierung">UI-03: Sortierung</h4>
+<p><strong>WHEN</strong> ein Zuschauer die Reihenfolge der Gäste ändern möchte,<br />
+<strong>THEN</strong> soll das System Sortieroptionen anbieten (z.B. alphabetisch, nach Anzahl Auftritte).</p>
+
+<h4 id="ui-04-navigation-zu-stream-episoden">UI-04: Navigation zu Stream-Episoden</h4>
+<p><strong>WHEN</strong> ein Zuschauer auf eine verlinkte Stream-Episode klickt,<br />
+<strong>THEN</strong> soll das System zur entsprechenden Episode-Seite navigieren.</p>
+
+<h3 id="performance-anforderungen">Performance-Anforderungen</h3>
+
+<h4 id="pe-01-seitenladezeit">PE-01: Seitenladezeit</h4>
+<p><strong>WHEN</strong> ein Zuschauer die Guest-List Seite aufruft,<br />
+<strong>THEN</strong> soll das System die Seite innerhalb von 3 Sekunden laden,<br />
+<strong>SO THAT</strong> eine gute Benutzererfahrung gewährleistet ist.</p>
+
+<h3 id="kompatibilität">Kompatibilität</h3>
+
+<h4 id="co-01-browser-kompatibilität">CO-01: Browser-Kompatibilität</h4>
+<p><strong>WHEN</strong> ein Zuschauer die Guest-List in verschiedenen Browsern öffnet,<br />
+<strong>THEN</strong> soll das System in allen modernen Browsern (Chrome, Firefox, Safari, Edge) korrekt funktionieren.</p>
+
+<h4 id="co-02-mobile-responsivität">CO-02: Mobile Responsivität</h4>
+<p><strong>WHEN</strong> ein Zuschauer die Guest-List auf einem mobilen Gerät öffnet,<br />
+<strong>THEN</strong> soll das System eine mobile-optimierte Darstellung bieten,<br />
+<strong>SO THAT</strong> die Nutzererfahrung auf allen Geräten optimal ist.</p>
+
+<h3 id="wartbarkeit">Wartbarkeit</h3>
+
+<h4 id="ma-01-yaml-datenstruktur">MA-01: YAML-Datenstruktur</h4>
+<p><strong>WHEN</strong> neue Gäste hinzugefügt werden,<br />
+<strong>THEN</strong> soll das System eine klare und konsistente YAML-Struktur verwenden,<br />
+<strong>SO THAT</strong> die Datenpflege einfach und fehlerresistent ist.</p>
+
+<h4 id="ma-02-automatische-integration">MA-02: Automatische Integration</h4>
+<p><strong>WHEN</strong> die YAML-Datei aktualisiert wird,<br />
+<strong>THEN</strong> soll das System automatisch die Guest-List Seite neu generieren,<br />
+<strong>SO THAT</strong> Änderungen sofort sichtbar werden.</p>
+
+<h3 id="usability">Usability</h3>
+
+<h4 id="us-01-visuelle-konsistenz">US-01: Visuelle Konsistenz</h4>
+<p><strong>WHEN</strong> die Guest-List angezeigt wird,<br />
+<strong>THEN</strong> soll das System das bestehende Design und die Farbschema der Website verwenden,<br />
+<strong>SO THAT</strong> eine konsistente Benutzererfahrung gewährleistet ist.</p>
+
+<h4 id="us-02-informative-tags">US-02: Informative Tags</h4>
+<p><strong>WHEN</strong> Stream-Tags angezeigt werden,<br />
+<strong>THEN</strong> soll das System die Tags visuell hervorheben und verständlich darstellen,<br />
+<strong>SO THAT</strong> Zuschauer schnell relevante Themen erkennen können.</p>
+
+<h2 id="datenmodell">Datenmodell</h2>
+
+<h3 id="yaml-struktur-beispiel">YAML-Struktur (Beispiel)</h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">guests</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Max</span><span class="nv"> </span><span class="s">Mustermann"</span>
+    <span class="na">bio</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Software-Entwicklung</span><span class="nv"> </span><span class="s">und</span><span class="nv"> </span><span class="s">-Architektur</span><span class="nv"> </span><span class="s">Experte"</span>
+    <span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Microservices"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Kubernetes"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">DevOps"</span><span class="pi">]</span>
+    <span class="na">episodes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Folge</span><span class="nv"> </span><span class="s">042:</span><span class="nv"> </span><span class="s">Microservices</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">der</span><span class="nv"> </span><span class="s">Praxis"</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/2023/01/15/folge042.html"</span>
+        <span class="na">date</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2023-01-15"</span>
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Folge</span><span class="nv"> </span><span class="s">089:</span><span class="nv"> </span><span class="s">Container-Orchestrierung"</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/2023/08/20/folge089.html"</span>
+        <span class="na">date</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2023-08-20"</span>
+</code></pre></div></div>
+
+<h2 id="akzeptanzkriterien">Akzeptanzkriterien</h2>
+
+<ol>
+  <li>Die Guest-List Seite ist über die Hauptnavigation erreichbar</li>
+  <li>Alle Gäste werden mit Name und Bio angezeigt</li>
+  <li>Filter- und Sortierfunktionen funktionieren korrekt</li>
+  <li>Die Seite ist responsive und in allen unterstützten Browsern funktionsfähig</li>
+  <li>YAML-Datei kann einfach gepflegt werden</li>
+  <li>Jekyll generiert die Seite automatisch bei Änderungen</li>
+</ol>
+
+
+      <footer class="site-footer">
+  <span class="site-footer-owner">
+    <a href="https://software-architektur.tv">software-architektur.tv</a> von <a href="http://ewolff.com">Eberhard Wolff</a>.<br />
+    Sketchnotes von Lisa Maria Schäfer
+  </span>
+  <nav>
+    <a href="/datenschutzhinweise.html">Datenschutzhinweise</a>
+    <a href="/impressum.html">Impressum</a>
+  </nav>
+  <span class="site-footer-credits" lang="en">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

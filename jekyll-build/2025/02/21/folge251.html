@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Folge 251 - KI und LLMs kritisch betrachtet mit Lucas Dohmen | Software Architektur im Stream </title>
+  <link type="application/atom+xml" rel="alternate" href="https://software-architektur.tv/feed.xml" title="software-architektur.tv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="stylesheet" href="/css/custom1.css">
+  <meta name="twitter:card" content="player" />
+  <meta property="og:url" content="https://software-architektur.tv/2025/02/21/folge251.html" />
+  <meta property="twitter:title" content="Folge 251 - KI und LLMs kritisch betrachtet mit Lucas Dohmen  | Software Architektur im Stream" />
+  <meta property="og:title" content="Folge 251 - KI und LLMs kritisch betrachtet mit Lucas Dohmen  | Software Architektur im Stream" />
+  <meta property="og:type" content="article" />
+  <meta property="twitter:player" content="https://www.youtube.com/embed/2ObdIUfjdpA" />
+  <meta property="twitter:player:width" content="560" />
+  <meta property="twitter:player:height" content="315" />
+
+  <meta property="twitter:image" content="https://software-architektur.tv/thumbnails/folge251.png" />
+  <meta property="twitter:image:alt" content="Titel der Folge" />
+  <meta property="og:image" content="https://software-architektur.tv/thumbnails/folge251.png" />  
+
+  <meta property="og:description" content="Lucas Dohmen und Eberhard Wolff schauen hinter den KI-Hype." />
+  <meta property="twitter:description" content="Lucas Dohmen und Eberhard Wolff schauen hinter den KI-Hype." />
+</head>
+
+
+
+  <body>
+    <script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://software-architektur.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', 'fc80a353-ef3c-45fc-b60f-f417d73ca50d');
+</script>
+
+<section class="page-header">
+  <h1 class="project-name">Folge 251 - KI und LLMs kritisch betrachtet mit Lucas Dohmen</h1>
+
+  <h2 class="project-tagline">Software Architektur im Stream</h2>
+
+
+
+  <section id="links">
+    <a href="/index.html">Home</a>
+    &nbsp;
+    <a href="/tags.html">Tags</a>
+    &nbsp;
+    <a href="/chronologisch.html">Folgen</a>
+    &nbsp;
+    <!-- <a href="/guests.html">Gäste</a> -->
+    &nbsp;
+    <a href="/podcast.html">Podcast</a>
+    &nbsp;
+    <a href="/sketchnote-buch">Buch</a>
+    &nbsp;
+    <a href="/beruf.html">Architektur als Beruf</a>
+    &nbsp;
+    <a href="/plan.html">Planung</a>
+    &nbsp;
+    <a href="/feed.xml">Feed</a>
+  </section>
+</section>
+
+
+
+
+	  
+    <section class="main-content">
+<ul>
+
+	<li><a href="#peertube">PeerTube Video - no Big Tech!</a></li>
+
+
+	<li><a href="#youtube">YouTube Video</a></li>
+
+
+	<li><a href="#podcast">Audio als Podcast</a></li>
+
+
+
+	<li><a href="#key-takeaways">Key Takeaways</a></li>
+	<li><a href="#wichtige-fragen-der-folge">Wichtige Fragen</a></li>
+	<li><a href="#glossar">Glossar</a></li>
+	<li><a href="#transcription">Transkription</a></li>
+
+</ul>	    
+
+	    
+    <p>In der IT sind KI und insbesondere LLMs aktuell das Hype-Thema. In
+dieser Folge hinterfragen Lucas Dohmen und Eberhard Wolff den Hype
+kritisch: Wie funktionieren diese Technologien und was sind ihre
+Probleme? Außerdem beleuchten sie, in welchen Szenarien der Einsatz
+von KI und LLMs sinnvoll ist oder vermieden werden sollte – und das
+nicht nur aus ethischer Perspektive.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://freelancer-podcast.de/index.php/episodes/folge-219-ein-kritischer-blick-auf-ki-ki-im-freelancing-mit-lucas-dohmen/">Lucas zu KI beim Freelancer Podcast</a></li>
+  <li><a href="https://theboardgametheory.de/2024/06/26/bgt150-kuenstliche-intelligenz/">Lucas zu KI beim Podcast “The Board Game Theory”</a></li>
+  <li><a href="https://amzn.to/41s3XDJ">Stephen Wolfram: What Is ChatGPT Doing … and Why Does It Work?</a></li>
+  <li><a href="https://amzn.to/4gRx9s3">Joseph Weizenbaum: Die Macht der Computer und die Ohnmacht der Vernunft</a></li>
+  <li><a href="https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking-self-reported-reductions-in-cognitive-effort-and-confidence-effects-from-a-survey-of-knowledge-workers/">The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers</a></li>
+</ul>
+
+
+
+    2025-02-21 <a href="https://software-architektur.tv/thumbnails/folge251.png">Thumbnail</a>
+
+
+
+<h2 id="peertube">PeerTube Video - no Big Tech!</h2>
+
+<center>
+    <div class="embed-container">
+      <iframe title="Folge 251 - KI und LLMs kritisch betrachtet mit Lucas Dohmen"
+	width="560" height="315"
+	src="https://tube.tchncs.de/videos/embed/c18a9671-9d3b-456a-bb85-faa3232802fd"
+	frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+    </div>
+</center>
+
+    
+
+<h2 id="youtube">YouTube Video</h2>
+
+<center>
+  <div class="embed-container">
+    <iframe width="560" height="315"
+src="https://www.youtube-nocookie.com/embed/2ObdIUfjdpA" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe>
+    </div>
+</center>
+
+
+
+
+
+<h2 id="podcast">Audio als Podcast</h2>
+
+<center>
+<iframe
+style="width:100%;min-width:275px;min-height:320px;max-width:475px;max-height:400px;border:0;overflow:hidden"
+src="https://www.podcaster.de/simpleplayer/?id=show~1evriw~software-architektur-im-stream~pod-10d0b78a97381ff08683299831&v=1740161056"></iframe>
+</center>
+
+<a href="https://1evriw.podcaster.de/download/KI_und_LLMs_kritisch_betrachtet_mit_Lucas_Dohmen.mp3">MP3 Download</a>
+
+<br />
+
+<a href="/podcast.html">Infos und Feeds zum Audio als Podcast</a>
+
+
+
+
+
+<p style="font-size: small;"><b>Hinweis:</b> Die nachfolgenden Texte wurden mit KI erstellt und können somit Fehler enthalten.</p>
+
+
+  <h1 id="ki-und-llms-kritisch-betrachtet---eine-nüchterne-perspektive">KI und LLMs kritisch betrachtet - Eine nüchterne Perspektive</h1>
+
+<p>Die aktuelle Diskussion um Künstliche Intelligenz (KI) und Large Language Models (LLMs) ist geprägt von überzogenen Erwartungen und missverständlichen Metaphern. Ein kritischer Blick auf die Technologie zeigt: Wir müssen differenzierter über die Möglichkeiten und Grenzen von KI-Systemen nachdenken.</p>
+
+<h2 id="die-geschichte-wiederholt-sich">Die Geschichte wiederholt sich</h2>
+
+<p>Bereits in den 1950er Jahren prägte John McCarthy den Begriff “Künstliche Intelligenz” - bewusst als Marketingbegriff, um Forschungsgelder zu akquirieren. Seither wiederholt sich ein Muster: Bei jedem technologischen Durchbruch werden überzogene Erwartungen geweckt. So sagte etwa KI-Pionier Marvin Minsky 1970 voraus, dass es bis 1978 Maschinen mit menschlicher Intelligenz geben würde. Diese Vorhersagen haben sich nie bewahrheitet.</p>
+
+<h2 id="der-eliza-effekt-lebt">Der Eliza-Effekt lebt</h2>
+
+<p>Schon 1966 zeigte sich beim Chatbot ELIZA unsere Tendenz, Computerprogrammen menschliche Eigenschaften zuzuschreiben. Dieser “Eliza-Effekt” ist heute bei modernen LLMs wie ChatGPT noch stärker zu beobachten. Dabei handelt es sich letztlich um Wahrscheinlichkeitsautomaten, die auf Basis großer Textmengen die jeweils wahrscheinlichste Fortsetzung generieren - nicht um “intelligente” Systeme im menschlichen Sinne.</p>
+
+<h2 id="probleme-bei-der-codegenerierung">Probleme bei der Codegenerierung</h2>
+
+<p>Aktuelle Studien zeigen: KI-generierter Code enthält oft mehr Bugs als menschlich geschriebener Code. Zudem verlieren Entwickler, die stark auf KI-Assistenten setzen, mit der Zeit ihre kritische Distanz und Problemlösungsfähigkeiten. Das ist besonders problematisch bei der Codegenerierung:</p>
+
+<ul>
+  <li>Die Systeme produzieren zwar kompilierfähigen Code, aber oft mit versteckten Fehlern</li>
+  <li>Eine manuelle Überprüfung bleibt zwingend notwendig</li>
+  <li>Das Debuggen von KI-generiertem Code kann aufwändiger sein als eigenes Schreiben</li>
+  <li>Bei Legacy-Systemen und komplexen Anforderungen stoßen die Systeme schnell an Grenzen</li>
+</ul>
+
+<h2 id="keine-neue-abstraktionsebene">Keine neue Abstraktionsebene</h2>
+
+<p>Anders als oft behauptet stellen KI-Systeme keine neue Abstraktionsebene wie der Übergang von Assembler zu höheren Programmiersprachen dar. Der generierte Code muss weiterhin vollständig verstanden und verifiziert werden. Die natürliche Sprache als Interface birgt sogar Risiken, da sie weniger präzise ist als Programmiersprachen.</p>
+
+<h2 id="fazit-kritische-distanz-bewahren">Fazit: Kritische Distanz bewahren</h2>
+
+<p>KI-Systeme können als Assistenten nützlich sein, sollten aber mit der nötigen kritischen Distanz eingesetzt werden:</p>
+
+<ul>
+  <li>Die Ergebnisse müssen immer verifiziert werden können</li>
+  <li>Die Verantwortung liegt weiterhin beim Menschen</li>
+  <li>Wichtige Fähigkeiten wie kritisches Denken dürfen nicht verlernt werden</li>
+  <li>Der Einsatz sollte auf sinnvolle Anwendungsfälle beschränkt bleiben</li>
+</ul>
+
+<p>Die aktuelle KI-Entwicklung bietet Chancen, birgt aber auch Risiken. Ein nüchterner, kritischer Blick auf die Technologie ist wichtiger denn je. Nur so können wir ihren Nutzen realisieren und gleichzeitig die notwendigen Kompetenzen für die Zukunft bewahren.</p>
+
+
+
+  
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ol>
+  <li>
+    <p>Der Begriff “Künstliche Intelligenz” wurde 1955 von John McCarthy als Marketingbegriff geprägt und ist irreführend, da es sich um Algorithmen und nicht um echte Intelligenz handelt.</p>
+  </li>
+  <li>
+    <p>LLMs sind Wahrscheinlichkeitsautomaten, die auf Basis von Trainingsdaten nächste Wörter vorhersagen. Sie verstehen nicht wirklich und lernen nicht aus Interaktionen.</p>
+  </li>
+  <li>
+    <p>Menschen neigen dazu, KI-Systeme zu vermenschlichen (Eliza-Effekt) und ihnen mehr Fähigkeiten zuzuschreiben als sie haben.</p>
+  </li>
+  <li>
+    <p>KI-generierter Code enthält oft mehr Fehler als menschlich geschriebener Code und muss gründlich überprüft werden.</p>
+  </li>
+  <li>
+    <p>Die Nutzung von KI-Tools kann zu einer Abnahme der eigenen Problemlösungsfähigkeiten führen.</p>
+  </li>
+</ol>
+
+<h2 id="wichtige-fragen-der-folge">Wichtige Fragen der Folge</h2>
+
+<ul>
+  <li>Wie funktionieren LLMs technisch?</li>
+  <li>Welche Risiken birgt die Vermenschlichung von KI-Systemen?</li>
+  <li>Wie verändert KI-generierter Code die Softwareentwicklung?</li>
+  <li>Können KI-Systeme Junior-Entwickler ersetzen?</li>
+  <li>Wie kann man KI-Systeme sinnvoll und kritisch einsetzen?</li>
+</ul>
+
+<h2 id="glossar">Glossar</h2>
+
+<ul>
+  <li>LLM: Large Language Model - Großes Sprachmodell</li>
+  <li>Eliza-Effekt: Tendenz von Menschen, Computer zu vermenschlichen</li>
+  <li>Reinforcement Learning: Maschinelles Lernen durch Belohnung/Bestrafung</li>
+  <li>Token: Kleinstes Element bei der Textverarbeitung</li>
+  <li>AGI: Artificial General Intelligence - Künstliche allgemeine Intelligenz</li>
+  <li>Anthropomorphisierung: Vermenschlichung von nicht-menschlichen Dingen</li>
+</ul>
+
+<h2 id="transcription" >Vollständige Transkription</h2>
+
+<p style="font-size: small;"><b>Hinweis:</b> Dieses Transkript wurde mit KI erstellt und kann somit Fehler enthalten.</p>
+  
+  <p>So, dann herzlich willkommen zu einer weiteren Episode von Software-Architektur im Stream.</p>
+
+<p>Bevor wir loslegen, so ein paar Hinweise.</p>
+
+<p>Einmal ist es so, wir haben am Montag tatsächlich einen Stream, so ein bisschen außerhalb der Rolle, der Reihe, mit dem Woody.</p>
+
+<p>Der hat zum einen das Thema Mob-Programming oder Ensemble-Programming so ein bisschen aus der Taufe gegoben.</p>
+
+<p>Wir sprechen über ein anderes Thema, und zwar über das Thema Beyond Estimates bzw.</p>
+
+<p>No Estimates.</p>
+
+<p>Das heißt, dass man Software agil entwickelt, ohne dass man Dinge abschätzt.</p>
+
+<p>Das ist ein Agile-Meets-Architecture-Special.</p>
+
+<p>Das ist eine Konferenz, wo es um das Thema Agilität und Architektur geht.</p>
+
+<p>Woody wird da einen Talk halten, und das ist so ein bisschen eine Vorbereitung.</p>
+
+<p>Dann können wir zum aktuellen Thema übergehen.</p>
+
+<p>Heute geht es um das Thema KI und LLMs kritisch betrachten mit Lucas.</p>
+
+<p>Schön, dass du da bist.</p>
+
+<p>Lucas, möchtest du kurz zwei Worte über dich sagen?</p>
+
+<p>Ja, hallo Eberhard.</p>
+
+<p>Gerne.</p>
+
+<p>Ich bin der Lucas.</p>
+
+<p>Ein paar Leute, die den Stream schon länger verfolgen, haben mich vielleicht auch schon mal hier gesehen.</p>
+
+<p>Ich war früher auch schon mal da, als wir beide noch bei einer anderen Firma zusammengearbeitet haben.</p>
+
+<p>Heute bin ich bei der Firma Komoot, die eine App macht fürs Wandern und Fahrradfahren, wo man Routen entdecken kann und so weiter, und leite dort das Webteam.</p>
+
+<p>Das hat mit dem Thema heute überhaupt gar nichts zu tun, aber das ist das, was ich sonst so tue.</p>
+
+<p>Vielleicht ein bisschen zur Einordnung.</p>
+
+<p>Du, Lucas, hattest ja schon bei dem Freelancer-Podcast eine Episode gemacht zu diesem Thema, was wir heute haben, und außerdem bei dem Boardgame-Theory-Podcast, der, glaube ich, tatsächlich über Boardgames sonst spricht, oder?</p>
+
+<p>Genau.</p>
+
+<p>Ja, okay.</p>
+
+<p>Und das ist also sozusagen so ein bisschen eine Fortsetzung dieser Reihe.</p>
+
+<p>Ich verlinke die beiden Episoden auch.</p>
+
+<p>Aber Lucas ist, wie gesagt, jemand, der schon länger dabei ist, und wir haben ja auch wieder eine stärkere Beziehung.</p>
+
+<p>Und vielleicht kurz zur Gesamteinordnung.</p>
+
+<p>Also, wir haben bei Software-Architektur im Stream im Moment informell so ein bisschen so einen AI-Fokus.</p>
+
+<p>Und das hängt irgendwie offensichtlich mit dem Hype zusammen, aber das hängt irgendwie auch damit zusammen, dass eben Ralf dazu gestoßen ist, bei dem das halt irgendwie ein Schwerpunktthema ist, und ich glaube auch, dass es tatsächlich ein total spannendes Thema insgesamt ist.</p>
+
+<p>Und es ist so ein bisschen so, wir hatten halt diese Episode gemacht, von wegen, ist AI eigentlich unter oder überhyped?</p>
+
+<p>Und das basierte halt darauf, dass ich Blogposts geschrieben hatte, die eigentlich gesagt haben, AI ist irgendwie overhyped.</p>
+
+<p>Und dann hatten wir uns halt zwei Leute eingeladen, die halt gesagt haben, nee, es ist unterhyped.</p>
+
+<p>Und das wenig überraschende Ergebnis der ganzen Geschichte war, dass wir dann eben am Ende eine Episode gemacht haben, wo eigentlich die Aussage eher rauskam, naja, es ist irgendwie unterhyped und der Hype ist gar nicht ausreichend.</p>
+
+<p>So, nun ist es halt so ein bisschen so, dass das, glaube ich, insgesamt zu einem starken Bias geführt hat.</p>
+
+<p>Und da ist diese Episode so ein bisschen ein Gegengewicht.</p>
+
+<p>Und was mir halt beim Vorgespräch aufgefallen ist, ist, dass viele von den Dingen, die wir, glaube ich, heute diskutieren, sind Dinge, von denen ich geglaubt habe, dass sie eigentlich sozusagen eh klar sind.</p>
+
+<p>Und das ist halt irgendwie immer gefährlich.</p>
+
+<p>Also ich als Berater und irgendwie jemand, der sich mit Softwarearchitektur und Softwareentwicklung beschäftigt, sind ganz viele Dinge, die mir halt sozusagen eh klar sind, sind irgendwie super unklar irgendwelchen anderen Leuten.</p>
+
+<p>Und deswegen ist das, glaube ich, hier eine Episode, die halt eine ganz wichtige Lücke so ein bisschen füllt.</p>
+
+<p>Und da eben auch nochmal so ein bisschen über Basics spricht.</p>
+
+<p>Und das ist so ein bisschen die Einordnung.</p>
+
+<p>Genau.</p>
+
+<p>Und die Initiative ging tatsächlich bis zu einem gewissen Maß von dir, Lucas, aus.</p>
+
+<p>Also vielen Dank dafür.</p>
+
+<p>Gerne.</p>
+
+<p>Und dann können wir eigentlich, glaube ich, inhaltlich loslegen, oder?</p>
+
+<p>Ja, gerne.</p>
+
+<p>Von meiner Seite aus.</p>
+
+<p>Und ich hatte ja gesagt, Grundlagen.</p>
+
+<p>Das heißt, die erste Frage wäre halt, wo kommt eigentlich dieser Begriff?</p>
+
+<p>Ach so, und dann noch ein Hinweis.</p>
+
+<p>Normalerweise ist es halt so, dass ich halt versuche, Menschen zu interviewen und ihnen halt irgendwie ganz viel Platz zu lassen und möglichst mich so ein bisschen nach hinten zu stellen.</p>
+
+<p>Wir werden heute, glaube ich, werde ich halt tatsächlich an einigen Stellen nicht umhinkommen, meine eigene Meinung unter der Ergänzung halt loszuwerden.</p>
+
+<p>Das haben wir aber tatsächlich vorher so abgesprochen.</p>
+
+<p>Und naja, das ist vielleicht etwas anders.</p>
+
+<p>Gut, alles klar.</p>
+
+<p>Genau.</p>
+
+<p>Also zu deiner Frage, wo kommt dieser Begriff her?</p>
+
+<p>Das ist tatsächlich wirklich interessant, weil sich das auch so ein bisschen heute wieder widerspiegelt.</p>
+
+<p>Die Geschichte setzt sich im Prinzip fort.</p>
+
+<p>Wenn man so in den Begriff wirklich schaut, dann wurde der von John McCarthy geprägt, der vor allem dafür bekannt ist, die Lisp-Programmiersprache erfunden zu haben.</p>
+
+<p>Und der hat auch gesagt, das ist ein, später gesagt, das ist ein Marketingbegriff.</p>
+
+<p>Er wollte etwas, mit dem er Funding bekommt, mit dem er seine weiteren Arbeiten unterstützen kann.</p>
+
+<p>Und das klang einfach super.</p>
+
+<p>Und dieser Begriff hat sich immer hin und her befruchtet, auch mit dem Science-Fiction-Bereich.</p>
+
+<p>Auch im Science-Fiction-Bereich denken wir auch an so Sachen wie Isaac Asimov, wo es einfach darum ging, diese große Frage, die uns alle auch irgendwie beschäftigt, so was ist eigentlich Bewusstsein?</p>
+
+<p>Was ist eigentlich der Mensch?</p>
+
+<p>Also all solche Sachen wurden ja von der Science-Fiction immer begleitet.</p>
+
+<p>Und da ging es ja auch immer um humanoide Wesen, ob das jetzt Aliens sind, ob das jetzt Roboter sind.</p>
+
+<p>Und auch aus diesen Überlegungen kommt das her.</p>
+
+<p>Und das ist dann immer hin und her gespielt worden.</p>
+
+<p>Und wichtig an der Stelle ist vielleicht auch noch der Turing-Test, den vielleicht auch schon viele gehört haben von Alan Turing, einer der auch der Pioniere der IT, der ja auch die Frage stellt, wie kann ich erkennen, ob jemand anderes eine Intelligenz ist oder ein Roboter oder ein Computerprogramm.</p>
+
+<p>Das heißt also, das beschäftigt die Menschen schon sehr lange.</p>
+
+<p>Und wenn man dann diese Geschichte verfolgt, dann sieht man immer wieder große Meilensteine in der KI.</p>
+
+<p>Und immer wenn so ein Meilenstein erscheint, dann wird sofort gesagt, jetzt ist der Punkt erreicht, wir haben menschliche Intelligenz, in drei Jahren.</p>
+
+<p>Und in drei Jahren brauchen wir keine Menschen mehr, dann macht das alles die KI.</p>
+
+<p>Oder ich bin mir sicher, diese KI hat jetzt Gefühle entwickelt oder solche Sachen.</p>
+
+<p>Das begleitet uns, seit es diesen Begriff gibt.</p>
+
+<p>Das ist nichts Neues, das ist nicht jetzt durch LLMs irgendwie neu passiert.</p>
+
+<p>Und das finde ich halt so interessant daran, dass das immer wieder passiert.</p>
+
+<p>Und genau, das zur Geschichte.</p>
+
+<p>Wenn man jetzt einen ganzen Geschichtsabriss macht, dann ist der Stream voll, glaube ich.</p>
+
+<p>Genau, so ein paar ergänzende Sachen an der Stelle.</p>
+
+<p>Das ist ja gesagt, 1955, und zwar absichtlich, um es mit Marketing zu erfüllen.</p>
+
+<p>Und ich glaube, das ist ein wichtiger Punkt, den man sich vergegenwärtigen muss.</p>
+
+<p>Das Ding ist irgendwie absichtlich misleading.</p>
+
+<p>Weil eigentlich ist eben, wie wir später sehen werden, reden wir über irgendwelche Algorithmen.</p>
+
+<p>Und das ist nicht wirklich Intelligenz.</p>
+
+<p>Und Intelligenz zu definieren, ist irgendwie schwierig.</p>
+
+<p>Die andere Sache, das hattest du in dem anderen Podcast auch gesagt, diese Vorhersage, dass halt irgendwann etwas Revolutionäres passieren sollte.</p>
+
+<p>Ich hatte jetzt noch mal geschaut, und es gibt halt diesen Marvin Minsky.</p>
+
+<p>Das ist so einer von den Informatikpionieren, KI-Pionieren, nicht Informatik.</p>
+
+<p>Und der Wikipedia-Artikel sagt halt, er habe vorausgesagt, dass es bald möglich sein würde, Emotionen in eine Maschine hineinzuprogrammieren.</p>
+
+<p>Die Aussage an sich finde ich schon absurd.</p>
+
+<p>Das passt nicht.</p>
+
+<p>Wir können eine Maschine nahezu per Definition und keine Emotionen haben.</p>
+
+<p>Reden wir mal.</p>
+
+<p>Selbst Data ist daran halt gescheitert bei Enterprise Next Generation.</p>
+
+<p>Und ich muss gestehen, ich habe bei dem Podcast, den ich mit dir gehört hatte, das glaube ich so ein bisschen nicht geglaubt.</p>
+
+<p>Dass dann vorhergesagt wird, bald passiert die große Revolution, und dass das schon immer so war.</p>
+
+<p>Und es stellt sich halt heraus, dass der Marvin Minsky 1970 gesagt hat, dass in drei bis acht Jahren, also 1973 bis 1978, es Maschinen mit der durchschnittlichen Intelligenz eines Menschen geben werde, die Shakespeare lesen und Autos warten würden.</p>
+
+<p>Und das ist tatsächlich ein Beispiel für exakt das, was du gesagt hast.</p>
+
+<p>Da kann man exakt sagen, der Minsky hat eben genau das gesagt, zu einer Zeit, wo das halt irgendwie lächerlich war.</p>
+
+<p>Es ist halt irgendwie die Zeit, wo wir Terminals, Timesharing, die ersten Timesharing-Systeme, Lochkarten gerade hinter uns gelassen haben.</p>
+
+<p>Das ist vollkommen absurd.</p>
+
+<p>Die Computer, die damals existiert haben, müssen sich gegenüber einem iPhone heute verstecken.</p>
+
+<p>Und diese anthropomorphen, also nicht menschenzentrierten Metaphern, das ist halt auch etwas, was sich durchzieht.</p>
+
+<p>Maschinelles Lernen ist etwas, was sagt, das ist genau das.</p>
+
+<p>Wer das Ding lernt, und eben künstliche Intelligenz, das zieht sich halt durch.</p>
+
+<p>Und das führt zu dieser Personifizierung.</p>
+
+<p>Was ich halt auch bei mir immer feststelle, dass man von ChatGPT als er oder von Claude als sie redet.</p>
+
+<p>Dabei ist das halt ganz klar ein Es.</p>
+
+<p>Es ist halt nicht ein Mensch, sondern es ist eben ein Algorithmus.</p>
+
+<p>Und dass man das überhaupt benennt, Claude hat personifiziert.</p>
+
+<p>Und diese ganze Geschichte führt halt schon auf so einen komischen Weg.</p>
+
+<p>Genau.</p>
+
+<p>Auch da finde ich es interessant, wie früh man diesen Effekt hatte, dass die Leute auch wirklich Menschlichkeit in Sachen reininterpretiert haben.</p>
+
+<p>Der Eliza-Effekt kam ja auch schon mal hier im Stream vor.</p>
+
+<p>Da muss man sich auch klar machen, das war 1966, also das ist auch schon eine ganze Weile her, wo Joseph Weizenbaum diesen Chatbot gebaut hat.</p>
+
+<p>Und der war super einfach.</p>
+
+<p>Das hat nichts mit dem zu tun, was heutzutage eine LLM macht.</p>
+
+<p>Und trotzdem haben Leute dann gesagt, dieser Bot versteht mich und ich tausche mich mit dem aus und endlich habe ich einen Psychiater, der mit mir spricht.</p>
+
+<p>Wir sind sehr anfällig dafür, Dinge, die Sprache verwenden, zu vermenschlichen.</p>
+
+<p>Und das machen sich solche Produkte halt auch zunutze.</p>
+
+<p>Die wissen, dass das gut funktioniert.</p>
+
+<p>Heute sagt man dann wieder, damals.</p>
+
+<p>Aber die Leute waren ja nicht anders, als wir das heute sind.</p>
+
+<p>Wir würden auch darauf reinfallen heute.</p>
+
+<p>Und das sollte man sich immer bewusst machen.</p>
+
+<p>Genau.</p>
+
+<p>Zu dem Punkt.</p>
+
+<p>Eliza ist tatsächlich so, dass ich in den 80ern meiner Ansicht nach ein Basic-Listing abgetippt habe.</p>
+
+<p>Das sind 30-Zeilen-Code oder sowas.</p>
+
+<p>In Emacs ist das immer noch drin, mit dem Meta-Extraktor.</p>
+
+<p>Das ist so ein Ding, wo man sagt, mir geht es heute nicht gut.</p>
+
+<p>Dann sagt das Ding, warum geht es dir nicht gut?</p>
+
+<p>Dann sagt man, weiß ich nicht, weil meine Mutter.</p>
+
+<p>Dann kommt er zurück, sagt mir mehr über deine Mutter.</p>
+
+<p>Das funktioniert im Wesentlichen so, dass er die Sätze umformuliert.</p>
+
+<p>Das ist einfach reflektiert.</p>
+
+<p>Also nicht zurückfragt, mir geht es heute nicht so gut.</p>
+
+<p>Das ist ja eigentlich nur eine Umstellung des Satzes.</p>
+
+<p>Dann reagiert er auf Schlüsselwörter wie meine Mutter.</p>
+
+<p>Das, was du gerade gesagt hattest, da gibt es diese Geschichte, dass seine Sekretärin angefangen hat und gesagt hat, ich möchte nicht, dass du meine Dialoge mit Eliza liest.</p>
+
+<p>Das impliziert, dass dort diese Personifizierung so weit gegangen ist, dass man sozusagen ein Verständnis sieht.</p>
+
+<p>Und über echte Probleme redet.</p>
+
+<p>Das ist insofern ganz extrem schwierig, weil Psychoanalyse und das ganze Zeug, was da herumschwirrt, ist zum einen eine medizinische Geschichte.</p>
+
+<p>Und zum anderen setzt es darauf, dass mich jemand versteht.</p>
+
+<p>Gerade das ist nicht der Fall.</p>
+
+<p>Das hat dazu geführt, dass der gesagt hat, hier läuft gerade was schief.</p>
+
+<p>Es gibt dieses Buch hier, die Macht der Computer und die Ohnmacht der Vernunft von ihm, was aus den 70ern kommt.</p>
+
+<p>Wo er, glaube ich, ein bisschen umgewendet ist.</p>
+
+<p>Um den Punkt noch zu Ende zu bringen, einmal habe ich diese Geschichte mitgenommen, dass AI und KI diese starke Verführung hat.</p>
+
+<p>Und das sehe ich auch sehr stark in dem, was jetzt gerade passiert mit ChatGPT.</p>
+
+<p>Das ist dasselbe Ding.</p>
+
+<p>Nur eben noch mal in krasser.</p>
+
+<p>Wir reden halt nicht über Eliza.</p>
+
+<p>Und die Sache, die ich meiner Ansicht nach aus dem Buch mitgenommen habe, ich habe das jetzt ehrlich gesagt nicht noch mal gelesen.</p>
+
+<p>Ich habe es vor langer Zeit gelesen.</p>
+
+<p>Im letzten Jahrhundert, glaube ich.</p>
+
+<p>Aber mir ist das noch im Gedächtnis.</p>
+
+<p>Das ist diese Geschichte mit, nehmen wir jetzt mal an, der Laptop landet auf einem fremden Planeten.</p>
+
+<p>Nehmen wir jetzt mal im Weiteren an, dass diese Aliens dazu in der Lage sind, diesen Laptop zu simulieren.</p>
+
+<p>Also vorherzusagen, was der halt tut.</p>
+
+<p>Dieser Pixel ändert sich unter diesen Bedingungen folgendermaßen.</p>
+
+<p>Und vielleicht sogar eine Kopie herstellen können, der diesen Laptop simulieren.</p>
+
+<p>Es ist die Frage, was bedeutet das denn?</p>
+
+<p>Was das bedeutet, ist, dass ich etwas Identisches habe, was mir genauso fällt wie mein Laptop.</p>
+
+<p>Aber ich habe dadurch nicht verstanden.</p>
+
+<p>Auf diesem Laptop ist jetzt die E-Mail, mit der ich Lucas gesagt habe, hey, wollen wir nicht eine Episode machen?</p>
+
+<p>Oder vielleicht ein Chatbeitrag?</p>
+
+<p>Das ist der Abstract zu dieser Episode.</p>
+
+<p>Das ist nachher die Aufnahme von dieser Episode.</p>
+
+<p>Und wir reden über ein Thema.</p>
+
+<p>Und wenn man das alles simuliert, wenn ich in den Explorer gehe, ich bin auf einer Windows-Maschine, dass man das frei doppelt klickt und das Video sieht.</p>
+
+<p>Das bedeutet, dass null klar ist, was eigentlich hier passiert.</p>
+
+<p>Und das fand ich spannend, weil das führte zu der Frage, was ist denn eigentlich echtes Verständnis?</p>
+
+<p>Und Weizenbaum macht letztendlich einen Punkt, dass er sagt, echtes Verständnis impliziert Körperlichkeit.</p>
+
+<p>Also nur dann, wenn ich weiß, was es zum Beispiel bedeutet, es bedeutet, zu leben, bestimmte Sinnempfindungen zu haben, das selber erfahren habe, kann ich das wirklich verstehen.</p>
+
+<p>Und darüber kann man jetzt diskutieren, ob das tatsächlich so ist.</p>
+
+<p>Im Sinne von limitiert das sozusagen die Einsatzfähigkeit der AI.</p>
+
+<p>Aber was das auf jeden Fall bedeutet, ist, dass man vorsichtig sein muss mit dem ganzen Verstehen.</p>
+
+<p>Ja, absolut.</p>
+
+<p>Befürchte, wir müssen mal durch den Chat durchgehen.</p>
+
+<p>Ja, da passieren Dinge.</p>
+
+<p>Genau, also ich habe auf alles eigentlich gleich ein bisschen viel, aber genau, TheInnocentKitten hatte geschrieben, bei einer Maschine erwarte ich ja gar keine Emotionen, sondern korrekte Antworten, zumindest im professionellen Umfeld.</p>
+
+<p>Das finde ich halt auch so interessant, auch wenn man sich zum Beispiel Star Trek anschaut.</p>
+
+<p>Du hast jetzt auch schon mehrfach Data erwähnt.</p>
+
+<p>Ich glaube, das hat auch so ein bisschen unsere Wahrnehmung davon, was so KI und so weiter ist, geprägt.</p>
+
+<p>Also zum einen gebe ich Star Trek daran die Schuld, dass alle Leute denken, Textinterfaces wären besser als alles andere.</p>
+
+<p>Aber das ist ein anderes Thema.</p>
+
+<p>Aber wenn man jetzt auch sich Data anschaut als dieses Wesen, was halt immer die absolut korrekte Sachen sagt, aber keine Witze versteht oder sowas und auch keine Witze macht oder nur unabsichtlich Witze macht.</p>
+
+<p>Und wenn man vergleicht mit dem Erlebnis, was viele haben mit einem LLM-Bot, wo sie dann vielleicht doch Emotionen oder Witzigkeit oder sonst was heraus interpretieren und vielleicht auch sich Witze generieren lassen oder sowas.</p>
+
+<p>Das ist ja eine andere Welt.</p>
+
+<p>Und wie wir wissen und wie wir auch nachher nochmal besprechen werden, ist es eben gerade nicht so, dass ein LLM immer total richtige Antworten baut, weil es eben nicht so funktioniert wie jetzt diese Science-Fiction-Gestalt von Data.</p>
+
+<p>Das heißt also, das sind grundlegend unterschiedliche Dinge, aber die halt einfach immer verbunden sind.</p>
+
+<p>Deswegen kann man aus meiner Sicht auch diese Science-Fiction-Idee von der tatsächlichen Welt nicht trennen, weil wir sie immer wieder miteinander verbinden.</p>
+
+<p>Wir verbinden das, was wir in einem Film sehen, was wir in einem Buch lesen mit dem, was in Wirklichkeit passiert und switchen dazwischen hin und her.</p>
+
+<p>Und das ist halt so ein bisschen das Gefährliche, weil wir von dem, was wir in der Science-Fiction lesen, meilenweit entfernt sind.</p>
+
+<p>Aber es sich so anfühlt, als wären wir da, weil es sich so ähnlich anfühlt.</p>
+
+<p>Ich fand diesen Satz, bei einer Maschine erwarte ich ja keine Emotion.</p>
+
+<p>Die eine Sache ist, eigentlich ist das eine philosophische Frage.</p>
+
+<p>Was ist eine Emotion und sind Maschinen dazu in der Lage, Emotionen zu empfinden?</p>
+
+<p>Und ich würde sagen, nein, weil ich halt, also ohne es jetzt irgendwie sagen zu können und detailliert darlegen zu können, weil ich eben der Meinung bin, dass das mit dem menschlichen Leben irgendwie zusammenhängt.</p>
+
+<p>Und die andere Sache ist halt, ich weiß nicht, ob ich keine Emotionen erwarte, weil wenn ich ein Chatbot habe und der simuliert eine Freundin oder einen Psychoanalytiker, eine Psychoanalytikerin, dann erwarte ich ja, dass der mir Emotionen vorspielt.</p>
+
+<p>Und das ist das Teuflische, die sind eben gar nicht da.</p>
+
+<p>Und das ist halt irgendwie das Problem.</p>
+
+<p>Und das ist auch ein fundamentales Problem, weil eben der Verwaltungsmoment hat sich eingestellt und hat gesagt, das kann nicht sein.</p>
+
+<p>Wir müssen halt irgendwie, den Leuten muss klar sein, dass ELIZA eben keine Intelligenz, keine Emotionen, kein Nichts hat.</p>
+
+<p>Und das, was wir gerade bei ChatGPT erleben und bei den aktuellen LLMs ist das Gegenteil.</p>
+
+<p>Also die beantworten absichtlich so, dass man halt das Gefühl hat, dass sie besonders intelligent sind.</p>
+
+<p>Und das ist eigentlich ein Teil des Problems.</p>
+
+<p>Genau, und es gab auch so eine sehr interessante Untersuchung, es gab ja, ich weiß nicht mehr genau, wann das war, letztes Jahr im Sommer, wurde ja eingeführt, dass ChatGPT jemanden, den man sich mit unterhalten kann und der halt auch in der Sprache antwortet.</p>
+
+<p>Und da war es total interessant, dass beispielsweise diese Stimmeninterface auch gekichert hat oder so Atempausen gemacht hat.</p>
+
+<p>Und dann hat sich halt auch in Untersuchungen gezeigt, dass genau das die Leute dazu bringt, es nochmal weiter zu vermenschlichen und noch mehr als Person wahrzunehmen.</p>
+
+<p>Das heißt also, auch die Hersteller spielen halt damit und wissen, dass halt solche eigentlich ja unnötigen Dinge, wenn man jetzt an Data denkt, wieder als dieses perfekt funktionierende Cyber-Gehirn, genau das ist das, was sie ja nicht machen, weil sie wissen, dass wir gut darauf reagieren, wenn dann jemand halt eine Atempause macht.</p>
+
+<p>Manchmal atmen diese Sachen dann auch und machen dann erst weiter.</p>
+
+<p>Und all das sorgt dafür, dass man es halt vermenschlicht und als Mensch wahrnehmen möchte.</p>
+
+<p>Lass uns mal kurz durchgehen.</p>
+
+<p>Also wir sind super schlecht, bei Namen steht hier Maschine Learning, es kann lernen, AI ist keine Neuronalnetze, keine Neuronen, keine Sprachmodelle.</p>
+
+<p>Würde ich glaube ich im Wesentlichen zupflichten.</p>
+
+<p>Vielleicht ein Satz zu dem Thema mit den Neuronalnetzen.</p>
+
+<p>Also tatsächlich funktionieren die im Wesentlichen glaube ich so wie halt Nerven, nur dass eben das Problem ist, dass wir halt ein Gehirn, also ich habe die Zahl nicht rausgesucht, müsste ich eigentlich nochmal machen, dass eben ein Gehirn aufgrund einfach der Größe nicht auf der Ebene simuliert wird aktuell.</p>
+
+<p>Dann steht Eugen hat geschrieben, Futurologen müssen Dinge voraussagen, die nicht öffentlich lächerlich sind, sonst werden sie nicht wahrgenommen.</p>
+
+<p>Wenn sie recht haben, ja weiß ich nicht.</p>
+
+<p>Also viel von diesem Cyberpunk Zeug sind halt Dinge, die zumindest nach meinem Empfinden so ein paar Effekte vorhergesagt haben.</p>
+
+<p>Ja, also ich meine klar, man kann halt immer sagen, ja man sagt halt irgendwelche Sachen voraus und dann hat man halt Glück und dann tritt es ein.</p>
+
+<p>Aber ich meine als Wissenschaftler oder wissenschaftlich arbeitender Mensch sollten wir vielleicht nur Sachen voraussehen, wo wir halt auch eine Chance für sehen, dass sie halt wirklich eintritt und nicht einfach irgendwelche Sachen behaupten, die halt gar keine Basis in der Realität haben.</p>
+
+<p>Und das sehen wir ja halt auch bei Elon Musk, der, ja weiß ich nicht, im Jahresabstand sagt, nächstes Jahr fahren die Autos selbst und es gibt keine LKW-Fahrer mehr.</p>
+
+<p>Oder bei dem Sam Altman, der ja auch die verrücktesten Voraussagen dazu macht, wann jetzt die superkünstliche Intelligenz AGI erreicht ist und was weiß ich.</p>
+
+<p>Also das ist einfach ein super Weg, um seinen Aktienkurs nach oben zu treiben oder halt früher seine Fundings zu bekommen als Wissenschaftler oder als Mensch an der Universität.</p>
+
+<p>Und deswegen, ja, klar, es kann natürlich sein, dass Sachen, die man so voraussagt, trotzdem passieren.</p>
+
+<p>Ich kann jetzt irgendwie irgendwelche Spiele voraussagen, die gewonnen werden oder was weiß ich, aber das hat halt nichts mit Wissenschaft zu tun.</p>
+
+<p>Wir sollten halt auch aus der Vergangenheit lernen, dass es eben unwahrscheinlich ist, dass die Sachen eintreten, weil wir sie schon so oft vorhergesagt haben.</p>
+
+<p>Genau.</p>
+
+<p>Dann gibt es die Diskussion rund um das Thema Sicherheit und zwar, ich glaube, im Sinne von also im Sinne von, ob diese Modelle sozusagen nach Hause telefonieren.</p>
+
+<p>Wie soll ich sagen, also die gesamten Daten liegen bei wem auch immer diese Modelle betreiben.</p>
+
+<p>Und das ist übrigens auch eines der Probleme, dass eben diese Modelle inhärent an der Monopolisierung darstellen.</p>
+
+<p>Weil nicht, also wenn Lucas und ich uns zusammentun und wir sagen, wir machen jetzt einen OpenAI-Wettbewerber auf, dann brauchen wir halt irgendwie viel Geld, um Modell zu trainieren.</p>
+
+<p>Und zwar wirklich viel Geld.</p>
+
+<p>Also ich weiß nicht, ob du es weißt, Lucas, aber hunderte Millionen oder sowas.</p>
+
+<p>Sehr viel Geld, ja.</p>
+
+<p>Ich kann es jetzt auch nicht genau sagen.</p>
+
+<p>So und das reicht ja nur, um ein Modell zu trainieren.</p>
+
+<p>Und das würde jetzt irgendwie bedeuten, und das führt automatisch zu dieser Monopolisierung.</p>
+
+<p>Es ist jetzt nicht zufällig so, dass die großen Unternehmen diese Modelle haben und dass wir die halt irgendwie nutzen.</p>
+
+<p>Und natürlich ist es so, dass halt alles, was wir mit denen besprechen, bei denen liegt.</p>
+
+<p>Und ich kenne jetzt die AGBs nicht, aber tendenziell sind die AGBs irgendwie so, dass die halt sagen, und das dürfen wir mindestens halt für das weitere Training nutzen.</p>
+
+<p>Es ist ja mittlerweile auch, glaube ich, öffentlich bekannt, dass Facebook für das Training des eigenen Modells Raubkopien von Büchern halt genutzt hat.</p>
+
+<p>Also die runtergeladen worden sind.</p>
+
+<p>Ja, exakt.</p>
+
+<p>Und ich meine das auch ab von den Büchern.</p>
+
+<p>Auch OpenAI hat ja gezeigt, dass aus ihrer Sicht es so ist, dass alles, was im Internet ist, darf sowieso in ein Modell aufgenommen werden, was jetzt dem traditionellen Verständnis von Copyright und Urheberrecht und so weiter eher nicht entspricht.</p>
+
+<p>Aber bei Facebook ist es jetzt halt gerade nochmal aufgefallen, weil sie halt das auch noch mit Erlaubnis vom Chef getorrentet haben, wo das dann einfach ein bisschen sehr offensichtlich ist, was da passiert.</p>
+
+<p>Genau, dann gibt es halt irgendwie eine Diskussion hier rund um das Thema mit dem Emotional.</p>
+
+<p>Also TheInnocentKitten hat geschrieben, eine freundliche Antwort würde ich nicht als emotional bezeichnen, sondern ein Feature des Interfaces.</p>
+
+<p>Mein Problem ist, also ich bin ja Berater.</p>
+
+<p>Das heißt, eigentlich lebe ich davon, dass mir Leute Fragen stellen und ich halt irgendwas erzähle.</p>
+
+<p>Und ich halte es für total wichtig, zu sagen, ich weiß es nicht.</p>
+
+<p>Das hängt davon ab.</p>
+
+<p>Hier sind da verschiedene Alternativen.</p>
+
+<p>Und das ist eigentlich sozusagen auch die ultimative Beraterantwort.</p>
+
+<p>Und hier geht es nicht um freundlich, sondern hier geht es darum, dass Chat-GPT und diese LNMs subjektiv meinem Gefühl nach das Gegenteil machen.</p>
+
+<p>Die sagen nämlich mit dem Brustton der Überzeugung, so ist es halt.</p>
+
+<p>Und in Wirklichkeit sind die aber auf einem sehr dünnen Eis, weil wir wissen ja, dass die halt Probleme haben und halt einige Sachen nicht vernünftig beantworten können.</p>
+
+<p>Also ich habe halt lange Zeit solche Spielchen gemacht, wie in einem Bus sitzen drei Passagiere, fünf Passagiere steigen aus.</p>
+
+<p>Wie viele sind noch im Bus?</p>
+
+<p>Und dann kommt da wie minus zwei raus oder so ein Quatsch.</p>
+
+<p>Oder so eine Geschichte, wie zweieinhalb Personen fahren mit dem Bus.</p>
+
+<p>Wie viele Tickets braucht man?</p>
+
+<p>Mittlerweile ist das halt abgedichtet.</p>
+
+<p>Aber das sind irgendwie Dinge, also die haben echte Schwierigkeiten.</p>
+
+<p>Und wenn die sich dann irgendwie hinstellen und so designt sind, dass die mit dem Brustton der Überzeugung sagen, es ist halt so und so, dann ist es halt irgendwie schwierig.</p>
+
+<p>Der Eugen hat geschrieben, er hat geschrieben, bereits Krokodile haben Emotionen, so schwer kann das also gar nicht sein.</p>
+
+<p>Das wäre jetzt eine Philosophiefrage, also tatsächlich nach meinem Empfinden.</p>
+
+<p>Also haben halt Hunde, Katzen, Tiere Emotionen oder ist das halt nur vorgespielt?</p>
+
+<p>Das ist halt so ein bisschen die Frage.</p>
+
+<p>Ja und nur eine Anmerkung, ich möchte nicht zu tief reingehen, weil sonst reden wir nur über diesen Teil.</p>
+
+<p>Ich finde, da steckt halt auch immer diese Idee hinter, dass quasi der Mensch so das intelligenteste Wesen ist.</p>
+
+<p>Und wir haben eine sehr einfache Verständnis von Intelligenz, wenn wir damit vorgehen.</p>
+
+<p>Also es gibt einfach verschiedenste Arten von Intelligenz.</p>
+
+<p>Es gibt Tiere, die haben acht Arme und können die unabhängig voneinander bewegen.</p>
+
+<p>Also ich kann das nicht.</p>
+
+<p>Und das sind halt Sachen, wo ich glaube, dass dieser Gedanke von dieser Hierarchie und wir stehen ja ganz oben und eventuell kommt jetzt dieses magische Roboterwesen, was wir erschaffen, was uns nochmal oben drauf sitzt.</p>
+
+<p>Das ist einfach viel zu einfach gedacht.</p>
+
+<p>Emotionen sind viel komplexer als das.</p>
+
+<p>Es gibt so viele verschiedene Arten von Emotionen.</p>
+
+<p>Deswegen überzeugen mich solche Argumente sehr wenig.</p>
+
+<p>Also eine Sache zu dem Intelligenzding.</p>
+
+<p>Es gibt halt diese Geschichte, ich habe das halt auf Social Media im Vorbeigehen nur gesehen, also es ist nachvollziehbar, wo man halt Ameisen sagt, sie sollen halt irgendeinen Gegenstand durch ein Labyrinth buxieren.</p>
+
+<p>Und das ist irgendwie super kompliziert.</p>
+
+<p>Das kriegen die halt relativ gut hin, weil der Ameisenstaat insgesamt hat ja emergentes Verhalten.</p>
+
+<p>Also fängt irgendwie an und findet den optimalen Weg, um irgendwelche Futterquellen auszubeuten.</p>
+
+<p>Und das hängt eben damit zusammen, dass sie Hormone haben, die ausschütten.</p>
+
+<p>Und dadurch kriegen sie es hin, dass sie insgesamt als Gruppe komplexe Probleme lösen.</p>
+
+<p>Und deswegen glaube ich sofort, dass das so ist.</p>
+
+<p>Und da sind Menschen halt unterlegen, was ich auch sofort glaube.</p>
+
+<p>Weil wenn wir jetzt zu zehnt loslaufen und sagen, hey, wir wollen das bewegen, müssen wir miteinander reden.</p>
+
+<p>Und es gibt zehn Menschen und das wird irgendwie schwierig.</p>
+
+<p>Nicht umsonst sind irgendwie Scrum-Teams kleiner.</p>
+
+<p>Und die andere Sache ist, und deswegen muss ich halt irgendwie tatsächlich ernsthaft grinsen.</p>
+
+<p>Also wenn die Wissenschaft halt Recht behält, wird es halt irgendwie so sein, dass wir unseren Lebensraum halt zerstören.</p>
+
+<p>Und wir können jetzt darüber diskutieren, ob das halt ein Ausdruck von Intelligenz ist.</p>
+
+<p>Also wenn wir halt wissen, dass wir halt unseren Lebensraum zerstören, das hat irgendwie trotzdem zu tun.</p>
+
+<p>Wow.</p>
+
+<p>Also ich muss mich jetzt nicht sonderlich anstrengen, um halt zu sagen, dass das halt als Verhalten sicher nicht intelligent ist.</p>
+
+<p>Ja.</p>
+
+<p>Fake Emotionen bauen Vertrauen auf, würde ich jetzt auch sagen.</p>
+
+<p>Wir haben übrigens also tatsächlich extrem viel im Chat, interessanterweise.</p>
+
+<p>Technoföderalismus als Begriff.</p>
+
+<p>Technofaschismus fällt mir halt auch ein.</p>
+
+<p>Und ich halte das, also ich brauche mir nicht drüber zu reden, dass wir das halt gerade in Aktion sehen.</p>
+
+<p>Dann geht es halt um eine lokale AI.</p>
+
+<p>Das ist übrigens auch einer, glaube ich, von den Punkten.</p>
+
+<p>Und Lucas hat das halt in dem anderen Podcast immer auch den Punkt gemacht, dass halt kleinere Modelle, spezialisierte Modelle vielleicht besser sind, die dann vielleicht auch eben eher lokal laufen.</p>
+
+<p>Also das würde, glaube ich, dazu vielleicht auch noch passen.</p>
+
+<p>Gut, dann haben wir ja den ersten Punkt schon fast abgehakt.</p>
+
+<p>Wie funktioniert das denn?</p>
+
+<p>Es ist wie ein IT-Projekt.</p>
+
+<p>Also die Planung, die wir vorher gemacht haben, war so medium gut.</p>
+
+<p>Genau, aber du wolltest wissen, also jetzt eine vollständige Erklärung davon, wie es funktioniert.</p>
+
+<p>Das ergibt, glaube ich, keinen Sinn, weil das zum einen besser funktioniert, wenn man auch Sachen zeigen kann und so.</p>
+
+<p>Und weil wir halt noch ein paar andere Themen besprechen wollen.</p>
+
+<p>Ich kann da an der Stelle das Buch von Stephen Wolfram empfehlen, der das sehr, sehr gut erklärt, wie ChatGPT im Speziellen, aber als quasi Muster für auch die anderen LLMs funktioniert.</p>
+
+<p>Wer sich da einarbeiten will, ist auch jetzt kein Riesenbuch.</p>
+
+<p>Es ist ein eher dünnes Buch.</p>
+
+<p>Und ich glaube, das gibt es auch als Blogpost.</p>
+
+<p>Aber ich finde ein Blogpost irgendwann ist es schwer zu lesen, wenn man nur noch am Scrollen ist.</p>
+
+<p>Genau, aber als wichtiger grundlegendes Verständnis von dem, was LLMs tun, ist eben, dass sie ein Wahrscheinlichkeitsautomat sind.</p>
+
+<p>Deswegen ist es halt auch so, dass natürlich, wenn man oft genug würfelt, kann auch die Wahrheit bei rauskommen.</p>
+
+<p>Aber es kann natürlich auch sehr oft so gewürfelt werden, dass dabei was rauskommt, was halt nicht stimmt.</p>
+
+<p>Was macht eine LLM?</p>
+
+<p>Eine LLM sagt für das, was wir an Text haben, da immer das nächste Wort voraus.</p>
+
+<p>Wir haben da so die allereinfachste Version für Leute, die ein iPhone benutzen.</p>
+
+<p>Ich weiß nicht, ob das bei Android auch so ist.</p>
+
+<p>Da gibt es diese Leiste oben.</p>
+
+<p>Und wenn man dann tippt, dann sagt es immer, möchtest du als nächstes Wort das, als nächstes Wort das, als nächstes Wort das.</p>
+
+<p>So kann man sich das vereinfacht vorstellen.</p>
+
+<p>Nur, das ist halt dadurch, dass es eben auf einem riesigen Textkörper, nämlich dem gesamten World Wide Web und vielen gepiratierten Büchern und vielen gepiratierten Filmen basiert.</p>
+
+<p>Und dadurch kann es eben sehr schlüssige Texte generieren, die einfach auch natürlich, weil sie auf menschlichem Text trainiert sind, sehr, sehr menschlich klingen.</p>
+
+<p>Was ja auch einfach nachvollziehbar ist.</p>
+
+<p>Und aus meiner Sicht der Riesenerfolg, den OpenAI hatte und der große Trick, auf den vorher keiner so gekommen ist, war, dass sie es geschafft haben, dass durch Reinforcement Learning haben sie das Modell so trainiert, dass es so wirkt, als würde man Fragen und Antworten spielen.</p>
+
+<p>Also als wäre es ein Chat und nicht einfach nur eine Textgenerierung.</p>
+
+<p>Das heißt also, dass halt eben beim Training immer wieder darauf geachtet wird, okay, wenn das kommt, dann muss darauf eine Antwort kommen und nicht einfach eine zweite Frage oder sowas.</p>
+
+<p>Und das wird eben von unterbezahlten Menschen, hauptsächlich in Afrika, werden diese Modelle trainiert, um möglichst das rauszugeben, was für das Unternehmen am attraktivsten ist.</p>
+
+<p>Wir sehen jetzt auch aktuell im sich wechselnden politischen Klima Diskussionen darüber, sollte es weniger gefiltert sein, sollte es auch Hassrede generieren dürfen und so weiter.</p>
+
+<p>Das sind ja alles Entscheidungen, die die Unternehmen dabei treffen, also was sie im Trainingsprozess als gut und was sie im Trainingsprozess als schlecht markieren.</p>
+
+<p>Und in diesem Feld bewegt sich das und entwickelt sich halt dann dorthin, wo das Unternehmen das haben möchte.</p>
+
+<p>Und das ist eben auch ein Teil, der sehr kostenaufwendig ist.</p>
+
+<p>Wir können nicht nur einfach ein paar GPUs zusammenschrauben und Forscher dahinter setzen.</p>
+
+<p>Dieser Trainingsteil ist halt essenziell, um das zu erreichen und ist natürlich auch sehr teuer, also gerade wenn man die Leute fair bezahlen würde, was man natürlich nicht tut.</p>
+
+<p>Und das ist so die ganz grobe Übersicht, was da passiert.</p>
+
+<p>Und da muss uns dann auch klar sein, also das ist auch, wenn man das im Kopf hat, dann sind einem viele von den Effekten, die wir gesehen haben in den letzten ein bis zwei Jahren auch klar.</p>
+
+<p>Wir hatten zum Beispiel diese Google-Antworten, wenn man sagt, wie sorge ich dafür, dass mein Belag nicht von der Pizza rutscht.</p>
+
+<p>Benutze Kleber, dann rutscht er nicht mehr von der Pizza.</p>
+
+<p>Das ist halt ursprünglich von einem Reddit, einem Witze-Reddit.</p>
+
+<p>Aber in dem Training wird ja nicht zwischen Witz und Wahrheit unterschieden.</p>
+
+<p>Das heißt also, der Postillonartikel wird genauso behandelt wie der Artikel vom Spiegel.</p>
+
+<p>Das heißt, wenn wir als Menschen das lesen und vielleicht schon eine gewisse Verbindung zu den Herkünften haben, zu den Medien haben, die wir konsumieren, dann verstehen wir vielleicht den Kontext.</p>
+
+<p>Das heißt, wir haben auch ein Vertrauensverhältnis dazu.</p>
+
+<p>Das ist eine Quelle, in der ich…</p>
+
+<p>Also man soll natürlich nie alles glauben, bla bla.</p>
+
+<p>Ich weiß, das wird dann auch immer gesagt. Überall kann gelogen werden, ist mir alles klar.</p>
+
+<p>Aber trotzdem haben wir ein grundlegendes Vertrauen gegenüber bestimmten Orten, von denen wir Informationen beziehen und weniger Vertrauen oder wissen, dass es halt ein Witz ist an anderen Stellen.</p>
+
+<p>Und das ist auch das, was halt in diesen Trainings oft ein Problem ist, dass eben das Internet voll ist von Unsinn.</p>
+
+<p>Also sowohl auf Reddit werden halt einfach Memes und Witze erzählt, als auch auf irgendwelchen Blogartikeln und was auch immer.</p>
+
+<p>Und das ist eine der großen Herausforderungen, in die dieses System reinläuft, weil es eben das gesamte Internet als Trainings- oder das Web als Trainingsmaterial verwendet.</p>
+
+<p>Ja, wobei, also verschiedene Ergänzungen.</p>
+
+<p>Ich glaube, es ist wichtig, sich das halt zu vergegenwärtigen, weil daraus kommt irgendwie raus, nicht so, dass wir Emotionen machen, das hat irgendwie gar keinen Sinn.</p>
+
+<p>Und so ein gewisses Misstrauen ist halt wichtig.</p>
+
+<p>Also was du halt sagst, es ist eben so, dass diese Dinge halt irgendwie Unsinn produzieren können.</p>
+
+<p>Was wiederum bedeutet, dass man eigentlich das kontrollieren muss, in gewisser Weise.</p>
+
+<p>Ich muss gestehen, dass ich, wie soll ich sagen, also für mich war halt, als ich ChatGPT das erstmal ausprobiert habe, war das halt schon extrem beeindruckend.</p>
+
+<p>Und es gibt bestimmte Dinge, die sich meiner Ansicht nach dadurch nicht isoliert erklären lassen.</p>
+
+<p>Also es ist zum Beispiel eben so, dass ChatGPT meiner Ansicht nach im wesentlichen Laufwege Software baut.</p>
+
+<p>Also nicht, wenn ich sage, bau ein Stück Software, kommt irgendwie sozusagen was Sinnvolles dabei raus.</p>
+
+<p>Und gerade in dem Bereich haben wir ja auch den Vorteil, dass wir halt irgendwie Tests, also nicht, dass wir formal sagen können, was die Requirements sind, durch irgendwie Abnahmetests.</p>
+
+<p>Und dann können wir halt den Code irgendwie dagegen laufen lassen, was ja dann letztendlich eine Kontrollinstanz wäre.</p>
+
+<p>Aber das ist halt mehr, also das, was ein taktisch korrekter Code ist, der darüber hinaus irgendwie vielleicht auch noch das Richtige tut, ist so ein bisschen für mich grenzwertig erklärbar durch dieses Modell.</p>
+
+<p>Und die zweite Sache ist, dass es so ein bisschen emergentes Verhalten gibt.</p>
+
+<p>Also wenn ich halt ganz viel Daten habe und das halt irgendwie damit halt das System füttere, dann ist es schon so, dass halt diese Daten irgendwie eine Repräsentation da drin haben.</p>
+
+<p>Was ja sowas ähnliches wie ein Lernprozess.</p>
+
+<p>Und da kommen irgendwie auch sozusagen sinnvolle Sachen oft raus.</p>
+
+<p>Ich glaube, das Kontrollieren ist ein wichtiger Punkt.</p>
+
+<p>Und vielleicht noch eine Sache.</p>
+
+<p>Es gab ja irgendwie diesen Chatbot von Microsoft, den sie, glaube ich, auf Twitter losgelassen haben vor Jahren.</p>
+
+<p>Und der dann irgendwie, das war noch vor Elon, eben als glühender Faschist da irgendwie rausgekommen ist.</p>
+
+<p>Und das hat irgendwie dazu geführt, dass ich bei ChatGPT versucht habe, herauszufinden, wie der halt mit solchen Sachen umgeht.</p>
+
+<p>Also antisemitische Äußerungen, ob man ihn halt dazu produzieren kann, sowas halt irgendwie zu produzieren.</p>
+
+<p>Und es stellt sich halt heraus, dass er das nicht, also ich habe es nicht wirklich geschafft.</p>
+
+<p>Ja, also warte jetzt noch ein, zwei Monate, dann macht er es wieder.</p>
+
+<p>Aber ja.</p>
+
+<p>Ja, das ist was anderes.</p>
+
+<p>Aber was ich versuche, zu sagen ist, dass er sozusagen rein Müll produziert, weil er halt irgendwie Müll im Internet findet.</p>
+
+<p>Dann müsste man ihn irgendwie dazu bringen, antisemitische Dinge von sich zu geben.</p>
+
+<p>Ihn nicht. Übrigens habe ich den auch gerade personifiziert.</p>
+
+<p>Davon komme ich halt irgendwie auch nicht weg.</p>
+
+<p>Also ich müsste das System dazu bekommen, dass es eben antisemitische Sachen halt produziert, weil es die zweifellos im Internet gibt.</p>
+
+<p>Aber ich habe es nicht hinbekommen.</p>
+
+<p>Das heißt, das ist irgendwie noch was anderes, glaube ich.</p>
+
+<p>Aber das ist so ein bisschen auch eine akademische Diskussion.</p>
+
+<p>Ja, also ich glaube nicht, dass es was anderes ist.</p>
+
+<p>Es gibt halt zusätzlich noch diese vorgeschalteten Systeme, die bestimmte Sachen schon rausfiltern.</p>
+
+<p>Es gab ja immer dieses Ignore all previous instructions und so weiter, was sie erstmal nicht raustrainiert bekommen haben.</p>
+
+<p>Also haben sie einfach einen Filter davor gesetzt, der solche Sachen gar nicht erst an das Modell ranlässt.</p>
+
+<p>Das ist halt so ein bisschen eine Kombination aus verschiedenen Technologien.</p>
+
+<p>Aber du hattest eben über Code gesprochen.</p>
+
+<p>Also erstens sollten wir uns immer klar machen, wir finden immer das, was wir selber machen, am schwierigsten.</p>
+
+<p>Also ist es immer am imposantesten, wenn es dann auf einmal das kann, was wir selbst können.</p>
+
+<p>Aber eigentlich ist es nicht erstaunlich, dass es so einfach einen funktionierenden Code generieren kann.</p>
+
+<p>Also wenn wir jetzt an solche Systeme wie Copilot denken, aber auch an ChatGPT, der Code generiert, ist es natürlich für eine Firma viel einfacher zu verifizieren, dass das ein kompilierfähiger Code ist, als zu gucken, ist das gültiges Deutsch oder gültiges Englisch, was da produziert wird.</p>
+
+<p>Weil das automatisiert möglich ist.</p>
+
+<p>Wir können automatisiert checken, kompiliert dieser Code.</p>
+
+<p>Deswegen funktioniert es meistens, dass der Code, der da erzeugt wird, auch zumindest mal kompiliert oder interpretiert werden kann, aber nachher halt Bugs hat und so weiter.</p>
+
+<p>Das gibt es auch immer wieder Untersuchungen und die werden leider auch nicht positiver, dass dabei mehr Sicherheitslücken entstehen, als wenn das Menschen machen, dass dabei mehr Bugs entstehen, wenn das Menschen schreiben.</p>
+
+<p>Das heißt also, so richtig überzeugend ist das nicht, weil es kann halt vor allem kompilierfähigen Code schreiben.</p>
+
+<p>Und ich weiß, dass wenn man dort eben Greenfield Dinge generieren lässt, funktioniert das halt sehr oft sehr gut, weil wir haben ein riesiges Trainingset.</p>
+
+<p>Das Trainingset ist so was wie GitHub.com, auf dem einfach unendlich viel Code ist und auf dem ist NPM.com, wo vielleicht sogar noch mehr Code ist.</p>
+
+<p>Und wenn wir halt Dinge generieren lassen, die schon jemand brauchte, dann funktionieren die natürlich, weil das ist eben aus dem Trainingset heraus.</p>
+
+<p>Wenn wir aber jetzt versuchen, Code zu generieren, der in unsere Anwendung, in unsere Architektur passt und so weiter, da ist es das, wo es halt fast immer zusammenbricht, weil es halt einfach nicht funktioniert.</p>
+
+<p>Und das ist, glaube ich, auch das große Problem.</p>
+
+<p>Deswegen wirkt es halt erst mal so cool.</p>
+
+<p>Deswegen gibt es halt auch Erfahrungsberichte von Leuten, die sagen so, hey, ich habe meine erste iOS App generiert, ohne Swift programmieren zu können.</p>
+
+<p>Das ist natürlich erst mal imposant, aber all diese Leute sagen, an irgendeinem Punkt ging es nicht mehr weiter und ich muss es doch lernen, weil es dann halt einfach nicht mehr auf dem aufbauen konnte, was schon da war, sondern einfach immer nur eine weitere Klasse oder ein weiteres, eine weitere Funktionalität hinzufügen konnte.</p>
+
+<p>Genau, also verschiedene Punkte dazu.</p>
+
+<p>Der eine Punkt, den du, glaube ich, machst, der wichtig ist, ist, die meisten Systeme, die wir haben, sind eben Legacy-Systeme und die muss man halt irgendwie erweitern und das wird schwierig, weil da müsste man dann mit das gesamte System herrschen.</p>
+
+<p>Und es ist interessanterweise so, also diese Menge an Token, die hat das System halt betrachtet, führen dann halt zu Schwierigkeiten.</p>
+
+<p>Also ich habe, was mir zum Beispiel Ralf gesagt hatte, war, da hat er ja diesen Linter gebaut, automatisiert für AsciiDoc und da ist es halt offensichtlich so, dass das System, dass zwei Testframeworks genutzt worden sind und zumindest in der ursprünglichen Version.</p>
+
+<p>Und das ist halt so ein typisches Ding von, okay, wir haben also nicht, ich habe, das System hat eben nicht realisiert, dass es da schon Testframework gibt.</p>
+
+<p>Ich muss noch eine Sache hinzufügen.</p>
+
+<p>Das ist auch etwas, was ich so ein bisschen, glaube ich, für mich gelernt habe.</p>
+
+<p>Wir haben hier jetzt eigentlich eine, also die Frage ist ja nicht, können AI-Systeme guten Code bauen, sondern die interessantere Frage ist meiner Ansicht nach, können AI-Systeme besseren oder gleich guten Code bauen wie Menschen.</p>
+
+<p>Und da ist es bedauerlicherweise so, ich habe das Gefühl, wir vergessen das manchmal.</p>
+
+<p>Der meiste Code, der da draußen irgendwie produktiv läuft, ist halt ganz, ganz schlimm in vielen Situationen.</p>
+
+<p>Und da bin ich mir eben nicht so sicher, ob man mit, also nicht zwei Testing Frameworks in einer Anwendung, also das passiert halt Menschen auch.</p>
+
+<p>Und da ist eben genau diese Geschichte.</p>
+
+<p>Es werden halt Episoden gemacht zum Thema, wo wir halt ChatGPT die iSAQB-Beispielaufgabe vorgelegt haben.</p>
+
+<p>Und für den Linter hatte eben Ralf auch noch mal sowas gemacht und hat gesagt, okay, ich baue da halt irgendwie eine Architekturdokumentation.</p>
+
+<p>So ein bisschen ein Klassiker für mich ist halt die Geschichte mit den Qualitätsszenarien.</p>
+
+<p>Also welche Qualitäten soll das System haben?</p>
+
+<p>Und dann ist halt bei dem Linter, das ist mir noch sehr gut in Erinnerung, da steht halt irgendwie, ich weiß nicht, 1000 Files sollen innerhalb von zehn Sekunden durchgemacht werden sollen.</p>
+
+<p>Das ist halt ein korrektes Qualitätsszenario.</p>
+
+<p>Das ist halt etwas, was sich verifizieren kann, ob das tatsächlich mit der Fall ist.</p>
+
+<p>Aber mein großes Problem ist, das ist halt vom Himmel gefallen.</p>
+
+<p>Also warum muss ein Linter exakt diese Performanceanforderungen haben?</p>
+
+<p>Warum nicht schneller?</p>
+
+<p>Warum nicht langsamer?</p>
+
+<p>Warum ist Performance so wichtig?</p>
+
+<p>Und da könnte man jetzt irgendwie sagen, lieber AI, du hast halt das Problem nicht verstanden.</p>
+
+<p>Setz dich, das ist doof.</p>
+
+<p>Aber mein Problem dabei ist, ich bin mir, also wenn mir jetzt jemand, das ist so ein bisschen dieses Turing-Testing.</p>
+
+<p>Also Turing-Test funktioniert ja so, dass man sagt, okay, habe ich eigentlich einen Menschen oder eine Maschine vor mir?</p>
+
+<p>Ich glaube, man muss eine Diskussion führen, die hat genau das Thema diskutiert.</p>
+
+<p>Also ist die Person, das Gegenüber ein Mensch oder eine Maschine?</p>
+
+<p>Und dann anschließend sich positionieren.</p>
+
+<p>Und wenn mir jetzt jemand gesagt hätte, hör mal zu, hier ist ein Architekturdokument.</p>
+
+<p>Da ist halt dieses Qualitätsszenario für ein Linter.</p>
+
+<p>Dann hätte ich halt nicht sagen können, ob das ein Mensch oder eine Maschine ist, weil Menschen machen genau denselben Fehler.</p>
+
+<p>Das ist so ein bisschen was, was halt bei mir da rauskommt.</p>
+
+<p>Also das eine, was halt bei mir dabei rauskommt, ist, wir müssen einfach besser werden und wir wissen, an welchen Stellen wir besser werden müssen.</p>
+
+<p>Und das ist völlig unabhängig von AI oder nicht.</p>
+
+<p>Und jetzt habe ich den Fallen etwas verloren.</p>
+
+<p>Also das andere ist, dass wir, also genau das ist halt das Problem, was mir da aufgefallen ist.</p>
+
+<p>Wir hatten auch diese AI-Unconference, da hatte sich halt Marco Emrich netterweise hingestellt und wir hatten mit Cursor irgendwie Code gebaut.</p>
+
+<p>Und bei dem Linter, bei der Architekturdokumentation, braucht man jetzt eigentlich jemanden, so einen Architekturberater.</p>
+
+<p>Also jemanden, der sich hinstellt und sagt, hallo, ich weiß, was die typischen Probleme sind, lass uns das halt irgendwie lösen.</p>
+
+<p>Und bei Cursor ist die Diskussion ganz schnell losgegangen in der Richtung von, wie soll eigentlich vernünftiges Exception Handling in TypeScript aussehen.</p>
+
+<p>Da braucht man jemanden, der, glaube ich, viel Ahnung hat von der Sprache und es springt dann irgendwann um, weil dann der Versuch da ist, der IDE oder dem AI-System klar zu machen, wie dann nur das Exceptional-Ding funktionieren soll und das ist irgendwie genau falsch.</p>
+
+<p>Also dann brauche ich jemanden, der Senior ist, der versteht, was eigentlich die Probleme sind, um dann das AI-Ding zu bewerten und in gewisser Weise ist das gut, weil es bedeutet, dass Menschen, die sich rumlaufen und sagen, Qualitätsszenarien sollten übrigens richtig sein, die werden auch weiterhin einen Job haben, aber es bedeutet auf der anderen Seite, dass blindes Vertrauen ganz, ganz schwierig ist und dann bedeutet es aber, dass ich eine Kontrollinstanz benötige.</p>
+
+<p>Ich würde sagen, eine Kontrollinstanz ist sogar noch schwieriger, anspruchsvoller als eine, die es einfach macht und das bedeutet eigentlich, ArchitekturberaterInnen oder Menschen, die Code bewerten, Code-Reviews machen, die werden auch in Zukunft sehr viel zu tun haben, vielleicht sogar mehr.</p>
+
+<p>Also zwei Sachen dazu.</p>
+
+<p>Einmal ist es so, dass wir einige von den Aufgaben, die wir gut auch einem Junior geben könnten, halt auch mit einer Maschine machen, mit derselben Fehler-Toleranz, sage ich jetzt mal, mit dem riesigen Unterschied, dass ein Junior ein Mensch ist, der von dir lernen wird.</p>
+
+<p>Das heißt, aber das ist bei der LLM nicht so.</p>
+
+<p>Die lernt nicht von dem, also zumindest nicht instantan, sondern vielleicht, wenn auch mal dein ganzes Gespräch wieder in ein Training reingegeben wird, dann vielleicht irgendwann, aber du jetzt konkret erklärst quasi gerade einer Maschine, was sie zu tun hat und sie generiert einfach nur den nächsten Token, den nächsten Token, bis das rauskommt, was du gerne da stehen haben würdest, aber du hast überhaupt gar keinen Lerneffekt erzeugt.</p>
+
+<p>Wenn du dasselbe mit einem Menschen machst, dann ist es in den allermeisten Fällen so, dass diese Person sagt, ah, okay, das hast du mir jetzt dreimal gesagt, jetzt habe ich es verstanden, jetzt mache ich das beim nächsten Mal richtig und ich weiß jetzt, wie ich eine Exception behandeln muss und das ist ein riesen Unterschied und das ist auch aus meiner Sicht einer von den ganz großen Problemen, die wir reinlaufen, wenn wir die Junior-Aufgaben wegautomatisieren und mit solchen Maschinen machen lassen, dann haben wir irgendwann keine Seniors mehr, weil die nicht nachwachsen können und es gibt viele Erfahrungsberichte, in denen halt Leute sagen, aktuell sind viele Juniors, die generieren sehr, sehr viel Code einfach mit ihren Assistants, aber denen fehlt einfach das Verständnis dafür, was da passiert und das sehe ich als ein riesiges Problem, weil wir dann einfach irgendwann, ja, wir wollen auch irgendwann in Rente gehen und dann ist vielleicht keiner mehr da, der wirklich weiß, was da passiert.</p>
+
+<p>Das ist natürlich überspitzt gesagt, aber das ist einfach nur das Weitergedacht, wie sich das aktuell entwickelt und das ist, finde ich, ein riesiges Problem und deswegen müssen wir halt gut darauf aufpassen, dass was wir da machen eben nicht einfach ist, wir ersetzen Juniors durch ein LLM und nachher gucken wir doof, weil wir keinen Senior mehr haben und ich meine, wir haben ja eh schon immer das Problem, dass wir keine Seniors finden und keiner will den Junior einstellen, also das Problem ist ja nicht neu, aber das wird dadurch halt noch viel extremer aus meiner Sicht.</p>
+
+<p>Genau, also man könnte es auch umformulieren, also wenn man sozusagen technologieoptimistisch ist, könnte man halt sagen, wir brauchen eigentlich noch mal was anderes, was halt irgendwie kurzfristiger lernt und das andere jetzt, wo ich sozusagen noch mal darüber nachdenke, also ich habe, nachdem wir halt irgendwie diese Session hatten, habe ich irgendwie noch mal darüber nachgedacht und habe mir eigentlich gedacht, also was bedeutet das jetzt für mich und für mich bedeutet das halt, eigentlich würde ich jetzt Cursor das Ding halt irgendwie bauen lassen und dann schreibe ich halt den Exception Code selber, wenn ich halt überhaupt der Meinung bin, dass das sozusagen wert ist und fixe den halt selber.</p>
+
+<p>Und was ja dazu führt, dass da in gewisser Weise ein Fehlverhalten war, weil also die Gruppe insgesamt, also Marc hatte das halt als so ein Mob oder Ensemble aufgezogen, hat irgendwie, glaube ich, versucht, das jetzt irgendwie gerade zu biegen.</p>
+
+<p>Ich muss gestehen, ich war da mindestens unbeteiligt, vielleicht war ich sozusagen irgendwie treibend, bizarrerweise, weil ich habe eigentlich keine Ahnung von Typescript.</p>
+
+<p>Und es ist ja die Frage, warum ist das so?</p>
+
+<p>Und vielleicht ist das eben einer der Gründe, dass man halt denkt, wir haben da halt jemanden vor uns, also jemanden, eine Person, die halt lernt und das ist eben nicht so.</p>
+
+<p>Das heißt also, wäre das jetzt ein Junior, wäre das halt ja genau das Richtige.</p>
+
+<p>Wir würden dem also sagen, hör mal zu, dem oder der sagen, hör mal zu, das, was du da machst, ist halt irgendwie unsinnig, aus folgenden Gründen, das solltest du irgendwie anders machen.</p>
+
+<p>Dann würde die Person halt beim nächsten Mal sagen, alles klar, mache ich halt irgendwie richtig.</p>
+
+<p>Vielleicht ist das da gerade intuitiv angewendet worden, dass das irgendwie die Idee war, meine Idee, unsere Idee, halt das Problem zu fixen.</p>
+
+<p>Und dann ist es halt gefixt.</p>
+
+<p>Und nee, das ist irgendwie schwierig.</p>
+
+<p>Ja, genau.</p>
+
+<p>Und der andere Punkt, den du noch gebracht hast, war halt, wir wechseln so ein bisschen die Rolle von der Person, die quasi Code Reviews macht, anstatt Code selber zu schreiben.</p>
+
+<p>Und da finde ich, ist eine der ganz beunruhigenden Ergebnisse, die gerade erst auch wieder raus gekommen sind von Microsoft Research, die haben eine Untersuchung gemacht, dass Leute, die solche Assistenten benutzen, weniger kritisch mit dem umgehen, was sie da tun, über die Zeit.</p>
+
+<p>Und dass ihre Fähigkeit, Probleme zu lösen, abnimmt, umso mehr sie generell Sachen benutzen.</p>
+
+<p>Und das bedeutet, dass, wenn wir das hier weiter denken, dass dann halt eben man einfach quasi irgendwann Code Reviews durchwinkt, obwohl da Sachen drin sind, die total Quatsch sind oder Bugs beinhalten oder Sicherheitslücken.</p>
+
+<p>Und das bedeutet, da sollten wir halt auch, selbst wenn uns dieser ganze Aspekt von Juniors und dem Weiterentwicklung und so weiter egal ist, was es mir persönlich nicht ist, aber könnte ja sein, dass es jemandem egal ist, selbst dann haben wir da ein großes Problem, weil halt einfach unsere Art und Weise, wie wir damit interagieren, sich selbst verstärkt.</p>
+
+<p>Und irgendwann lassen wir es halt einfach machen und dann ist es halt egal, wenn da halt nur noch Unsinn bei rauskommt.</p>
+
+<p>Und das ist halt ein Riesenproblem, weil wir halt vielleicht sogar Fähigkeiten verlernen, die wir benötigen, um das halt auch korrekt zu machen.</p>
+
+<p>Und ich, keine Ahnung, bei uns beiden ist es jetzt schon länger her, dass wir irgendwie unsere erste Schleife und unser erstes IF und so weiter geschrieben haben.</p>
+
+<p>Aber du musst es halt einige Male gemacht haben, selber gemacht haben, um irgendwann dieses, was für uns jetzt selbstverständlich ist, zu verstehen.</p>
+
+<p>Und darauf bauen wir immer weiter auf und bauen wir immer weiter auf.</p>
+
+<p>Und wenn wir das alles auslagern, dann wird es halt irgendwann sehr schwierig, diese Sachen überhaupt noch korrekt zu bewerten und korrekte Reviews zu machen.</p>
+
+<p>Und das bestätigt dieses Research im Prinzip.</p>
+
+<p>Also verschiedene Sachen dazu.</p>
+
+<p>Ich hatte eben tatsächlich in diesem Artikel, den ich damals für Heise geschrieben habe und das ist schon länger her, so eine Untersuchung zitiert, wo es halt um, wir haben Menschen die Aufgabe gegeben, irgendwas zu schreiben im Sinne von Verschlüssel, halt eine Datei.</p>
+
+<p>Wir haben herausgefunden, dass die Menschen, die das mit CoPilot und so gemacht haben, ich glaube, da vorne hat die Werkzeuge, also die hat eher so auf Codeebene arbeiten, direkt in der Idee, eben wie du gesagt hast, die schlechteren Lösungen gebaut haben, also die unsichereren und ein höheres Vertrauen in die eigenen Lösungen hatten.</p>
+
+<p>Was ich dabei spannend fand war, also wie soll ich sagen, wie schwierig kann es sein, eine Datei zu verschlüsseln?</p>
+
+<p>Das müsste eigentlich easy sein, aber offensichtlich ist es so, dass es eben nicht völlig easy ist und dass man da Fehler machen kann bei der Übergabe des Schlüssels und was da drauf war.</p>
+
+<p>Und das ist halt genau der Effekt, den du beschrieben hast.</p>
+
+<p>Und die andere Sache, also das, was wir eben diskutiert haben, auch in der Folge mit Ralf, das war eine relativ ad hoc-Folge, wo es halt darum ging, dass eben dieser Linter für AsciiDoc generiert worden ist, den hat er eben generieren lassen.</p>
+
+<p>Da schwebt halt irgendwie mit, dass man da eine höhere Abstraktionsebene letztendlich hat.</p>
+
+<p>Im Prinzip ist halt die Aussage, wir bauen jetzt einen Linter und dann fällt der Linter raus.</p>
+
+<p>Das funktioniert offensichtlich.</p>
+
+<p>Er hatte ja jetzt in der letzten Episode auch z.B. Merge (?) gebaut.</p>
+
+<p>Das kann ich halt absichern durch Tests.</p>
+
+<p>Das heißt, ich weiß, dass das System mindestens die Tests erfüllt.</p>
+
+<p>Die Frage ist jetzt, welche Anforderungen habe ich an den Code und will ich das eben auf dieser Ebene nochmal kontrollieren?</p>
+
+<p>Also will ich halt wissen, ob das Exception Handling sozusagen korrekt ist, dass diese ganzen Sachen vernünftig funktionieren.</p>
+
+<p>Da müsste man wahrscheinlich theoretisch sagen, ja, ich sollte das wahrscheinlich tun, weil die Ergebnisse können unsinnig sein.</p>
+
+<p>Da ist aber irgendwie die andere Frage, wenn ich jetzt eine Entwicklung gebe, die kann das auch fehlermachen und Schwierigkeiten produzieren.</p>
+
+<p>Da ist die Frage, ob ich das auch immer reviewen würde.</p>
+
+<p>Da ist wieder mein Punkt, der Code, der entsteht in den Projekten, ist häufig schlecht.</p>
+
+<p>Ich bin mir nicht sicher, ob es dadurch noch schlimmer wird.</p>
+
+<p>Aber es ist halt auch eine Risikogeschichte.</p>
+
+<p>Also ich möchte auf eine Sache eingehen.</p>
+
+<p>Wir sind ja auch langsam so, gehen auf das Ende der Timebox zu.</p>
+
+<p>Aber eine Sache, die mir noch wichtig ist, weil das immer wieder gesagt wird, dass das quasi eine neue Abstraktionsebene ist.</p>
+
+<p>Und das, finde ich, ist einfach eine gefährliche Falschwahrnehmung.</p>
+
+<p>Das, was wir machen, ist eben nicht so, als würden wir jetzt statt Assembler-Code C schreiben.</p>
+
+<p>Das ist nicht dasselbe, weil was wir machen ist, wir generieren Code und wir müssen in diesem Code, den wir haben, generieren lassen, müssen wir wieder die Fehler finden.</p>
+
+<p>Und wir müssen den weiterhin vollständig verstehen.</p>
+
+<p>Das ist nicht eine höhere Abstraktionslevel.</p>
+
+<p>Das ist absoluter Quatsch.</p>
+
+<p>Wir können das so nicht verwenden und wir müssen weiterhin volles Verständnis für das haben, was da generiert wird.</p>
+
+<p>Sonst können wir es nicht verifizieren und sonst können wir nicht sicherstellen, dass wir das in Produktion geben können.</p>
+
+<p>Und das ist das Gefährliche an dieser Denkweise, weil das wird einem halt so verkauft.</p>
+
+<p>Das wird dann nochmal mit diesem Agentic-Marketing-Buzz nochmal weitergetrieben, dass man jetzt halt irgendwie so einem Ding einen Auftrag gibt und das macht das einen Verein.</p>
+
+<p>Und das ist einfach nicht richtig.</p>
+
+<p>Wir können das so nicht machen, weil, wie wir besprochen haben, das ist alles auf Wahrscheinlichkeiten basierend.</p>
+
+<p>Und es ist einfach im ganzen Research zeigt sich immer wieder, es erzeugt mehr Bugs, als wenn man es selber schreiben würde.</p>
+
+<p>Auch wenn du viel schlechten Code gesehen hast, ist der Code, der da generiert wird, eben noch schlechter.</p>
+
+<p>Und das ist eben das Problem.</p>
+
+<p>Und darum können wir diese Schlussfolgerung, dass wir quasi einfach jetzt mit menschlicher Sprache interagieren und wir brauchen jetzt nicht mehr den Code zu schreiben, das ist Quatsch.</p>
+
+<p>Und ich finde, das ist auch die Falle an dieser Denkweise, dass menschliche Sprache das bessere Interface ist.</p>
+
+<p>Weil wir haben ja Programmiersprachen, weil wir damit ganz konkret Sachen ausdrücken können.</p>
+
+<p>Und das schaffen wir in der menschlichen Sprache ja meistens nicht.</p>
+
+<p>Und das ist ja genau das, was wir in unserem Job immer wieder merken.</p>
+
+<p>Wenn wir versuchen, etwas, was wir in menschlicher Sprache gehört haben, in Code zu übersetzen, dann fallen uns Sachen auf, die eben nicht so eindeutig waren.</p>
+
+<p>Und warum sollten wir diese Sprache, mit der wir das ganz konkret ausdrücken können, ersetzen durch eine mit einem Wahrscheinlichkeitsautomat dahinter?</p>
+
+<p>Das ergibt für mich einfach keinen Sinn.</p>
+
+<p>Das ist für mich keine sinnvolle Argumentation.</p>
+
+<p>Ja, ich befürchte, ich bin mir da nicht ganz so sicher, weil mein Punkt wäre halt, wenn man jetzt sozusagen Ralfs Beispiel verfolgt, was hätte er denn sonst machen können?</p>
+
+<p>Er hätte in natürlicher Sprache irgendeinem Team sagen können, mach das halt irgendwie.</p>
+
+<p>Und da wäre halt auch irgendwas rausgekommen, da kann es Missverständnisse geben, der Code kann irgendwie falsch sein.</p>
+
+<p>Und die Frage ist eben, ob das Ergebnis dann deutlich besser gewesen wäre.</p>
+
+<p>Mein Problem dabei ist eben, also eigentlich müsste man in beiden Fällen das halt irgendwie kontrollieren.</p>
+
+<p>Und dann wird es halt eine Risikoabschätzung.</p>
+
+<p>Ich glaube, das, was halt tatsächlich ein guter Punkt ist und wichtig, also erstmal muss man halt dazu sagen, das ist halt, glaube ich, ein Szenario, was halt so relativ isoliert und ein technisches Problem löst.</p>
+
+<p>Im wirklichen Leben sind das ja sowieso Anforderungen.</p>
+
+<p>Wir haben ein Legacy-System, was ich irgendwie auch verstehen muss, um da halt Änderungen zu machen.</p>
+
+<p>Und das ist nochmal eine Dimension schwieriger.</p>
+
+<p>Das ist also nochmal was anderes.</p>
+
+<p>Und dann ist irgendwie die, also nicht die Aussage, die du dann irgendwie triffst, ist eigentlich, naja, aber das wird irgendwie eine minderwertige Lösung sein.</p>
+
+<p>Und ich befürchte aber, dass wir halt bei uns in der Branche, haben wir durchaus Kostenoptimierer, die halt irgendwie minderwertige Lösungen halt durchaus akzeptieren.</p>
+
+<p>Also das, was wir halt auch mit Offshoring gesehen haben.</p>
+
+<p>Und ich bin mir halt, also wie soll ich sagen, als Techniker finde ich das halt irgendwie katastrophal, weil eigentlich will ich halt die höchste Qualität haben.</p>
+
+<p>Aus der betriebswirtschaftlichen Perspektive ist es irgendwie was anderes.</p>
+
+<p>Und deswegen schwanke ich da.</p>
+
+<p>Ich glaube, der Punkt ist halt, also das habt ihr ja auch in den anderen Podcast-Folgen so ein bisschen gesagt, und das ist halt auch das, was mir halt auffällt.</p>
+
+<p>Du willst eigentlich die Ergebnisse kontrollieren.</p>
+
+<p>Und wenn du das aufgibst, dann hast du halt ein Risiko.</p>
+
+<p>Willst du das Risiko akzeptieren?</p>
+
+<p>Und es gibt ein konkretes Beispiel.</p>
+
+<p>Also wir haben bei Softwarearchitektur im Stream jetzt eben diese AI-unterstützte Zusammenfassung.</p>
+
+<p>Und die gucken wir uns halt nochmal an.</p>
+
+<p>Das hängt einfach damit zu.</p>
+
+<p>Also konkretes Beispiel war, ich hatte ja die Episode mit Tanja gemacht über Produktmanagement und Legacy-System.</p>
+
+<p>Und sie hat erzählt, naja, da gibt es halt dieses System, was hochindividualisierte Produkte hat.</p>
+
+<p>Und wenn man einen Versicherungsfall hat und dasselbe nochmal bestellen möchte, dann braucht man diese ganze Individualisierung nicht, weil man nochmal dasselbe bestellen will.</p>
+
+<p>Das haben wir als erstes neu implementiert.</p>
+
+<p>Daraufhin hat die Zusammenfassung, in der Zusammenfassung stand dann, bei Versicherungsfällen kann man besonders gut eine Legacy-Migration machen.</p>
+
+<p>Sowas in dem Dreh.</p>
+
+<p>Und das ist halt tatsächlich grob sinnverzerrend.</p>
+
+<p>Also so sinnverzerrend und falsch, dass ich dann den Absatz komplett neu geschrieben habe, weil das halt einfach Quatsch war.</p>
+
+<p>Und jetzt ist mir die Frage, kann ich damit leben, wenn ich sowas im Code habe?</p>
+
+<p>Und das ist nichts Ungewöhnliches, weil es passiert häufig, dass sich ein Kunde mit einem Entwickler irgendwas anguckt und dann der Kunde sagt, nein, das habe ich nicht gemeint.</p>
+
+<p>Das ist halt etwas völlig anderes.</p>
+
+<p>Das wird hier irgendwie sozusagen schlimmer.</p>
+
+<p>Ja.</p>
+
+<p>Ich glaube aber auch, dass das tatsächlich schlechter ist, als die meisten Leute denken.</p>
+
+<p>Es gab ja jetzt auch gerade erst diese BBC-Studie, die herausgefunden hat, dass in 51 Prozent der Fragen, die sie gestellt haben zu Sachen aus ihrem eigenen Datenset signifikante Fehler drin waren und in 20 Prozent faktische Fehler.</p>
+
+<p>Also diese Systeme sind wesentlich schlechter, als wir denken.</p>
+
+<p>Und wir bewerten meistens solche Systeme nach Sachen, wo wir selber nicht die Antwort wissen.</p>
+
+<p>Wir generieren damit SQL-Code, weil das kann ich nicht so gut, also mache ich den damit.</p>
+
+<p>Den kann ich aber nicht bewerten und nachher ist es ein schlechter SQL-Code.</p>
+
+<p>Wenn wir dann aber Sachen damit generieren, die wir selber verstehen, dann ist es auf jeden Fall, nachher sagen wir, oh, das ist aber nicht so gut.</p>
+
+<p>Aber dann kann es einfach nur nicht das, was ich so gut kann, weil ich bin ja so schlau.</p>
+
+<p>Und darum kann es halt die Sachen von den anderen Leuten, die andere Professionen haben, da kann es das.</p>
+
+<p>Aber da, wo ich mich auskenne, da bin ich immer noch schlauer.</p>
+
+<p>Und das ist eben einfach eine Falschwahrnehmung, weil es ist einfach in allen Bereichen falsch.</p>
+
+<p>Wir können es nur in manchen Bereichen nicht so gut verifizieren.</p>
+
+<p>Und das ist eben das, was wir immer wieder in den Ergebnissen sehen und wo wir auch fehlgeleitet werden durch diese Benchmarks.</p>
+
+<p>Also es gibt ja diese Benchmarks, die immer nur zeigen, number goes up, es wird immer alles toller.</p>
+
+<p>Und das liegt einfach daran, dass diese Benchmarks den Firmen bekannt sind.</p>
+
+<p>Also trainieren sie halt auf den Benchmarks.</p>
+
+<p>Und natürlich sind sie dann beim nächsten Mal besser.</p>
+
+<p>Das ist totaler Quatsch.</p>
+
+<p>Also diese Benchmarks sind nichts wert.</p>
+
+<p>Und wenn wir dann aber das mit echten Anfragen machen, zeigt Papier nach Papier, dass es einfach immer noch schlecht ist und immer noch falsche Ergebnisse liefert.</p>
+
+<p>Und das ist jetzt nicht auf Code bezogen, weil das war jetzt halt eher so dieser Use Case.</p>
+
+<p>Ich lasse mir Sachen zusammenfassen oder ich lasse mir Sachen berichten aus dem Internet oder sowas.</p>
+
+<p>Und der Use Case ist einfach wirklich katastrophal schlecht und sollte meiner Meinung nach gar nicht benutzt werden.</p>
+
+<p>Lass uns kurz noch durch den Chat gehen.</p>
+
+<p>Wir sind so ein bisschen über die Zeit rüber.</p>
+
+<p>Also Dennis von Ketten hat noch geschrieben, er denke das Stichwort ist Intuition.</p>
+
+<p>Das war, ehrlich gesagt, vor einer Viertelstunde.</p>
+
+<p>LLMs haben keine. Dahintersteckt vielleicht was mit LLM und intrinsischer Prüfung auf Korrektheit zu tun hat.</p>
+
+<p>Ja, genau.</p>
+
+<p>Irgendetwas ist in diesen Modellen drin, nicht?</p>
+
+<p>Also die haben auf dem Dataset hat irgendwas gebaut.</p>
+
+<p>Intuition ist allerdings der falsche Begriff, glaube ich.</p>
+
+<p>Unsere Intuition ist ja auch nicht fehlerfrei, aber wir lernen mitunter sofort neu.</p>
+
+<p>Das war das, was wir diskutiert haben, nicht?</p>
+
+<p>Dieses sofort neu lernen, dass das halt ein Problem ist.</p>
+
+<p>Und ich muss halt gestehen, also Intuition ist halt borderline so Vorurteilsbehaftet, nicht?</p>
+
+<p>Also wenn ich halt sage intuitiv, also ich treffe eine Person im Anzug auf einer Konferenz, ich nehme an, eher Entscheider.</p>
+
+<p>Das ist halt Intuition slash Vorurteil und das ist irgendwie auch gefährlich, aber das ist eine andere Diskussion.</p>
+
+<p>Nicht, weil am Ende ist das halt irgendwie jemand, der Techniker ist oder irgendwas anderes.</p>
+
+<p>Ist im Grunde die gleiche Diskussion mit der Frage, ob man Schulkindern den Taschenrechner genehmigen soll, bloß auf der nächsten Ebene?</p>
+
+<p>Das glaube ich nicht, weil das ist ja der Punkt, den Lucas auch gerade gemacht hat.</p>
+
+<p>Das ist irgendwie nicht deterministisch, nicht?</p>
+
+<p>Und das ist was anderes.</p>
+
+<p>Und ein Taschenrechner produziert sogar erfolgreichere, bessere Ergebnisse und ist halt fehlerfrei.</p>
+
+<p>Das ist übrigens auch eine von den Sachen, was in diesem künstlichen Intelligenzbereich und überhaupt in diesem Bereich von, wer ist denn nun eigentlich intelligenter, so ein bisschen eine Fehlleitung ist.</p>
+
+<p>Selbstverständlich ist es so, dass ich schlechter Kopf rechnen kann als ein Taschenrechner.</p>
+
+<p>Und das ist schon lange so und darüber brauchen wir nicht zu reden.</p>
+
+<p>Und in einem anderen Podcast war es halt diese Geschichte mit dem Schachspielen.</p>
+
+<p>Das ist irgendwie, da hattet ihr darüber diskutiert.</p>
+
+<p>Großspielen gehört ja auch dazu.</p>
+
+<p>Da ist es eigentlich eher umgekehrt so, dass es mich irritiert, dass diese stark formalisierten Systeme so sind, dass wir als Menschen immer noch oder lange Zeit mithalten konnten.</p>
+
+<p>Also das ist ja ein Schachfeld, das kann ich perfekt formalisieren.</p>
+
+<p>Es gibt ganz klare Regeln.</p>
+
+<p>Das ist algorithmisch erschlagbar.</p>
+
+<p>Trotzdem ist es halt so, dass Computer da lange Zeit nicht so gut ausgehalten haben.</p>
+
+<p>Ich habe halt kein mentales Modell von dem, was der PC da generiert hat, das dann zu debuggen dauert.</p>
+
+<p>Meiner Meinung nach länger, als mit einem solchen Modell selbst zu schreiben.</p>
+
+<p>Unter der Voraussetzung, dass man es eben debuggen will.</p>
+
+<p>Keine Ahnung, aber nicht guter Punkt.</p>
+
+<p>Das wäre die Frage, will ich nicht sozusagen als Assistenz benutzen.</p>
+
+<p>Also was ich tatsächlich gemacht habe, ist, ich habe dieses Ding gebaut zum Spam-Recycling.</p>
+
+<p>Den gibt man in die Spam-Nachricht per Copy-Paste und der produziert anschließend Output, wo die ganzen Sachen alphabetisch sortiert sind.</p>
+
+<p>Da habe ich das Ding durch die AI herausgefunden, wie man das macht und habe es anschließend reingeschrieben.</p>
+
+<p>Aber es ist eher so wie ein technischer Berater, so.</p>
+
+<p>Ich hatte das Gefühl, ich glaube, ich habe da immer noch die Kontrolle gehabt.</p>
+
+<p>Also ich glaube, das, was die Person meint, war, dass man Code generieren lässt, anstatt ihn selbst zu schreiben.</p>
+
+<p>Das ist auf jeden Fall die Erfahrung, die auch einige Kollegen von mir gemacht haben, die gesagt haben, ich bin durch die LLM langsamer geworden und habe sie deswegen jetzt auch wieder weggetan, weil ich gemerkt habe, dass ich mehr damit beschäftigt bin, diesen Code zu debuggen und zu verstehen, weil da so viele Fehler drin sind, als wenn ich ihn einfach selber geschrieben habe.</p>
+
+<p>Und das ist, glaube ich, auch das, was Netzmuffel hier meint.</p>
+
+<p>Ja, super.</p>
+
+<p>Und das ist ja, glaube ich, ein total wichtiges Feedback.</p>
+
+<p>Ich habe so ein bisschen das Gefühl, dass wir so ein bisschen langsam sozusagen das Ende finden sollten.</p>
+
+<p>Wir haben nämlich schon überzogen.</p>
+
+<p>Ich muss gestehen, die Nachrichten im Chat, also sorry, wir sind dir wahrscheinlich nicht ganz gerecht geworden.</p>
+
+<p>Noch sozusagen irgendwelche letzten Worte, die du loswerden willst?</p>
+
+<p>Ja, also wir haben jetzt nur einen Teil von dem besprochen, den wir eigentlich besprechen wollten, was ich vorausgesagt hatte.</p>
+
+<p>Aber genau, also mir ist halt einfach wichtig, geht einfach ein bisschen, also wenn ihr euch entscheidet, diese Systeme zu benutzen, ich habe mich persönlich dagegen entschieden, aber wenn ihr euch dafür entscheidet, dann stellt sicher, dass was ihr dort mitmacht, dass ihr das auch verifizieren könnt, weil es ist eben kein System, was irgendwie zauberhaft die richtigen Sachen macht und ihr müsst einfach dafür gerade stehen und ihr seid nachher die Person, die das quasi produziert hat mit maschineller Unterstützung in Anführungsstrichen.</p>
+
+<p>Und das heißt, ihr seid dafür verantwortlich, was da gebaut wird.</p>
+
+<p>Und so müsst ihr das auch betrachten.</p>
+
+<p>Und das, finde ich, ist eine der wichtigsten Grundsätze in der Verwendung von diesen Systemen.</p>
+
+<p>Ja, genau.</p>
+
+<p>Also finde ich, das ist eine total super Zusammenfassung.</p>
+
+<p>Und das war auch eine von den Sachen, die mir mal in den Kopf gekommen ist.</p>
+
+<p>Eigentlich geht es um kritisches Denken.</p>
+
+<p>Irgendetwas ist da und wird irgendwie produziert.</p>
+
+<p>Wie bewerte ich, ob das tatsächlich sinnvoll ist und ob das irgendwie hilft?</p>
+
+<p>Und das ist, glaube ich, auch jenseits von AI etwas, was total hilfreich ist.</p>
+
+<p>Also einfach Dinge halt kritisch hinterfragen und dann irgendwie sozusagen eine Entscheidung fällen.</p>
+
+<p>Und damit können wir irgendwie auch nochmal kurz den Aufruf loswerden, Sonntag zur Wahl zu gehen.</p>
+
+<p>Definitiv.</p>
+
+<p>Genau, hervorragend.</p>
+
+<p>Vielen Dank.</p>
+
+<p>Und ich wünsche dann schon mal sozusagen ein schönes Wochenende.</p>
+
+<p>Und wie gesagt, Montagabend ist dann die nächste Episode zu dem Thema No Estimates oder Beyond Estimates mit Woody.</p>
+
+<p>Vielen Dank.</p>
+
+<p>Alles klar.</p>
+
+<p>Tschüss.</p>
+
+
+
+<footer class="site-footer">
+  <span class="site-footer-owner">
+    <a href="https://software-architektur.tv">software-architektur.tv</a> von <a href="http://ewolff.com">Eberhard Wolff</a>.<br />
+    Sketchnotes von Lisa Maria Schäfer
+  </span>
+  <nav>
+    <a href="/datenschutzhinweise.html">Datenschutzhinweise</a>
+    <a href="/impressum.html">Impressum</a>
+  </nav>
+  <span class="site-footer-credits" lang="en">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>
