@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Folge 240 - Domain-Driven Design - Ein vollständiges Beispiel 1/2 | Software Architektur im Stream </title>
+  <link type="application/atom+xml" rel="alternate" href="https://software-architektur.tv/feed.xml" title="software-architektur.tv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="stylesheet" href="/css/custom1.css">
+  <meta name="twitter:card" content="player" />
+  <meta property="og:url" content="https://software-architektur.tv/2024/11/18/episode240.html" />
+  <meta property="twitter:title" content="Folge 240 - Domain-Driven Design - Ein vollständiges Beispiel 1/2  | Software Architektur im Stream" />
+  <meta property="og:title" content="Folge 240 - Domain-Driven Design - Ein vollständiges Beispiel 1/2  | Software Architektur im Stream" />
+  <meta property="og:type" content="article" />
+  <meta property="twitter:player" content="https://www.youtube.com/embed/VlPfO7pah8U" />
+  <meta property="twitter:player:width" content="560" />
+  <meta property="twitter:player:height" content="315" />
+
+  <meta property="twitter:image" content="https://software-architektur.tv/thumbnails/episode240.png" />
+  <meta property="twitter:image:alt" content="Titel der Folge" />
+  <meta property="og:image" content="https://software-architektur.tv/thumbnails/episode240.png" />  
+
+  <meta property="og:description" content="Ein Beispiel für DDD-Techniken wie Bounded Context, Core Domain, Event Storming oder Team Topologies" />
+  <meta property="twitter:description" content="Ein Beispiel für DDD-Techniken wie Bounded Context, Core Domain, Event Storming oder Team Topologies" />
+</head>
+
+
+
+  <body>
+    <script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://software-architektur.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', 'fc80a353-ef3c-45fc-b60f-f417d73ca50d');
+</script>
+
+<section class="page-header">
+  <h1 class="project-name">Folge 240 - Domain-Driven Design - Ein vollständiges Beispiel 1/2</h1>
+
+  <h2 class="project-tagline">Software Architektur im Stream</h2>
+
+
+
+  <section id="links">
+    <a href="/index.html">Home</a>
+    &nbsp;
+    <a href="/tags.html">Tags</a>
+    &nbsp;
+    <a href="/chronologisch.html">Folgen</a>
+    &nbsp;
+    <!-- <a href="/guests.html">Gäste</a> -->
+    &nbsp;
+    <a href="/podcast.html">Podcast</a>
+    &nbsp;
+    <a href="/sketchnote-buch">Buch</a>
+    &nbsp;
+    <a href="/beruf.html">Architektur als Beruf</a>
+    &nbsp;
+    <a href="/plan.html">Planung</a>
+    &nbsp;
+    <a href="/feed.xml">Feed</a>
+  </section>
+</section>
+
+
+
+
+	  
+    <section class="main-content">
+<ul>
+
+	<li><a href="#peertube">PeerTube Video - no Big Tech!</a></li>
+
+
+	<li><a href="#youtube">YouTube Video</a></li>
+
+
+	<li><a href="#podcast">Audio als Podcast</a></li>
+
+
+
+</ul>	    
+
+	    
+    <p>Was bedeutet es eigentlich, Domain-driven Design (DDD) umzusetzen?
+Diese Episode beginnt die Reise durch ein vollständiges Beispiel und
+zeigt , wie die verschiedenen Techniken wie Event Storming und
+strategisches Design zusammen wirken, um den Aufbau von Anwendungen zu
+unterstützen. Das zeigt, wie man mit einem einfachen, aber
+vollständigen Ansatz mit DDD beginnen können.</p>
+
+<p>In dieser Episode geht es um die Elemente von Strategic Design wie
+Bounded Context. In einer zweiten Episode wird es um taktisches Design
+gehen.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://speakerdeck.com/ewolff/domain-driven-design-a-complete-example-ba6487a4-0244-4799-9b3d-ebd75d141850">Folien</a></li>
+  <li><a href="https://software-architektur.tv/2023/10/13/episode184.html">Bert Jan Schrijver about Generic or
+Specific?</a></li>
+  <li><a href="https://software-architektur.tv/2020/10/09/folge021.html">Domain Story Telling mit Henning Schwentner und Stefan
+Hofer</a></li>
+  <li><a href="https://software-architektur.tv/2022/03/11/folge112.html">Wir bauen eine Software-Architektur - Struktur der
+Lösung</a></li>
+  <li><a href="https://software-architektur.tv/2022/05/20/folge120.html">Technischer Kontext und fachliche Aufteilung - iSAQB Advanced
+Beispielaufgabe</a></li>
+  <li><a href="https://software-architektur.tv/2024/06/14/episode220.html">Bounded Context - Was ist das
+genau?</a></li>
+  <li><a href="https://software-architektur.tv/2024/04/18/folge213.html">Team
+Topologies</a></li>
+  <li><a href="https://software-architektur.tv/2024/09/16/episode230.html">Team Topologie in der Praxis mit Kim Nena
+Duggen</a></li>
+</ul>
+
+
+
+    2024-11-18 <a href="https://software-architektur.tv/thumbnails/episode240.png">Thumbnail</a>
+
+
+
+<h2 id="peertube">PeerTube Video - no Big Tech!</h2>
+
+<center>
+    <div class="embed-container">
+      <iframe title="Folge 240 - Domain-Driven Design - Ein vollständiges Beispiel 1/2"
+	width="560" height="315"
+	src="https://tube.tchncs.de/videos/embed/c7511c15-f264-4a39-8edc-7b082b549139"
+	frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+    </div>
+</center>
+
+    
+
+<h2 id="youtube">YouTube Video</h2>
+
+<center>
+  <div class="embed-container">
+    <iframe width="560" height="315"
+src="https://www.youtube-nocookie.com/embed/VlPfO7pah8U" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe>
+    </div>
+</center>
+
+
+
+
+
+<h2 id="podcast">Audio als Podcast</h2>
+
+<center>
+<iframe
+style="width:100%;min-width:275px;min-height:320px;max-width:475px;max-height:400px;border:0;overflow:hidden"
+src="https://www.podcaster.de/simpleplayer/?id=show~1evriw~software-architektur-im-stream~pod-7de1329602a07f8e4dcaa3130b&v=1731947570"></iframe>
+</center>
+
+<a href="https://1evriw.podcaster.de/download/Domain-Driven_Design_Ein_vollstaendiges_Beispiel_1.mp3">MP3 Download</a>
+
+<br />
+
+<a href="/podcast.html">Infos und Feeds zum Audio als Podcast</a>
+
+
+
+
+
+<footer class="site-footer">
+  <span class="site-footer-owner">
+    <a href="https://software-architektur.tv">software-architektur.tv</a> von <a href="http://ewolff.com">Eberhard Wolff</a>.<br />
+    Sketchnotes von Lisa Maria Schäfer
+  </span>
+  <nav>
+    <a href="/datenschutzhinweise.html">Datenschutzhinweise</a>
+    <a href="/impressum.html">Impressum</a>
+  </nav>
+  <span class="site-footer-credits" lang="en">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Folge 179 - Software-Architektur = Abhängigkeiten Managen? | Software Architektur im Stream </title>
+  <link type="application/atom+xml" rel="alternate" href="https://software-architektur.tv/feed.xml" title="software-architektur.tv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="stylesheet" href="/css/custom1.css">
+  <meta name="twitter:card" content="player" />
+  <meta property="og:url" content="https://software-architektur.tv/2023/09/01/folge179.html" />
+  <meta property="twitter:title" content="Folge 179 - Software-Architektur = Abhängigkeiten Managen?  | Software Architektur im Stream" />
+  <meta property="og:title" content="Folge 179 - Software-Architektur = Abhängigkeiten Managen?  | Software Architektur im Stream" />
+  <meta property="og:type" content="article" />
+  <meta property="twitter:player" content="https://www.youtube.com/embed/kmV0r5_oUh0" />
+  <meta property="twitter:player:width" content="560" />
+  <meta property="twitter:player:height" content="315" />
+
+  <meta property="twitter:image" content="https://software-architektur.tv/thumbnails/folge179.png" />
+  <meta property="twitter:image:alt" content="Titel der Folge" />
+  <meta property="og:image" content="https://software-architektur.tv/thumbnails/folge179.png" />  
+
+  <meta property="og:description" content="Was sind Abhängigkeiten überhaupt? Sind sie wirklich so zentral für Software-Architektur?" />
+  <meta property="twitter:description" content="Was sind Abhängigkeiten überhaupt? Sind sie wirklich so zentral für Software-Architektur?" />
+</head>
+
+
+
+  <body>
+    <script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://software-architektur.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', 'fc80a353-ef3c-45fc-b60f-f417d73ca50d');
+</script>
+
+<section class="page-header">
+  <h1 class="project-name">Folge 179 - Software-Architektur = Abhängigkeiten Managen?</h1>
+
+  <h2 class="project-tagline">Software Architektur im Stream</h2>
+
+
+
+  <section id="links">
+    <a href="/index.html">Home</a>
+    &nbsp;
+    <a href="/tags.html">Tags</a>
+    &nbsp;
+    <a href="/chronologisch.html">Folgen</a>
+    &nbsp;
+    <!-- <a href="/guests.html">Gäste</a> -->
+    &nbsp;
+    <a href="/podcast.html">Podcast</a>
+    &nbsp;
+    <a href="/sketchnote-buch">Buch</a>
+    &nbsp;
+    <a href="/beruf.html">Architektur als Beruf</a>
+    &nbsp;
+    <a href="/plan.html">Planung</a>
+    &nbsp;
+    <a href="/feed.xml">Feed</a>
+  </section>
+</section>
+
+
+
+
+	  
+    <section class="main-content">
+<ul>
+
+	<li><a href="#peertube">PeerTube Video - no Big Tech!</a></li>
+
+
+	<li><a href="#youtube">YouTube Video</a></li>
+
+
+	<li><a href="#podcast">Audio als Podcast</a></li>
+
+
+
+</ul>	    
+
+	    
+    <p>Wesentlicher Teil der Software-Architektur ist die Strukturierung
+großer Systeme in kleinere Module. Wichtig sind dabei vor allem die
+Abhängigkeiten der Module  untereinander, um bei Änderungen die
+Auswirkungen auf andere Module unter Kontrolle zu halten. Also scheint
+das Entwickeln einer Software-Architektur vor allem aus dem Managen
+von Abhängigkeiten zu bestehen. In dieser Episode diskutiert Eberhard,
+was Abhängigkeiten überhaupt sind, wie man mit ihnen umgeht und ob sie
+tatsächlich so zentral für Software-Architektur sind.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://mastodon.social/@ewolff/110790532706693513">Mastodon-Tröt als Auslöser der
+Diskussion</a></li>
+  <li><a href="https://mastodon.social/@nick_tune@hachyderm.io/110790570764538094">Nick Tunes
+Antwort</a></li>
+  <li><a href="https://mastodon.social/@blabaere/110790822086763974">blabaeres Hinweis auf das
+Paper</a></li>
+  <li><a href="https://mastodon.social/@stilkov@innoq.social/110793188069809780">Stefans Frage: Wenn A und B C nutzen - sind A und B
+gekoppelt?</a></li>
+  <li><a href="https://mastodon.social/@hjoest@mastodon.green/110793362947745223">Holger Joests Hinweis auf weitere Quellen</a></li>
+  <li><a href="https://www.pathsensitive.com/2022/09/bet-you-cant-solve-these-9-dependency.html">Jimmy Koppel: How an Ancient Philosophy Problem Explains Software
+Dependence</a></li>
+  <li><a href="https://www.jameskoppel.com/files/papers/demystifying_dependence.pdf">Jimmy Koppel, Daniel Jackson: Demystifying
+Dependence</a></li>
+  <li><a href="https://software-architektur.tv/2023/06/07/folge168.html">Episode Hands-on Behavioral Code Analysis with Adam
+Tornhill</a></li>
+  <li><a href="https://software-architektur.tv/2021/06/04/episode61.html">Chris Chedgey and Mike Swainston-Rainford - Architecture Management
+with Structure
+101</a></li>
+</ul>
+
+
+
+    2023-09-01 <a href="https://software-architektur.tv/thumbnails/folge179.png">Thumbnail</a>
+
+
+
+<h2 id="peertube">PeerTube Video - no Big Tech!</h2>
+
+<center>
+    <div class="embed-container">
+      <iframe title="Folge 179 - Software-Architektur = Abhängigkeiten Managen?"
+	width="560" height="315"
+	src="https://tube.tchncs.de/videos/embed/fcc9d18b-1695-479f-aaa2-ec94df22c005"
+	frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+    </div>
+</center>
+
+    
+
+<h2 id="youtube">YouTube Video</h2>
+
+<center>
+  <div class="embed-container">
+    <iframe width="560" height="315"
+src="https://www.youtube-nocookie.com/embed/kmV0r5_oUh0" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe>
+    </div>
+</center>
+
+
+
+
+
+<h2 id="podcast">Audio als Podcast</h2>
+
+<center>
+<iframe
+style="width:100%;min-width:275px;min-height:320px;max-width:475px;max-height:400px;border:0;overflow:hidden"
+src="https://www.podcaster.de/simpleplayer/?id=show~1evriw~software-architektur-im-stream~pod-f4e1de8c756baa1e0a635f1471&v=1693584630"></iframe>
+</center>
+
+<a href="https://1evriw.podcaster.de/software-architektur-im-stream/media/Software-Architektur_-_Abhaengigkeiten_Managen.mp3">MP3 Download</a>
+
+<br />
+
+<a href="/podcast.html">Infos und Feeds zum Audio als Podcast</a>
+
+
+
+
+
+<footer class="site-footer">
+  <span class="site-footer-owner">
+    <a href="https://software-architektur.tv">software-architektur.tv</a> von <a href="http://ewolff.com">Eberhard Wolff</a>.<br />
+    Sketchnotes von Lisa Maria Schäfer
+  </span>
+  <nav>
+    <a href="/datenschutzhinweise.html">Datenschutzhinweise</a>
+    <a href="/impressum.html">Impressum</a>
+  </nav>
+  <span class="site-footer-credits" lang="en">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

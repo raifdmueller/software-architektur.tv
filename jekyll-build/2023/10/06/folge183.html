@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Folge 183 - Technische Schulden - Software langfristig weiterentwickeln | Software Architektur im Stream </title>
+  <link type="application/atom+xml" rel="alternate" href="https://software-architektur.tv/feed.xml" title="software-architektur.tv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="stylesheet" href="/css/custom1.css">
+  <meta name="twitter:card" content="player" />
+  <meta property="og:url" content="https://software-architektur.tv/2023/10/06/folge183.html" />
+  <meta property="twitter:title" content="Folge 183 - Technische Schulden - Software langfristig weiterentwickeln  | Software Architektur im Stream" />
+  <meta property="og:title" content="Folge 183 - Technische Schulden - Software langfristig weiterentwickeln  | Software Architektur im Stream" />
+  <meta property="og:type" content="article" />
+  <meta property="twitter:player" content="https://www.youtube.com/embed/W-sFLMr01uI" />
+  <meta property="twitter:player:width" content="560" />
+  <meta property="twitter:player:height" content="315" />
+
+  <meta property="twitter:image" content="https://software-architektur.tv/thumbnails/folge183.jpg" />
+  <meta property="twitter:image:alt" content="Titel der Folge" />
+  <meta property="og:image" content="https://software-architektur.tv/thumbnails/folge183.jpg" />  
+
+  <meta property="og:description" content="Vortrag über technische Schulden" />
+  <meta property="twitter:description" content="Vortrag über technische Schulden" />
+</head>
+
+
+
+  <body>
+    <script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://software-architektur.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', 'fc80a353-ef3c-45fc-b60f-f417d73ca50d');
+</script>
+
+<section class="page-header">
+  <h1 class="project-name">Folge 183 - Technische Schulden - Software langfristig weiterentwickeln</h1>
+
+  <h2 class="project-tagline">Software Architektur im Stream</h2>
+
+
+
+  <section id="links">
+    <a href="/index.html">Home</a>
+    &nbsp;
+    <a href="/tags.html">Tags</a>
+    &nbsp;
+    <a href="/chronologisch.html">Folgen</a>
+    &nbsp;
+    <!-- <a href="/guests.html">Gäste</a> -->
+    &nbsp;
+    <a href="/podcast.html">Podcast</a>
+    &nbsp;
+    <a href="/sketchnote-buch">Buch</a>
+    &nbsp;
+    <a href="/beruf.html">Architektur als Beruf</a>
+    &nbsp;
+    <a href="/plan.html">Planung</a>
+    &nbsp;
+    <a href="/feed.xml">Feed</a>
+  </section>
+</section>
+
+
+
+
+	  
+    <section class="main-content">
+<ul>
+
+	<li><a href="#peertube">PeerTube Video - no Big Tech!</a></li>
+
+
+	<li><a href="#youtube">YouTube Video</a></li>
+
+
+	<li><a href="#podcast">Audio als Podcast</a></li>
+
+
+
+</ul>	    
+
+	    
+    <p>Oft wird Software immer schlechter wartbar, je länger
+Entwicklungsteams an ihr arbeiten. Dazu hat sich die Metapher
+“technische Schulden” etabliert. Aber es ist nicht immer sinnvoll,
+technische Schulden zu beseitigen und sie können auch “einfach so”
+entstehen. Darum geht es in diesem Vortrag - und über die Grundlagen
+der Metapher, wie sie bei der Kommunikation mit Managern hilf, warum
+die Metapher eigentlich nicht besonders gut gewählt ist und natürlich
+wie man mit technischen Schulden sinnvoll umgehen kann.</p>
+
+<p>Diese Episode ist ein Video eines Vortrags.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://swaglab.rocks/60-min-consulting/">60-Minuten-Consulting</a></li>
+  <li><a href="https://speakerdeck.com/ewolff/technical-debt-maintaining-software-long-term">Folien</a></li>
+  <li><a href="https://wiki.c2.com/?WardExplainsDebtMetapWhat">Ward Cunningham im C2-Wiki zu Technical
+Debt</a></li>
+  <li><a href="https://www.youtube.com/watch?v=pqeJFYwnkjE">Video: Ward Cunningham spricht über Technical
+Debt</a></li>
+  <li><a href="https://www.infoq.com/articles/no-more-technical-debt">Article about Quality Investments (with Felix
+Müller)</a></li>
+  <li><a href="https://www.se-radio.net/2015/04/episode-224-sven-johann-and-eberhard-wolff-on-technical-debt/">Podcast Technical Debt with Sven Johann</a></li>
+  <li><a href="https://www.infoq.com/articles/managing-technical-debt/">Managing Technical Debt with Sven
+Johann</a></li>
+  <li><a href="https://www.heise.de/developer/artikel/Episode-73-Technische-Schulden-4771190.html">heise Podcast zu Technical Debt</a></li>
+  <li><a href="https://www.heise.de/developer/artikel/Technische-Schulden-entstehen-einfach-so-3969279.html">Blog „Technische Schulden entstehen einfach
+so“</a></li>
+  <li><a href="https://www.sigs-datacom.de/fachzeitschriften/objektspektrum/archiv/artikelansicht/artikel-titel/qualitaetsinvestitionen-statt-technischer-schuldenwarum-wir-eine-neue-metapher-benoetigen.html">Artikel über Qualitätsinvestitonen mit Felix Müller – DE</a></li>
+  <li><a href="https://jaxenter.de/der-umgang-mit-technischen-schulden-2548">Artikel Umgang mit technischen
+Schulden</a></li>
+  <li><a href="https://software-architektur.tv/2021/02/05/folge37.html">Episode zu technischen Schulden bei Software Architektur im Stream</a></li>
+  <li><a href="https://software-architektur.tv/2021/01/15/folge35.html">Episode André Neubauer - CTO = Chief Technical Debt Owner?</a></li>
+  <li><a href="https://software-architektur.tv/2021/07/16/folge67.html">Episode zu Qualitätsszenarien</a></li>
+  <li><a href="https://software-architektur.tv/2020/12/18/folge033.html">Episode zu Patterns zu u.a. Refactoring mit Michael
+Hunger</a></li>
+</ul>
+
+
+
+
+    2023-10-06 <a href="https://software-architektur.tv/thumbnails/folge183.jpg">Thumbnail</a>
+
+
+
+<h2 id="peertube">PeerTube Video - no Big Tech!</h2>
+
+<center>
+    <div class="embed-container">
+      <iframe title="Folge 183 - Technische Schulden - Software langfristig weiterentwickeln"
+	width="560" height="315"
+	src="https://tube.tchncs.de/videos/embed/c770e766-1598-4972-90ab-076840d52313"
+	frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+    </div>
+</center>
+
+    
+
+<h2 id="youtube">YouTube Video</h2>
+
+<center>
+  <div class="embed-container">
+    <iframe width="560" height="315"
+src="https://www.youtube-nocookie.com/embed/W-sFLMr01uI" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe>
+    </div>
+</center>
+
+
+
+
+
+<h2 id="podcast">Audio als Podcast</h2>
+
+<center>
+<iframe
+style="width:100%;min-width:275px;min-height:320px;max-width:475px;max-height:400px;border:0;overflow:hidden"
+src="https://www.podcaster.de/simpleplayer/?id=show~1evriw~software-architektur-im-stream~pod-de08c01c691b565747e635f844&v=1696440771"></iframe>
+</center>
+
+<a href="https://1evriw.podcaster.de/download/TechnicalDebt.mp3">MP3 Download</a>
+
+<br />
+
+<a href="/podcast.html">Infos und Feeds zum Audio als Podcast</a>
+
+
+
+
+
+<footer class="site-footer">
+  <span class="site-footer-owner">
+    <a href="https://software-architektur.tv">software-architektur.tv</a> von <a href="http://ewolff.com">Eberhard Wolff</a>.<br />
+    Sketchnotes von Lisa Maria Schäfer
+  </span>
+  <nav>
+    <a href="/datenschutzhinweise.html">Datenschutzhinweise</a>
+    <a href="/impressum.html">Impressum</a>
+  </nav>
+  <span class="site-footer-credits" lang="en">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

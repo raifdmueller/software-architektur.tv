@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Implementierungsplan: Guest-List Feature | Software Architektur im Stream </title>
+  <link type="application/atom+xml" rel="alternate" href="https://software-architektur.tv/feed.xml" title="software-architektur.tv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="stylesheet" href="/css/custom1.css">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://software-architektur.tv/Guest-List/plan.html" />
+  <meta property="twitter:title" content="Implementierungsplan: Guest-List Feature | Software
+  Architektur im Stream" />
+  <meta property="og:title" content="Implementierungsplan: Guest-List Feature | Software Architektur im Stream" />
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:image" content="https://software-architektur.tv/twitter-image.jpg" />
+  <meta property="twitter:image" content="https://software-architektur.tv/twitter-image.jpg" />
+  <meta property="twitter:image:alt" content="Eberhard Wolff vor einem Software Architektur im Stream-Hintergrund" />
+  
+  <meta property="og:description" content="" />
+  <meta property="twitter:description" content="" />
+</head>
+
+
+  <body>
+    <script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://software-architektur.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', 'fc80a353-ef3c-45fc-b60f-f417d73ca50d');
+</script>
+
+<section class="page-header">
+  <h1 class="project-name">Implementierungsplan: Guest-List Feature</h1>
+
+  <h2 class="project-tagline">Software Architektur im Stream</h2>
+
+
+
+  <section id="links">
+    <a href="/index.html">Home</a>
+    &nbsp;
+    <a href="/tags.html">Tags</a>
+    &nbsp;
+    <a href="/chronologisch.html">Folgen</a>
+    &nbsp;
+    <!-- <a href="/guests.html">Gäste</a> -->
+    &nbsp;
+    <a href="/podcast.html">Podcast</a>
+    &nbsp;
+    <a href="/sketchnote-buch">Buch</a>
+    &nbsp;
+    <a href="/beruf.html">Architektur als Beruf</a>
+    &nbsp;
+    <a href="/plan.html">Planung</a>
+    &nbsp;
+    <a href="/feed.xml">Feed</a>
+  </section>
+</section>
+
+
+    <section class="main-content">
+      
+      <h1 id="implementierungsplan-guest-list-feature">Implementierungsplan: Guest-List Feature</h1>
+
+<h2 id="überblick">Überblick</h2>
+<p>Implementierung einer statischen Guest-List Seite für software-architektur.tv, die alle Stream-Gäste mit Profilen, LinkedIn-Links und Stream-Verlinkungen anzeigt.</p>
+
+<h2 id="phase-1-datenstruktur-erstellen">Phase 1: Datenstruktur erstellen</h2>
+
+<h3 id="11-yaml-datenfile-erstellen-_dataguestsyml">1.1 YAML-Datenfile erstellen (<code class="language-plaintext highlighter-rouge">_data/guests.yml</code>)</h3>
+<ul>
+  <li><strong>Ziel</strong>: Zentrale Datenhaltung für alle Gast-Informationen</li>
+  <li><strong>Struktur</strong>:
+```yaml
+guests:
+    <ul>
+      <li>name: “Max Mustermann”
+linkedin: “https://www.linkedin.com/in/maxmustermann”
+image: “/images/guests/max-mustermann.jpg”<br />
+tags: [“Microservices”, “Kubernetes”, “DevOps”]
+episodes:
+        <ul>
+          <li>title: “Folge 042: Microservices in der Praxis”
+url: “/2023/01/15/folge042.html”
+date: “2023-01-15”
+```</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Aufwand</strong>: 2 Stunden</li>
+  <li><strong>Abhängigkeiten</strong>: Keine</li>
+</ul>
+
+<h3 id="12-bildverzeichnis-vorbereiten">1.2 Bildverzeichnis vorbereiten</h3>
+<ul>
+  <li><strong>Ziel</strong>: Struktur für Gast-Profilbilder schaffen</li>
+  <li><strong>Aufgaben</strong>:
+    <ul>
+      <li>Verzeichnis <code class="language-plaintext highlighter-rouge">images/guests/</code> erstellen</li>
+      <li>Platzhalter-Bild für Tests (<code class="language-plaintext highlighter-rouge">placeholder.jpg</code>)</li>
+      <li>Bildrichtlinien definieren (Format, Größe)</li>
+    </ul>
+  </li>
+  <li><strong>Aufwand</strong>: 1 Stunde</li>
+  <li><strong>Abhängigkeiten</strong>: Keine</li>
+</ul>
+
+<h2 id="phase-2-jekyll-layout--template">Phase 2: Jekyll Layout &amp; Template</h2>
+
+<h3 id="21-guest-list-layout-erstellen-_layoutsguest-listhtml">2.1 Guest-List Layout erstellen (<code class="language-plaintext highlighter-rouge">_layouts/guest-list.html</code>)</h3>
+<ul>
+  <li><strong>Ziel</strong>: Wiederverwendbares Template für Guest-List Seiten</li>
+  <li><strong>Features</strong>:
+    <ul>
+      <li>Extends <code class="language-plaintext highlighter-rouge">default.html</code> Layout</li>
+      <li>CSS Grid für responsive Gast-Cards</li>
+      <li>Filter/Sort Controls</li>
+      <li>Liquid Template Logic für YAML-Daten</li>
+    </ul>
+  </li>
+  <li><strong>Aufwand</strong>: 3 Stunden</li>
+  <li><strong>Abhängigkeiten</strong>: Phase 1.1 abgeschlossen</li>
+</ul>
+
+<h3 id="22-guest-list-seite-erstellen-guestsmd">2.2 Guest-List Seite erstellen (<code class="language-plaintext highlighter-rouge">guests.md</code>)</h3>
+<ul>
+  <li><strong>Ziel</strong>: Hauptseite für Guest-List mit korrektem Front Matter</li>
+  <li><strong>Inhalte</strong>:
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Gäste von Software-Architektur im Stream</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">guest-list</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Alle Gäste des Software-Architektur Streams mit Profilen und Stream-Links</span>
+<span class="nn">---</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Aufwand</strong>: 1 Stunde</li>
+  <li><strong>Abhängigkeiten</strong>: Phase 2.1 abgeschlossen</li>
+</ul>
+
+<h2 id="phase-3-styling--javascript">Phase 3: Styling &amp; JavaScript</h2>
+
+<h3 id="31-css-styling-erweitere-csscustom1css">3.1 CSS Styling (erweitere <code class="language-plaintext highlighter-rouge">css/custom1.css</code>)</h3>
+<ul>
+  <li><strong>Ziel</strong>: Ansprechendes, responsive Design für Guest-List</li>
+  <li><strong>Features</strong>:
+    <ul>
+      <li>Guest-Card Design (Bild, Name, Tags, Links)</li>
+      <li>Filter/Sort Control Styling</li>
+      <li>Mobile-first responsive Design</li>
+      <li>Tag-Pills Styling</li>
+      <li>Konsistent mit bestehender Cayman-Theme</li>
+    </ul>
+  </li>
+  <li><strong>CSS Klassen</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">.guest-grid</code>, <code class="language-plaintext highlighter-rouge">.guest-card</code>, <code class="language-plaintext highlighter-rouge">.guest-avatar</code></li>
+      <li><code class="language-plaintext highlighter-rouge">.guest-tags</code>, <code class="language-plaintext highlighter-rouge">.tag-pill</code></li>
+      <li><code class="language-plaintext highlighter-rouge">.filter-controls</code>, <code class="language-plaintext highlighter-rouge">.sort-controls</code></li>
+    </ul>
+  </li>
+  <li><strong>Aufwand</strong>: 4 Stunden</li>
+  <li><strong>Abhängigkeiten</strong>: Phase 2 abgeschlossen</li>
+</ul>
+
+<h3 id="32-javascript-funktionalität-jsguest-listjs">3.2 JavaScript Funktionalität (<code class="language-plaintext highlighter-rouge">js/guest-list.js</code>)</h3>
+<ul>
+  <li><strong>Ziel</strong>: Interaktive Filter- und Sortier-Funktionen</li>
+  <li><strong>Features</strong>:
+    <ul>
+      <li>Textsuche nach Namen</li>
+      <li>Tag-basierte Filterung</li>
+      <li>Sortierung (alphabetisch, nach Anzahl Auftritte)</li>
+      <li>Lazy Loading für Bilder</li>
+      <li>URL-Parameter für geteilte Filter-States</li>
+    </ul>
+  </li>
+  <li><strong>Aufwand</strong>: 4 Stunden</li>
+  <li><strong>Abhängigkeiten</strong>: Phase 3.1 abgeschlossen</li>
+</ul>
+
+<h2 id="phase-4-navigation-integration">Phase 4: Navigation Integration</h2>
+
+<h3 id="41-header-navigation-erweitern">4.1 Header Navigation erweitern</h3>
+<ul>
+  <li><strong>Ziel</strong>: Guest-List in Hauptnavigation integrieren</li>
+  <li><strong>Datei</strong>: <code class="language-plaintext highlighter-rouge">_includes/page-header.html</code></li>
+  <li><strong>Position</strong>: Zwischen “Folgen” und “Podcast”</li>
+  <li><strong>Code</strong>:
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/guests.html"</span><span class="nt">&gt;</span>Gäste<span class="nt">&lt;/a&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Aufwand</strong>: 1 Stunde</li>
+  <li><strong>Abhängigkeiten</strong>: Phase 2.2 abgeschlossen</li>
+</ul>
+
+<h2 id="phase-5-testing--optimierung">Phase 5: Testing &amp; Optimierung</h2>
+
+<h3 id="51-performance-optimierung">5.1 Performance Optimierung</h3>
+<ul>
+  <li><strong>Ziel</strong>: Schnelle Ladezeiten und optimale User Experience</li>
+  <li><strong>Aufgaben</strong>:
+    <ul>
+      <li>Bildkomprimierung (WebP-Format, optimale Größen)</li>
+      <li>CSS/JS Minifizierung</li>
+      <li>Lazy Loading Implementation</li>
+      <li>Core Web Vitals Testing</li>
+    </ul>
+  </li>
+  <li><strong>Aufwand</strong>: 2 Stunden</li>
+  <li><strong>Abhängigkeiten</strong>: Phase 3 abgeschlossen</li>
+</ul>
+
+<h3 id="52-cross-browser--responsive-testing">5.2 Cross-Browser &amp; Responsive Testing</h3>
+<ul>
+  <li><strong>Ziel</strong>: Kompatibilität auf allen Geräten sicherstellen</li>
+  <li><strong>Test-Matrix</strong>:
+    <ul>
+      <li>Desktop: Chrome, Firefox, Safari, Edge</li>
+      <li>Mobile: iOS Safari, Chrome Mobile, Samsung Internet</li>
+      <li>Tablets: iPad Safari, Android Chrome</li>
+    </ul>
+  </li>
+  <li><strong>Accessibility Testing</strong>: Screen Reader, Keyboard Navigation</li>
+  <li><strong>Aufwand</strong>: 2 Stunden</li>
+  <li><strong>Abhängigkeiten</strong>: Phase 5.1 abgeschlossen</li>
+</ul>
+
+<h2 id="phase-6-dokumentation--content">Phase 6: Dokumentation &amp; Content</h2>
+
+<h3 id="61-dokumentation-erstellen">6.1 Dokumentation erstellen</h3>
+<ul>
+  <li><strong>Ziel</strong>: Wartbarkeit und einfache Datenpflege sicherstellen</li>
+  <li><strong>Dokumente</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Guest-List/README.md</code>: Anleitung für Admins</li>
+      <li><code class="language-plaintext highlighter-rouge">Guest-List/CONTRIBUTING.md</code>: Beitrag-Guidelines</li>
+      <li>Bildrichtlinien und Templates</li>
+    </ul>
+  </li>
+  <li><strong>Aufwand</strong>: 2 Stunden</li>
+  <li><strong>Abhängigkeiten</strong>: Implementierung abgeschlossen</li>
+</ul>
+
+<h3 id="62-initial-content-migration">6.2 Initial Content Migration</h3>
+<ul>
+  <li><strong>Ziel</strong>: Erste echte Gast-Daten einpflegen</li>
+  <li><strong>Aufgaben</strong>:
+    <ul>
+      <li>10-20 prominente Gäste aus Posts extrahieren</li>
+      <li>LinkedIn-Profile recherchieren und verlinken</li>
+      <li>Profilbilder sammeln und optimieren</li>
+      <li>Tags aus bestehenden Posts zuordnen</li>
+    </ul>
+  </li>
+  <li><strong>Aufwand</strong>: 3 Stunden</li>
+  <li><strong>Abhängigkeiten</strong>: Phase 6.1 abgeschlossen</li>
+</ul>
+
+<h2 id="technische-spezifikationen">Technische Spezifikationen</h2>
+
+<h3 id="dateistruktur">Dateistruktur</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── _data/
+│   └── guests.yml              # Zentrale Gast-Datenbank
+├── _layouts/
+│   └── guest-list.html         # Template für Guest-List Seiten
+├── _includes/
+│   └── page-header.html        # Navigation (erweitert)
+├── images/
+│   └── guests/                 # Gast-Profilbilder
+│       ├── placeholder.jpg
+│       └── [guest-images]
+├── css/
+│   └── custom1.css            # Erweiterte Styles
+├── js/
+│   └── guest-list.js          # Interactive Funktionalität
+├── Guest-List/
+│   ├── requirements.md        # EARS Requirements
+│   ├── plan.md               # Dieser Plan
+│   └── README.md             # Wartungsanleitung
+└── guests.md                 # Hauptseite
+</code></pre></div></div>
+
+<h3 id="yaml-schema-definition">YAML Schema Definition</h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _data/guests.yml Schema</span>
+<span class="na">guests</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">string (required)</span>           <span class="c1"># Display name</span>
+    <span class="na">linkedin</span><span class="pi">:</span> <span class="s">string (required)</span>       <span class="c1"># LinkedIn URL</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">string (required)</span>          <span class="c1"># Relative path to image</span>
+    <span class="na">tags</span><span class="pi">:</span> <span class="s">array[string] (required)</span>    <span class="c1"># Topic tags from episodes  </span>
+    <span class="na">bio</span><span class="pi">:</span> <span class="s">string (optional)</span>            <span class="c1"># Short bio text</span>
+    <span class="na">episodes</span><span class="pi">:</span> <span class="s">array (required)</span>        <span class="c1"># Episodes participated in</span>
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">string</span>                 <span class="c1"># Episode title</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">string</span>                   <span class="c1"># Relative URL to episode</span>
+        <span class="na">date</span><span class="pi">:</span> <span class="s">string (YYYY-MM-DD)</span>     <span class="c1"># Episode date</span>
+        <span class="na">role</span><span class="pi">:</span> <span class="s">string (optional)</span>       <span class="c1"># guest|co-host|moderator</span>
+</code></pre></div></div>
+
+<h3 id="performance-ziele">Performance Ziele</h3>
+<ul>
+  <li><strong>First Contentful Paint</strong>: &lt; 1.5s</li>
+  <li><strong>Largest Contentful Paint</strong>: &lt; 2.5s</li>
+  <li><strong>Cumulative Layout Shift</strong>: &lt; 0.1</li>
+  <li><strong>Time to Interactive</strong>: &lt; 3.0s</li>
+  <li><strong>Lighthouse Score</strong>: &gt; 90 (Performance, Accessibility, SEO)</li>
+</ul>
+
+<h3 id="browser-support-matrix">Browser Support Matrix</h3>
+<ul>
+  <li><strong>Desktop</strong>: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+</li>
+  <li><strong>Mobile</strong>: iOS Safari 14+, Chrome Mobile 90+, Samsung Internet 14+</li>
+  <li><strong>Accessibility</strong>: WCAG 2.1 AA compliant</li>
+</ul>
+
+<h2 id="risiken--mitigationen">Risiken &amp; Mitigationen</h2>
+
+<h3 id="technische-risiken">Technische Risiken</h3>
+<ol>
+  <li><strong>Performance bei vielen Gästen</strong>
+    <ul>
+      <li><em>Mitigation</em>: Pagination oder Virtualization ab 100+ Gästen</li>
+    </ul>
+  </li>
+  <li><strong>Bildladezeiten</strong>
+    <ul>
+      <li><em>Mitigation</em>: Lazy Loading, WebP-Format, CDN</li>
+    </ul>
+  </li>
+  <li><strong>Jekyll Build-Zeit</strong>
+    <ul>
+      <li><em>Mitigation</em>: Liquid Template Optimierung, Conditional Includes</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="content-risiken">Content Risiken</h3>
+<ol>
+  <li><strong>Fehlende LinkedIn-Profile</strong>
+    <ul>
+      <li><em>Mitigation</em>: Fallback auf andere Profile (Twitter, Website)</li>
+    </ul>
+  </li>
+  <li><strong>Copyright bei Profilbildern</strong>
+    <ul>
+      <li><em>Mitigation</em>: Nur autorisierte Bilder, Fallback-Avatare</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="erfolgskriterien">Erfolgskriterien</h2>
+
+<h3 id="funktional">Funktional</h3>
+<ul>
+  <li>✅ Alle Gäste werden korrekt angezeigt</li>
+  <li>✅ Filter/Sort Funktionen arbeiten fehlerfrei</li>
+  <li>✅ Navigation ist intuitiv und konsistent</li>
+  <li>✅ Mobile Experience ist optimal</li>
+</ul>
+
+<h3 id="performance">Performance</h3>
+<ul>
+  <li>✅ Ladezeit &lt; 3 Sekunden auf 3G</li>
+  <li>✅ Lighthouse Score &gt; 90</li>
+  <li>✅ Keine Layout Shifts während Laden</li>
+</ul>
+
+<h3 id="wartbarkeit">Wartbarkeit</h3>
+<ul>
+  <li>✅ Neue Gäste können in &lt; 5 Minuten hinzugefügt werden</li>
+  <li>✅ Dokumentation ist vollständig und verständlich</li>
+  <li>✅ Code ist kommentiert und strukturiert</li>
+</ul>
+
+<h2 id="zeitschätzung">Zeitschätzung</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phase</th>
+      <th>Aufwand</th>
+      <th>Abhängigkeiten</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1. Datenstruktur</td>
+      <td>3h</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>2. Templates</td>
+      <td>4h</td>
+      <td>Phase 1</td>
+    </tr>
+    <tr>
+      <td>3. Styling/JS</td>
+      <td>8h</td>
+      <td>Phase 2</td>
+    </tr>
+    <tr>
+      <td>4. Navigation</td>
+      <td>1h</td>
+      <td>Phase 2</td>
+    </tr>
+    <tr>
+      <td>5. Testing</td>
+      <td>4h</td>
+      <td>Phase 3</td>
+    </tr>
+    <tr>
+      <td>6. Dokumentation</td>
+      <td>5h</td>
+      <td>Phase 5</td>
+    </tr>
+    <tr>
+      <td><strong>Gesamt</strong></td>
+      <td><strong>25h</strong></td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ol>
+  <li>✅ Plan erstellen und genehmigen lassen</li>
+  <li>🔄 Phase 1: YAML-Struktur implementieren</li>
+  <li>⏳ Phase 2: Templates entwickeln</li>
+  <li>⏳ Phase 3: Styling und Interaktivität</li>
+  <li>⏳ Phase 4-6: Integration, Testing, Content</li>
+</ol>
+
+<p><em>Letzte Aktualisierung: 2025-08-04</em></p>
+
+
+      <footer class="site-footer">
+  <span class="site-footer-owner">
+    <a href="https://software-architektur.tv">software-architektur.tv</a> von <a href="http://ewolff.com">Eberhard Wolff</a>.<br />
+    Sketchnotes von Lisa Maria Schäfer
+  </span>
+  <nav>
+    <a href="/datenschutzhinweise.html">Datenschutzhinweise</a>
+    <a href="/impressum.html">Impressum</a>
+  </nav>
+  <span class="site-footer-credits" lang="en">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

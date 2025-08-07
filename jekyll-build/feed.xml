@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://software-architektur.tv/feed.xml" rel="self" type="application/atom+xml" /><link href="https://software-architektur.tv/" rel="alternate" type="text/html" /><updated>2025-08-06T11:52:50+00:00</updated><id>https://software-architektur.tv/feed.xml</id><title type="html">software-architektur.tv</title><subtitle>software-architektur.tv Website</subtitle><author><name>Eberhard Wolff</name></author><entry><title type="html">Folge 273 - Model Context Protocol (MCP): Schnittstellen für LLMs schaffen mit Martin Lippert</title><link href="https://software-architektur.tv/2025/08/01/folge273.html" rel="alternate" type="text/html" title="Folge 273 - Model Context Protocol (MCP): Schnittstellen für LLMs schaffen mit Martin Lippert" /><published>2025-08-01T00:00:00+00:00</published><updated>2025-08-01T00:00:00+00:00</updated><id>https://software-architektur.tv/2025/08/01/folge273</id><content type="html" xml:base="https://software-architektur.tv/2025/08/01/folge273.html"><![CDATA[<p>Das Model Context Protocol (MCP) wird nicht ohne Grund als das USB-C
+für Large Language Models (LLMs) bezeichnet: Es schafft einen
+Standard, wie LLMs auf Kontextinformationen zugreifen und externe
+Werkzeuge steuern können. Das hat große Auswirkungen auf die
+Entwicklung von KI-Anwendungen. In diesem Stream schauen wir uns an,
+warum MCP gerade in aller Munde ist, wie es funktioniert, und was es
+für Entwickler:innen konkret bedeutet. Mit dabei eine Live-Demo mit
+Spring AI. Martin Lippert leitet die Entwicklung der Spring-Tools und
+kann auf langjährige Erfahrung als Entwickler und Speaker
+zurückblicken.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://modelcontextprotocol.io/">MCP Model Context Protocol</a></li>
+  <li><a href="https://github.com/modelcontextprotocol/servers">Verzeichnis von
+Servern</a></li>
+  <li><a href="https://github.com/modelcontextprotocol/java-sdk">MCP Java SDK</a></li>
+  <li><a href="https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html">Spring AI
+ MCP</a></li>
+  <li><a href="https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol">Spring AI
+Beispiel</a></li>
+  <li><a href="https://github.com/habuma/spring-ai-examples">Craig Walls Spring AI Beispiele</a></li>
+  <li><a href="https://docs.openwebui.com/openapi-servers/mcp/">Open WebUI MCP-Unterstützung</a></li>
+  <li><a href="https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization#authorization-server-discovery">MCP-Spezifikation zu Autorisierung</a></li>
+  <li><a href="https://aaronparecki.com/2025/04/03/15/oauth-for-model-context-protocol">Blog zu OAuth und MCP</a></li>
+  <li><a href="https://gandalf.lakera.ai/">Gandalf: Spiel zu Prompt-Injection</a></li>
+</ul>]]></content><author><name>Eberhard Wolff</name></author><category term="Künstliche Intelligenz" /><category term="MCP" /><summary type="html"><![CDATA[MCP ist ein Schnittstellenstandard, der viele neue Einsatzmöglichkeiten für LLMs bietet.]]></summary></entry><entry><title type="html">Folge 272 - Shorts aus fünf Jahren Stream mit Eberhard, Lisa und Ralf</title><link href="https://software-architektur.tv/2025/07/25/episode272.html" rel="alternate" type="text/html" title="Folge 272 - Shorts aus fünf Jahren Stream mit Eberhard, Lisa und Ralf" /><published>2025-07-25T00:00:00+00:00</published><updated>2025-07-25T00:00:00+00:00</updated><id>https://software-architektur.tv/2025/07/25/episode272</id><content type="html" xml:base="https://software-architektur.tv/2025/07/25/episode272.html"><![CDATA[<p>Wir feiern fünf Jahre „Software Architektur im Stream“!</p>
+
+<p>Dazu schauen wir uns ausgewählte Shorts aus vergangenen Folgen an und
+kommentieren sie gemeinsam. Mit dabei: ganz unterschiedliche Themen
+rund um Software-Architektur – von Domain-driven Design über
+historische Einblicke bis zu Monolithen und Microservices.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="/2020/10/29/folge023.html">Lisa Schäfer zu Sketchnotes in der IT</a></li>
+  <li><a href="https://www.sketchnotes.tech/blog/2020-11-13_how_to_schlechte_idee/">Sketchnote Symbol How To: Schlechte Idee</a></li>
+  <li><a href="/2020/11/13/folge025.html">Microservices, Transaktionen &amp;
+Konsistenz</a> - Quelle für die “schlechte
+Idee”</li>
+  <li><a href="/2024/12/10/episode244.html">IT im Jahr 2034 – Wo wollen wir hin?</a></li>
+  <li><a href="/2021/07/09/folge66.html">Prof. Christiane Floyd zu “menschenzentrierter
+Software-Entwicklung”</a></li>
+  <li><a href="/2021/04/30/folge57.html">Carola Lilienthal zu langlebigen
+Software-Architekturen</a></li>
+  <li><a href="/2023/09/15/folge180.html">Engineering Excellence mit Michael Vitz</a></li>
+  <li><a href="/2022/09/30/folge136.html">Encouraging Engineering Excellence with Johannes Mainusch and
+Robert Albrecht</a></li>
+  <li><a href="/2022/11/04/folge141.html">Auftragstaktik - Agilität beim Militär? mit Sönke
+Marahrens</a></li>
+  <li><a href="/2023/08/11/folge178.html">Crew Ressource Management - Wie geht die Luftfahrt mit dem Faktor
+Mensch um?</a></li>
+  <li><a href="/2023/04/27/folge162.html">Die IT-Welt vor 10 Jahren mit Stefan Tilkov und Eberhard Wolff -
+live von der RheinJUG</a></li>
+  <li><a href="/2022/06/23/folge124.html">Microservices - Schlag den Eberhard &amp; Stefan! Mit Stefan
+Toth</a></li>
+  <li><a href="/2024/01/31/folge200.html">Die Kontroverse - Schlag den Stefan und Eberhard von der
+OOP</a></li>
+  <li><a href="/2020/11/27/folge027.html">Architektur-Optionen für moderne Web Frontends mit Franziska
+Dessart, Joy Heron und Lucas Dohmen</a></li>
+</ul>]]></content><author><name>Eberhard Wolff</name></author><category term="Historisch" /><summary type="html"><![CDATA[Wir sprechen über einige Episoden aus den ersten fünf Jahren.]]></summary></entry><entry><title type="html">Episode 271 - The Architecture of the Death Star - 20 Years of arc42 and What We Can Learn</title><link href="https://software-architektur.tv/2025/07/11/episode271.html" rel="alternate" type="text/html" title="Episode 271 - The Architecture of the Death Star - 20 Years of arc42 and What We Can Learn" /><published>2025-07-11T00:00:00+00:00</published><updated>2025-07-11T00:00:00+00:00</updated><id>https://software-architektur.tv/2025/07/11/episode271</id><content type="html" xml:base="https://software-architektur.tv/2025/07/11/episode271.html"><![CDATA[<p>“Fear will keep the local systems in line… fear of this battle
+station!” - Grand Moff Tarkin</p>
+
+<p>In this session, we’ll examine the most iconic space fortress in film
+history through Juan’s complete arc42 documentation. This creative
+Star Wars project becomes an educational journey through the arc42
+template - exploring how fictional architectures can teach us real
+lessons about software documentation.</p>
+
+<p>What to expect:</p>
+
+<ul>
+  <li><strong>A practical arc42 walkthrough:</strong> Exploring how Juan applied the
+arc42 template to document the Death Star’s architecture. We’ll walk
+through the key chapters and see how each section contributes to
+understanding this complex system.</li>
+  <li><strong>Architectural decisions that made history:</strong> What can we learn
+from the Empire’s architectural choices? How does documenting
+fictional systems help us understand real-world architecture
+decisions?</li>
+  <li><strong>20 Years of arc42:</strong> The template celebrates its 20th anniversary
+in 2025. We’ll explore why arc42 has remained relevant and how
+creative examples like this help teach architecture documentation.</li>
+  <li><strong>Lessons learned from creative documentation:</strong> What can we learn
+when we apply serious architecture practices to fictional systems?
+How does this approach help both newcomers and experienced
+architects understand documentation principles?</li>
+</ul>
+
+<p>Using Juan’s arc42 documentation of the Death Star (available on
+GitHub in English and Spanish), we’ll explore how structured
+documentation works in practice - and why good documentation matters
+whether you’re building software or a space station.</p>
+
+<p><strong>Target audience:</strong> Software architects, arc42 users, Star Wars fans,
+and anyone who wants to learn how to document architectures so that
+even after 20 years, someone still understands why certain decisions
+were made.</p>
+
+<p>“Remember… the documentation will be with you, always.”</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://github.com/juangcarmona/starwars-deathstar-arc42-documentation">Juans Death Star Documentation</a></li>
+</ul>]]></content><author><name>Eberhard Wolff</name></author><category term="English" /><category term="Dokumentation" /><summary type="html"><![CDATA[Juan G. Carmona and Ralf D. Müller discuss an arc42 documentation example: the Death Star]]></summary></entry><entry><title type="html">Folge 270 - Open-Source-Komponenten richtig im Projekt oder Produkt verwenden mit Prof. Dirk Riehle</title><link href="https://software-architektur.tv/2025/07/04/folge270.html" rel="alternate" type="text/html" title="Folge 270 - Open-Source-Komponenten richtig im Projekt oder Produkt verwenden mit Prof. Dirk Riehle" /><published>2025-07-04T00:00:00+00:00</published><updated>2025-07-04T00:00:00+00:00</updated><id>https://software-architektur.tv/2025/07/04/folge270</id><content type="html" xml:base="https://software-architektur.tv/2025/07/04/folge270.html"><![CDATA[<p>Kaum ein Software-Projekt kommt heute noch ohne Open-Source-Teile
+aus. Wie kann man solche Komponenten im Projekt rechtlich und
+technisch richtig einsetzen? Welche Auswirkungen haben Lizenzen mit
+einem Copyleft? Was gilt es in Bezug auf Compliance zu beachten?
+Gerade der EU Cyber Resilience Act bringt das Thema wieder auf die
+Agenda. Prof. Dirk Riehle ist Professor für Open-Source-Software und
+diskutiert diese und andere Fragen mit uns.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li>Prof. Riehles <a href="https://bayave.com/osc">Trainings</a></li>
+  <li>Prof. Riehles <a href="https://scatool.com">Werkzeuge</a></li>
+  <li><a href="https://xkcd.com/2347/">xkcd zu Open-Source-Abhängigkeiten</a></li>
+</ul>]]></content><author><name>Eberhard Wolff</name></author><category term="Open Source" /><summary type="html"><![CDATA[Wir sprechen über Open Source Lizenzen und ihre Bedeutung für die Software-Entwicklung.]]></summary></entry><entry><title type="html">Folge 269 - Was ist die Hauptherausforderung der Software-Architektur?</title><link href="https://software-architektur.tv/2025/06/27/folge269.html" rel="alternate" type="text/html" title="Folge 269 - Was ist die Hauptherausforderung der Software-Architektur?" /><published>2025-06-27T00:00:00+00:00</published><updated>2025-06-27T00:00:00+00:00</updated><id>https://software-architektur.tv/2025/06/27/folge269</id><content type="html" xml:base="https://software-architektur.tv/2025/06/27/folge269.html"><![CDATA[<p>Software-Architektur gilt als anspruchsvoll und komplex – doch woran
+liegt das eigentlich?</p>
+
+<p>Auf Mastodon, BlueSky und LinkedIn haben wir gefragt: Was ist die
+zentrale Herausforderung in der Software-Architektur?</p>
+
+<p>In dieser Episode werfen wir einen Blick auf die Antworten und
+diskutieren, was Software-Architektur von so herausfordernd macht.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://bsky.app/profile/ewolff.com/post/3lsdharvvnh2o">Umfrage auf
+BlueSky</a></li>
+  <li><a href="https://mastodon.social/@ewolff/114736885443917983">Umfrage auf Mastodon</a></li>
+  <li><a href="https://www.linkedin.com/posts/eberhardwolff_softwarearchitecture-activity-7343160670588207104-2su5">Umfrage auf LinkedIn</a></li>
+</ul>]]></content><author><name>Eberhard Wolff</name></author><category term="Grundlagen" /><summary type="html"><![CDATA[Auf Mastodon, BlueSky und LinkedIn habt ihr die Frage beantwortet - hier diskutieren wir die Ergebnisse.]]></summary></entry><entry><title type="html">Folge 268 - Garbage-In/Garbage-Out? Claude Code und die Express-Architektur</title><link href="https://software-architektur.tv/2025/06/20/folge268.html" rel="alternate" type="text/html" title="Folge 268 - Garbage-In/Garbage-Out? Claude Code und die Express-Architektur" /><published>2025-06-20T00:00:00+00:00</published><updated>2025-06-20T00:00:00+00:00</updated><id>https://software-architektur.tv/2025/06/20/folge268</id><content type="html" xml:base="https://software-architektur.tv/2025/06/20/folge268.html"><![CDATA[<p>In der <a href="/2025/06/13/folge267.html">Episode davor</a> haben wir mit Claude
+in nur einer Stunde eine Architektur für einen Wardley-Map Editor
+entwickelt. Schnell, spontan, ungeprüft – klassisches
+“Architektur-Theater” könnte man sagen. Aber was passiert, wenn diese
+Express-Architektur auf die Realität des Codes trifft?</p>
+
+<p>In dieser Folge testen wir das ultimative “Garbage-In/Garbage-Out”
+Experiment: Kann Claude Code aus unserer spontanen Architektur
+funktionierenden Code entwickeln? Oder wird die fehlende Verifikation
+und Tiefe der Architektur zum Stolperstein?</p>
+
+<p>Mit dabei: <a href="https://www.linkedin.com/in/ingo-eichhorst/">Ingo
+Eichhorst</a>, der als
+KI-Experte seine Einschätzung zur praktischen Anwendung von LLMs in
+der Softwareentwicklung einbringt.</p>
+
+<p>Gemeinsam ergründen wir:</p>
+
+<ul>
+  <li>Wie robust sind LLM-generierte Architekturen in der Praxis?</li>
+  <li>Wo sind die Grenzen zwischen Architektur-Theorie und Code-Realität?</li>
+  <li>Kann Claude Code die Lücken einer “schnellen” Architektur selbst schließen?</li>
+  <li>Welche architektonischen Entscheidungen erweisen sich als tragfähig, welche als Luftschlösser?</li>
+</ul>
+
+<p>Ein authentisches Experiment ohne Drehbuch: Werden wir am Ende einen
+funktionsfähigen Wardley-Map Editor haben – oder lernen wir
+schmerzhaft, warum gründliche Architektur-Arbeit durch nichts zu
+ersetzen ist?</p>
+
+<p>Live-Coding meets Architektur-Realitätscheck – mit ungewissem Ausgang.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://github.com/ingo-eichhorst/claude-spark-cli-generator">Claude-SPARC Script und Web-Tool (autogenerated)</a> Dieses claude-sparc-sh ist gegenüber dem von Reuven Cohen leicht modifiziert: es braucht keine MCP-Tool-Definition uns installiert Claude Code, wenn es noch nicht installiert ist. Dadurch ist es z.B. einfach in einer sicheren Umgebung wie GitHub Codespaces einsetzbar:</li>
+  <li><a href="https://claude-sparc.ingo-eichhorst.de/">Die dazugehörige Website</a></li>
+  <li><a href="https://www.linkedin.com/in/reuvencohen/">Reuven Cohen auf LinkedIn</a></li>
+  <li>Die Architektur aus dem ersten Teil des Architektur-Theaters
+    <ul>
+      <li><a href="https://github.com/raifdmueller/wardley-map-editor/">GitHub Repo</a></li>
+      <li><a href="https://raifdmueller.github.io/wardley-map-editor/">Website</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/raifdmueller/wardley-map-editor/tree/feature/claude-code-live-implementation">Der Code aus der Live-Session</a></li>
+  <li><a href="https://github.com/raifdmueller/wardley-map-editor/tree/feature/claude-code-demo-implementation">Der Code aus einer vorherigen Test-Session</a></li>
+</ul>]]></content><author><name>Eberhard Wolff</name></author><category term="Künstliche Intelligenz" /><summary type="html"><![CDATA[Ralf und Ingo Eichhorst zeigen, wie Claude das System auf Basis der Architektur aus den Folgen davor implementiert]]></summary></entry><entry><title type="html">Folge 267 - Architekturtheater mit Claude und Ralf</title><link href="https://software-architektur.tv/2025/06/13/folge267.html" rel="alternate" type="text/html" title="Folge 267 - Architekturtheater mit Claude und Ralf" /><published>2025-06-13T00:00:00+00:00</published><updated>2025-06-13T00:00:00+00:00</updated><id>https://software-architektur.tv/2025/06/13/folge267</id><content type="html" xml:base="https://software-architektur.tv/2025/06/13/folge267.html"><![CDATA[<p>Ist der Einsatz von LLMs in der Software-Architektur nur Hype und
+Theater – oder können die LLMs echten Mehrwert schaffen? In dieser
+besonderen Folge gehen wir einen Schritt weiter als nur darüber zu
+reden: Wir machen es live!</p>
+
+<p>Unserem Star-Gast Claude (Anthropics LLM) entwickelt unter der Leitung
+von Ralf in Echtzeit die Architektur für einen Wardley-Map Editor mit
+draw.io Export-Funktion.</p>
+
+<p>Ihr erlebt hautnah, wie LLMs bei Architektur-Entscheidungen,
+Struktur-Design und Dokumentation unterstützen – und wo menschliche
+Expertise unverzichtbar bleibt. Wir fokussieren uns auf die
+architektonischen Aspekte: Komponenten-Design, Schnittstellen,
+Datenflüsse und Design-Entscheidungen.</p>
+
+<p>Ein echtes Experiment mit ungewissem Ausgang: Reicht eine Stunde für
+die Architektur? Bekommen wir vielleicht sogar noch einen
+funktionsfähigen Prototypen oder ein Proof-of-Concept hin?</p>
+
+<p>Authentisch, ungeschnitten, mit allen Höhen und Tiefen einer echten
+Architektur-Session.</p>
+
+<p>Spoiler: Am Ende exportieren wir tatsächlich eine Wardley Map nach
+draw.io – oder scheitern spektakulär beim Versuch.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://github.com/raifdmueller/wardley-map-editor/">GitHub Repo</a></li>
+  <li><a href="https://raifdmueller.github.io/wardley-map-editor/">Website für das Projekt</a></li>
+</ul>]]></content><author><name>Eberhard Wolff</name></author><category term="Künstliche Intelligenz" /><summary type="html"><![CDATA[Ralf nutzt live das LLM Claude für Architekturarbeit.]]></summary></entry><entry><title type="html">Folge 266 - Soll man LLMs für Software-Architektur nutzen? mit Ralf und Eberhard</title><link href="https://software-architektur.tv/2025/06/06/folge266.html" rel="alternate" type="text/html" title="Folge 266 - Soll man LLMs für Software-Architektur nutzen? mit Ralf und Eberhard" /><published>2025-06-06T00:00:00+00:00</published><updated>2025-06-06T00:00:00+00:00</updated><id>https://software-architektur.tv/2025/06/06/folge266</id><content type="html" xml:base="https://software-architektur.tv/2025/06/06/folge266.html"><![CDATA[<p>Large Language Models (LLMs) wie ChatGPT oder Claude sind in aller
+Munde und versprechen, auch die Software-Architektur zu
+revolutionieren. Doch wie nützlich sind diese Tools wirklich für
+Architekt:innen? Können sie bei der Erstellung von
+Architekturdokumentationen, Architecture Decision Records oder dem
+Architecture Communication Canvas helfen? Oder überwiegen die Risiken
+wie Halluzinationen und fehlendes Verständnis für die Realität? In
+dieser Folge diskutieren Eberhard Wolff und Ralf D. Müller kontrovers
+über den Einsatz von LLMs in der Software-Architektur. Sie beleuchten
+sowohl die Chancen als auch die Fallstricke und diskutieren, wo LLMs
+helfen können und wo sie versagen. Eine Diskussion zwischen zwei
+erfahrenen Software-Architekten, deren Meinungen unterschiedlicher
+nicht sein könnten  – mit praktischen Erkenntnissen
+für alle, die sich fragen: KI-Hype oder echte Hilfe?</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://software-architektur.tv/">Umfrage zur Nutzung der Website</a></li>
+  <li><a href="https://software-architektur.tv/2025/04/11/episode260.html">Folge KI = Bullshit?</a></li>
+  <li><a href="https://www.linkedin.com/posts/dirk-mahler-837a4b5_ai-neo4j-claude-activity-7321596753223340033-xz4r">Dirks Experiment</a></li>
+  <li><a href="https://doctoolchain.org/asciidoc-linter/arc42/10_quality_requirements.html">Arc42 Dokumentation für den AsciiDoc-Linter</a></li>
+  <li><a href="https://www.nature.com/articles/s41562-025-02194-6">Francesco Salvi, Manoel Horta Ribeiro, Riccardo Gallotti &amp; Robert West: On the conversational persuasiveness of GPT-4 nature human behavior</a></li>
+  <li><a href="https://arxiv.org/html/2202.03629v7">Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Yejin Bang, Delong Chen, Wenliang Dai, Ho Shu Chan, Andrea Madotto, and Pascale Fung (Center for Artificial Intelligence Research (CAiRE), Hong Kong University of Science and Technology, Hong Kong): Survey of Hallucination in Natural Language Generation</a></li>
+  <li><a href="https://winfuture.de/news/150778">ChatGPT halluziniert immer mehr und OpenAI weiß nicht, warum</a></li>
+  <li><a href="https://software-architektur.tv/2025/04/03/episode258.html">Episode zu Wardley Maps Meets Software Architecture</a></li>
+  <li><a href="https://book.servo.org/contributing.html#ai-contributions">Servo verbietet AI-Contributions</a></li>
+  <li><a href="https://github.com/dotnet/runtime/pull/115733">Desaströser Commit von CoPilot an Dot Net</a></li>
+  <li><a href="https://www.heise.de/news/cURL-Maintainer-Habe-die-Nase-voll-wegen-KI-Bug-Reports-10372739.html">cURL-Maintainer: “Habe die Nase voll” – wegen KI-Bug-Reports</a></li>
+  <li><a href="https://chatgpt.com/share/68238ff5-4bac-800f-aea7-5d6aaee3b8bb">ChatGPT beantwortet: Ist der Einsatz von LLMs eine wichtige Maßnahme, um besser und produktiver Software Architekturen zu erstellen oder gibt es andere, erfolgversprechendere Möglichkeiten?</a></li>
+  <li><a href="https://github.com/docToolchain/asciidoc-linter">AsciiDoc Linter</a></li>
+  <li><a href="https://github.com/docToolchain/LLM-Prompts">LLM Prompts for Architecture Documentation</a></li>
+</ul>]]></content><author><name>Eberhard Wolff</name></author><category term="Künstliche Intelligenz" /><summary type="html"><![CDATA[Eine kontroverse Diskussion darüber, wie LLMs als Werkzeug für Architektur nützlich sein können.]]></summary></entry><entry><title type="html">Folge 265 - Die Evolution von Architektur durch Team Topologies</title><link href="https://software-architektur.tv/2025/05/30/folge265.html" rel="alternate" type="text/html" title="Folge 265 - Die Evolution von Architektur durch Team Topologies" /><published>2025-05-30T00:00:00+00:00</published><updated>2025-05-30T00:00:00+00:00</updated><id>https://software-architektur.tv/2025/05/30/folge265</id><content type="html" xml:base="https://software-architektur.tv/2025/05/30/folge265.html"><![CDATA[<p>Eigentlich definiert Architektur “nur” die Struktur der Software. Aber
+das Gesetz von Conway weißt schon auf den Zusammenhang zwischen
+Architektur und Organisation hin.  Durch das Inverse Conway Maneuvre
+ist klar geworden, dass die geschickte Aufstellung der Organisation
+die Architektur maßgeblich beeinflussen kann. Dieser Vortrag zeigt
+auf, dass Team Topologie auch erhebliche Konsequenzen für die
+Architektur-Arbeit hat: Team Topologies fungiert nicht nur als
+Werkzeug für Architektur, sondern muss auch in die architektonische
+Planung einbezogen werden.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://speakerdeck.com/ewolff/the-evolution-of-architecture-through-team-topologies-6373db28-5bcc-49f4-8aff-efa2c24c51a9">Folien</a></li>
+  <li><a href="http://cseweb.ucsd.edu/~wgg/CSE218/Parnas-IFIP71-information-distribution.PDF">D.L. Parnas: Information Distribution Aspects of Design
+Methodology</a></li>
+  <li><a href="https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month">Frederick P. Brooks: The Mythical
+Man-Month</a></li>
+  <li><a href="https://software-architektur.tv/2020/11/20/folge026.html">Episode zu
+Modularisierung</a></li>
+  <li><a href="https://software-architektur.tv/2020/07/02/folge004.html">Fachliche Architektur - Warum und
+wie?</a></li>
+  <li><a href="https://software-architektur.tv/2024/04/18/folge213.html">Episode zu Team
+Topologies</a></li>
+  <li><a href="https://software-architektur.tv/2020/08/14/folge012.html">Episode zur DevOps
+Study</a></li>
+  <li><a href="https://software-architektur.tv/2024/09/27/episode233.html">Fearless Change - Neue Ideen
+etablieren</a></li>
+  <li><a href="https://software-architektur.tv/2024/06/28/episode222.html">Software Architektur - Den menschlichen Faktor verbessern!</a></li>
+</ul>]]></content><author><name>Eberhard Wolff</name></author><category term="Team Topologies" /><summary type="html"><![CDATA[Warum Team Topologies die Ideen von Software-Architektur fortsetzt.]]></summary></entry><entry><title type="html">Folge 264 - Statt Agilität und moderner Architektur: Die Illusion von Kontrolle</title><link href="https://software-architektur.tv/2025/05/23/folge264.html" rel="alternate" type="text/html" title="Folge 264 - Statt Agilität und moderner Architektur: Die Illusion von Kontrolle" /><published>2025-05-23T00:00:00+00:00</published><updated>2025-05-23T00:00:00+00:00</updated><id>https://software-architektur.tv/2025/05/23/folge264</id><content type="html" xml:base="https://software-architektur.tv/2025/05/23/folge264.html"><![CDATA[<p>Agile Entwicklung verspricht einen besseren Umgang mit Unsicherheit –
+und doch dominieren in vielen Projekten weiterhin detaillierte Pläne,
+Feinkonzepte und Architektur mit Big Design Up Front. Warum fällt es
+so schwer, loszulassen?</p>
+
+<p>Diese Episode beleuchtet die psychologischen Gründe hinter dem
+Festhalten an Planung: das Bedürfnis nach Sicherheit, die Angst vor
+Chaos und die Illusion von Kontrolle. Und sie zeigt, welche
+Bedingungen nötig sind, damit Teams sich wirklich auf das Unplanbare
+einlassen können – mit Vertrauen, Mut und einer gesunden Fehlerkultur.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="https://software-architektur.tv/2024/03/27/folge209.html">Are We Engineers? With Hillel Wayne</a></li>
+  <li><a href="https://software-architektur.tv/2022/10/28/folge140.html">Zukunftssichere Architekturen - Keine gute Idee?</a></li>
+  <li><a href="https://software-architektur.tv/2021/07/09/folge66.html">Prof. Christiane Floyd zu “menschenzentrierter Software-Entwicklung”</a></li>
+  <li><a href="https://software-architektur.tv/2025/05/16/folge263.html">Postagilität - Was kommt jetzt? mit Tanja Friedel und Uwe Vigenschow</a></li>
+  <li><a href="https://software-architektur.tv/2023/12/08/folge191.html">Software-Entwicklung = Lernen</a></li>
+  <li><a href="https://software-architektur.tv/2025/02/24/episode252.html">Intro to Beyond Estimates with Woody Zuill</a></li>
+  <li><a href="https://software-architektur.tv/2022/05/13/folge119.html">Gibt es das Wasserfallmodell überhaupt?</a></li>
+</ul>]]></content><author><name>Eberhard Wolff</name></author><category term="Agilität" /><summary type="html"><![CDATA[Erklärt das Bedürfnis nach Sicherheit übertriebene Planung und Architektur?]]></summary></entry></feed>

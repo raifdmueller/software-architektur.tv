@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Folge 212 - Integration | Software Architektur im Stream </title>
+  <link type="application/atom+xml" rel="alternate" href="https://software-architektur.tv/feed.xml" title="software-architektur.tv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/cayman.css">
+  <link rel="stylesheet" href="/css/custom1.css">
+  <meta name="twitter:card" content="player" />
+  <meta property="og:url" content="https://software-architektur.tv/2024/04/12/folge212.html" />
+  <meta property="twitter:title" content="Folge 212 - Integration  | Software Architektur im Stream" />
+  <meta property="og:title" content="Folge 212 - Integration  | Software Architektur im Stream" />
+  <meta property="og:type" content="article" />
+  <meta property="twitter:player" content="https://www.youtube.com/embed/Mzd7UlQwqsc" />
+  <meta property="twitter:player:width" content="560" />
+  <meta property="twitter:player:height" content="315" />
+
+  <meta property="twitter:image" content="https://software-architektur.tv/thumbnails/folge212.png" />
+  <meta property="twitter:image:alt" content="Titel der Folge" />
+  <meta property="og:image" content="https://software-architektur.tv/thumbnails/folge212.png" />  
+
+  <meta property="og:description" content="Wir sprechen über Integrationsansätze wie REST oder Messaging" />
+  <meta property="twitter:description" content="Wir sprechen über Integrationsansätze wie REST oder Messaging" />
+</head>
+
+
+
+  <body>
+    <script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="https://software-architektur.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', 'fc80a353-ef3c-45fc-b60f-f417d73ca50d');
+</script>
+
+<section class="page-header">
+  <h1 class="project-name">Folge 212 - Integration</h1>
+
+  <h2 class="project-tagline">Software Architektur im Stream</h2>
+
+
+
+  <section id="links">
+    <a href="/index.html">Home</a>
+    &nbsp;
+    <a href="/tags.html">Tags</a>
+    &nbsp;
+    <a href="/chronologisch.html">Folgen</a>
+    &nbsp;
+    <!-- <a href="/guests.html">Gäste</a> -->
+    &nbsp;
+    <a href="/podcast.html">Podcast</a>
+    &nbsp;
+    <a href="/sketchnote-buch">Buch</a>
+    &nbsp;
+    <a href="/beruf.html">Architektur als Beruf</a>
+    &nbsp;
+    <a href="/plan.html">Planung</a>
+    &nbsp;
+    <a href="/feed.xml">Feed</a>
+  </section>
+</section>
+
+
+
+
+	  
+    <section class="main-content">
+<ul>
+
+	<li><a href="#peertube">PeerTube Video - no Big Tech!</a></li>
+
+
+	<li><a href="#youtube">YouTube Video</a></li>
+
+
+	<li><a href="#podcast">Audio als Podcast</a></li>
+
+
+
+</ul>	    
+
+	    
+    <p>Die Unternehmens-IT-Landschaften bestehen heutzutage aus einer
+Vielzahl unterschiedlicher Software-Systeme. Jedes Software-System
+muss sich in diese Landschaft einfügen und daher mit anderen Systemen
+integrieren. Und bei Microservices spielt ebenfalls die Integration
+der einzelnen Services eine zentrale Rolle.  In dieser Episode
+diskutieren wir typische Mechanismen zur Integration wie REST oder
+Messaging und wie sie die typischen Probleme bei der Integration
+lösen.</p>
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li><a href="/2023/09/01/folge179.html">Folge zu Abhängigkeiten</a></li>
+  <li>Does my ESB look big on this
+    <ul>
+      <li><a href="https://www.infoq.com/presentations/soa-without-esb/">Video</a></li>
+      <li><a href="https://de.slideshare.net/deimos/jim-webber-martin-fowler-does-my-bus-look-big-in-this">Folien</a></li>
+    </ul>
+  </li>
+  <li><a href="https://dpunkt.de/produkt/rest-und-http/">Stefan Tilkov, Martin Eigenbrodt, Silvia Schreier, Oliver Wolf: REST und HTTP</a></li>
+  <li><a href="/2022/09/23/folge135.html">HTTP Folge mit Lucas Dohmen</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Enterprise_service_bus">Enterprise Service Bus bei Wikipedia</a></li>
+  <li><a href="https://www.youtube.com/watch?v=RCHZ6oCNZvU">Kafka Video</a></li>
+  <li><a href="https://www.enterpriseintegrationpatterns.com/">Gregor Hohpe: Patterns of Enterprise Application Architecture</a></li>
+  <li><a href="https://camel.apache.org/">Apache Camel</a></li>
+  <li><a href="https://spring.io/projects/spring-integration/">Spring Integration</a></li>
+  <li><a href="/2022/01/14/episode98.html">Episode zu Feeds mit Jochen Christ</a></li>
+  <li><a href="/2021/09/24/folge76.html">Episode zu lose Kopplung</a></li>
+</ul>
+
+
+
+    2024-04-12 <a href="https://software-architektur.tv/thumbnails/folge212.png">Thumbnail</a>
+
+
+
+<h2 id="peertube">PeerTube Video - no Big Tech!</h2>
+
+<center>
+    <div class="embed-container">
+      <iframe title="Folge 212 - Integration"
+	width="560" height="315"
+	src="https://tube.tchncs.de/videos/embed/f3d434b4-a5fd-4f0c-bb03-c98b076f79fa"
+	frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
+    </div>
+</center>
+
+    
+
+<h2 id="youtube">YouTube Video</h2>
+
+<center>
+  <div class="embed-container">
+    <iframe width="560" height="315"
+src="https://www.youtube-nocookie.com/embed/Mzd7UlQwqsc" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" ></iframe>
+    </div>
+</center>
+
+
+
+
+
+<h2 id="podcast">Audio als Podcast</h2>
+
+<center>
+<iframe
+style="width:100%;min-width:275px;min-height:320px;max-width:475px;max-height:400px;border:0;overflow:hidden"
+src="https://www.podcaster.de/simpleplayer/?id=show~1evriw~software-architektur-im-stream~pod-11e2983beba3198294722297e3&v=1712927794"></iframe>
+</center>
+
+<a href="https://1evriw.podcaster.de/software-architektur-im-stream/media/Integration.mp3">MP3 Download</a>
+
+<br />
+
+<a href="/podcast.html">Infos und Feeds zum Audio als Podcast</a>
+
+
+
+
+
+<footer class="site-footer">
+  <span class="site-footer-owner">
+    <a href="https://software-architektur.tv">software-architektur.tv</a> von <a href="http://ewolff.com">Eberhard Wolff</a>.<br />
+    Sketchnotes von Lisa Maria Schäfer
+  </span>
+  <nav>
+    <a href="/datenschutzhinweise.html">Datenschutzhinweise</a>
+    <a href="/impressum.html">Impressum</a>
+  </nav>
+  <span class="site-footer-credits" lang="en">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+    </section>
+
+  </body>
+</html>

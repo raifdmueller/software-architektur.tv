@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 16.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:PUBLISH
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:W. Europe Standard Time
+BEGIN:STANDARD
+DTSTART:16011028T030000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010325T020000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+CLASS:PUBLIC
+CREATED:20250725T151413Z
+DESCRIPTION:Das Model Context Protocol (MCP) wird nicht ohne Grund als das 
+	USB-C für Large Language Models (LLMs) bezeichnet: Es schafft einen Stand
+	ard\, wie LLMs auf Kontextinformationen zugreifen und externe Werkzeuge st
+	euern können. Das hat große Auswirkungen auf die Entwicklung von KI-Anwe
+	ndungen. In diesem Stream schauen wir uns an\, warum MCP gerade in aller M
+	unde ist\, wie es funktioniert\, und was es für Entwickler:innen konkret 
+	bedeutet. Mit dabei eine Live-Demo mit Spring AI. Martin Lippert leitet di
+	e Entwicklung der Spring-Tools und kann auf langjährige Erfahrung als Ent
+	wickler und Speaker zurückblicken.\n\nhttps://youtu.be/5Q_TrSfq4Mw https:
+	//www.twitch.tv/ebrwolff\n
+DTEND;TZID="W. Europe Standard Time":20250801T140000
+DTSTAMP:20250618T103817Z
+DTSTART;TZID="W. Europe Standard Time":20250801T130000
+LAST-MODIFIED:20250725T151413Z
+LOCATION:https://youtu.be/5Q_TrSfq4Mw https://www.twitch.tv/ebrwolff
+PRIORITY:5
+SEQUENCE:0
+SUMMARY;LANGUAGE=de:Model Context Protocol (MCP): Schnittstellen für LLMs 
+	schaffen mit Martin Lippert
+TRANSP:OPAQUE
+UID:040000008200E00074C5B7101A82E0080000000090C421A14DE0DB01000000000000000
+	010000000C04977AB0A5F1047BE52A7E62105CF9E
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MS-OLK-AUTOFILLLOCATION:FALSE
+X-MS-OLK-CONFTYPE:0
+END:VEVENT
+END:VCALENDAR
